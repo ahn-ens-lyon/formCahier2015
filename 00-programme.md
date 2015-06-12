@@ -1,9 +1,11 @@
-title: 00-programme
-description: Programme de l’atelier Cahier 2015, Emmanuel Château, Maud Igarao
-theme: theme/remark-dark-em.css
-name: inverse
-layout: true
-class: inverse
+title: Google OAuth2 及 Analytics Data API 的应用 description: < greatghoul - 西安GDG - 2013/03 > theme: ../themes/remark-dark.css name: inverse layout: true class: inverse
+
+class: center middle
+
+Google OAuth2 及 Analytics Data API 的应用
+< greatghoul - 西安GDG - 2013/03 >
+
+.footnote[ http://www.g2w.me - Ask and learn.]
 
 ---
 name: index

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <title>Title</title>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+      <link href="themes/remark-dark.css" rel="stylesheet" media="all" type="text/css"/>
+    </head>
+    <body>
+      <textarea id="source">
+title: 00-XQuery
+description: Atelier SynopsX Cahier 2015, Emmanuel Château, Maud Ingarao
+theme: ../themes/remark-dark.css
+name: inverse
+layout: true
+class: inverse
+
+class: center middle
+00-XQuery
+Une Introduction
+.footnote[[entrepôt GitHub](https://ahn-ens-lyon/formCahier2015) | [jour1](00-programme.html#jour1) | [jour2](00-programme.html#jour2)
+
+---
+name: index
+class: center middle
+
+# .red[S]ommaire
+Atelier SynopsX | consortium cahier 2015
+
+
+---
+name: presentation
+layout: false
+class: left
+
+# À quoi sert XQuery ?
+
+## requêter des données stockées en XML
+## manipuler des fichiers
+## transformer des messages entre applications
+## rendre du XML en HTMl
+
+???
+XQuery a d’abord été conçu comme un langage pour requêter des données stockées en XML. Son principal rôle intervient donc avec les bases de données XML qu’il s’agisse de bases de données nativement XML ou bien de XML stockées dans des bases de données relationnelles.
+
+On peut également utiliser XQuery pour manipuler des fichiers XML stockées dans un système de fichier, ou bien pour transformer des messages en les passant d’une application à l’autre. Ici, l’utilisation de XQuery entre en concurrence avec XSLT et est principalement une question de choix.
+
+Certains aprécient tellement XQuery qu’ils cherchent à l’employer pour transformer du XML en HTML présentationnel. Ce n’est pas réellement l’utilisation pour laquelle ce langaeg a été conçu (pas forcément conseillé).
+
+---
+
+# Installation de BaseX
+
+Vérifiez que vous disposez de Java 8.0
+
+Télécharger l’archive appropriée sur :
+http://basex.org/products/download/all-downloads/
+
+Exécuter BaseX
+
+---
+
+# Votre première requête XQuery
+
+- Allez dans `Fichier nouveau`
+- Tapez l’instruction suivante
+```xquery
+"Hello World !"
+```
+- Exécutez l’instruction en appuyant sur Entrée
+
+---
+
+# D’autres exemples
+
+## Plus intéressant, essayez :
+```xquery
+2 + 2
+```
+Sans surprise, le résultat devrait être `4`
+
+## Pour connaître l’heure :
+```xquery
+current-time()
+```
+
+???
+
+Exemples :
+- calcul arithmétique
+- utilisation d’une fonction
+
+Bien évidemment, aucune de ces requêtes ne sont très utiles en elles-mêmes, et ce qu’elles démontrent n’est pas de la haute science. Mais au sein d’un langage de requête, on peut avoir besoin de faire certains calculs, ce qui est possible avec XQuery. Nous verrons par ailleurs, que XQuery est un langage fonctionnel Turing complet.
+
+XQuery est aussi conçu de manière à ce que les expressions soient complètement imbricables. N’importe quelle expression peut être employée dans n’importe quelle autre expression pourvu qu’elle délivre une valeur du type approprié. Ce qui implique que les expressions qui sont essentiellement employées pour selectionner des données au sein d’une clause `where` par exemple, peuvent aussi être employées comme des requêtes autonomes.
+
+---
+
+# Accéder à des documents XML
+
+Chemin du document que nous allons utiliser :
+`exemples/document.xml`
+
+```xquery
+fn:doc('chemin/document.xml')
+```
+
+## Lister les `persName` dans le document
+
+en XPath :
+```
+//tei:persName
+```
+
+en XQuery :
+```
+fn:doc( 'chemin/document.xml' )//tei:persName
+```
+
+Compter les `persName`
+```
+fn:count( fn:doc('chemin/document.xml')//tei:persName )
+```
+
+???
+Même s’il est capable de prendre en charge des tâches telles que celles décrites précédemment, XQuery est principalement conçu pour accéder à des données XML. Regardons maintenant un exemple qui requiert en entrée un document XML.
+
+Un exemple en XML est contenu dans le répertoire `exemple/` au sein du dossier de la formation. C’est un document XML-TEI qui comporte plusieurs divisions.
+- Vous pouvez ouvrir le document en XQuery avec la fonction `fn:doc`
+- Vous pouvez également accéder aux divisions du document
+
+
+
+
+    </textarea>
+    <script src="js/remark-0.6.5.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+    var hljs = remark.highlighter.engine;</script>
+    <script src="remark.language.js" type="text/javascript"></script>
+    <script type="text/javascript">
+    var slideshow = remark.create({
+    highlightStyle: 'monokai',
+    highlightLanguage: 'remark'
+    }) ;
+    </script>
+  </body>
+</html>

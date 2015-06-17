@@ -9,7 +9,6 @@ une XSLT -->
         <xsl:value-of select="." />
     </xsl:template>
     <xsl:template match="comment() | processing-instruction()" />
-    <xsl:template match="p" />
  </xsl:stylesheet>
 <!--
 Question 

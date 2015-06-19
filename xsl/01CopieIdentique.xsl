@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="2.0">
     <xsl:output encoding="UTF-8" method="xml" indent="yes"/>
-<!-- une XSL qui copie tout le document XML-TEI à l'identique !-->
-<!-- jamais utilisé tel quel, mais jeu de règles qui peut servir pour agir précisément
-sur les nœuds d'un document initial, ou pour commencer un travail complexe de
-transformation et garder la trace de tous le nœuds du docuemnt. -->
+<!-- cette XSLT copie tout le document XML-TEI à l’identique !-->
+<!-- ne jamais utiliser tel quel, un jeu de règles qui peut servir pour agir précisément sur les nœuds d’un document initial, ou pour commencer un travail complexe de transformation et garder la trace de tous le nœuds du document. -->
 
 <!-- la première instruction traite le noeud document et commande simplement de
 parcourir les nœuds fils en profondeur -->
@@ -27,6 +25,6 @@ ainsi elle copie tout récursivement -->
 <!-- exercices :
 supprimer les commentaires dans le fichier résultat ;
 supprimer les attributs xml-id de p ;
-supprimer les noeuds textuels d'espace blancs -->
+supprimer les noeuds textuels d’espace blancs -->
 
 </xsl:stylesheet>

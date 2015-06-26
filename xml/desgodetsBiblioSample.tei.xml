@@ -1439,35 +1439,6 @@
                                 </imprint>
                             </monogr>
                         </biblStruct>
-                        <biblStruct xml:id="lunsinghScherleer1962">
-                            <analytic>
-                                <author>
-                                    <persName ref="#lunsinghScheurleerTheodorHerman">
-                                        <forename>Theodor Herman</forename>
-                                        <forename>Lunsingh Scheurleer</forename>
-                                    </persName>
-                                </author>
-                                <title level="a">Een exemplaar van Antoine Desgodets’
-                                    Traité de la commodité de l’Architecture in het
-                                    Rijksprentenkabinet</title>
-                            </analytic>
-                            <monogr>
-                                <title level="m">Opus musivum, een bundel studies
-                                    aangeboden aan Professor doctor M. D. Ozinga ter
-                                    gelegenheid van zijn zestigste verjaardag op 10
-                                    november 1962</title>
-                                <imprint>
-                                    <date>1964</date>
-                                    <!--<publisher>Van Gorcum en C̊</publisher>-->
-                                    <publisher>Van Gorcum en C</publisher>
-                                    <pubPlace>Assen</pubPlace>
-                                    <biblScope type="pp">285-297</biblScope>
-                                </imprint>
-                                <extent>IV-507 p. ; In-4°</extent>
-                            </monogr>
-                            <idno type="catBnf"
-                                >http://catalogue.bnf.fr/ark:/12148/cb331220465/PUBLIC</idno>
-                        </biblStruct>
                         <!-- lettre M -->
                         <biblStruct xml:id="mariette1853-1862">
                             <monogr>
@@ -1754,7 +1725,7 @@
                                 <author>
                                     <persName>
                                         <forename>Quatremère</forename>
-                                        <forename>de Quincy</forename>
+                                        <surname>de Quincy</surname>
                                     </persName>
                                 </author>
                                 <title level="m">Dictionnaire historique
@@ -1799,7 +1770,7 @@
                                 <respStmt>
                                     <persName>
                                         <forename>Laurent-Etienne</forename>
-                                        <forename>Rondet</forename>
+                                        <surname>Rondet</surname>
                                     </persName>
                                     <resp>traducteur</resp>
                                 </respStmt>

@@ -34,6 +34,16 @@ class: left
 
 # Créez votre bibliothèque de fonction !
 
+
+
+```xquery
+  declare namespace functx = "http://www.functx.com";
+  declare function functx:num-descendant-elements
+  ($el as element()) as xs:integer { sum(for $child in $el/*
+  return functx:num-descendant-elements($child) + 1)
+};
+```
+
 ---
 
 # Créez une base de données avec le fichier `xml/desgodetsBiblioSample.tei.xml`

@@ -7,7 +7,7 @@
     </head>
     <body>
       <textarea id="source">
-title: 01-XQuery
+title: 00-XQuery
 description: Atelier SynopsX Cahier 2015, Emmanuel Château, Maud Ingarao
 theme: ../themes/remark-dark.css
 name: inverse
@@ -15,7 +15,9 @@ layout: true
 class: inverse
 
 class: center middle
-01-XQuery et RESTXQ
+00-XQuery
+Une Introduction
+
 .footnote[[entrepôt GitHub](https://ahn-ens-lyon/formCahier2015) | [jour1](00-programme.html#jour1) | [jour2](00-programme.html#jour2)
 
 ---
@@ -30,68 +32,183 @@ name: presentation
 layout: false
 class: left
 
-# RESTXQ
+# XQuery
 
-Adam Retter
-
----
-
-# REST
-[[cf dia Gdp]]
-- Thèse de Roy Felding
-- Ressource
-- Identifiant
-
-???
-Ces dernières années, le paradigme REST s’est largement imposé dans le développement Web.
-
-Ressource / URI
-
-Une des manières les plus efficaces de travailler avec des données sur le web consiste à traiter toutes les opérations commes des opérations de publication (récupérer un objet dans une collection, insérer un objet dans une collection sur le serveur, poster des objets dans une file, ou des contenus en rapport, effacer un objet d’une collection ou récupérer des métadonnées sur cet objet).
-
-Une telle approche requiert une modification de la manière dont on pense les applications qui sont dès lors beaucoup plus orientées vers les services que vers les objets.
-
-Mais approximativement la manière dont on travaille avec les opérations de bases de données (atomicité de la transaction à maintenir à chaque point dans le workflow). Pas de changement d’état en cours d’opération.
+- Standardisé par le le W3C
+- version 1
+- version 2
+- extension XQuery Update
+- version 3
 
 ---
 
-# Avantages
+# À quoi sert XQuery ?
 
-- portabilité
-- déclaratif
-- interface REST
-- travail sur le modèle de données
-- possibilité de mise à jour + index
+## requêter des données stockées en XML
+## manipuler des fichiers
+## transporter des messages entre applications
+## rendre du XML en HTMl ou dans un autre format
+
+???
+XQuery a d’abord été conçu comme un langage pour requêter des données stockées en XML. Son principal rôle intervient donc avec les bases de données XML qu’il s’agisse de bases de données nativement XML ou bien de XML stockées dans des bases de données relationnelles.
+
+On peut également utiliser XQuery pour manipuler des fichiers XML stockées dans un système de fichier, ou bien pour transformer des messages en les passant d’une application à l’autre. Ici, l’utilisation de XQuery entre en concurrence avec XSLT et est principalement une question de choix.
+
+Certains aprécient tellement XQuery qu’ils cherchent à l’employer pour transformer du XML en HTML présentationnel. Ce n’est pas réellement l’utilisation pour laquelle ce langaeg a été conçu (pas forcément conseillé).
+
+---
+
+# XQuery vs XSLT
+
+- opère sur le même modèle de données
+- partage de XPath et fonctions prédéfinies
+- fonctionnalités comparables
+- expressivité comparable
+- efficience comparable
+- XQuery plus adapté pour la requête
+- pas de règles modèles dans XQuery (xsl:template)
+
+???
+XQuery plus "pull" que "push"
+XSLT charge l’ensemble du document
+tandis que XQuery peut utiliser des index
+---
+
+# Installation de BaseX
+
+Vérifiez que vous disposez de Java 8.0
+
+Télécharger l’archive appropriée sur :
+http://basex.org/products/download/all-downloads/
+
+Exécuter BaseX
+
+---
+
+# Votre première requête XQuery
+
+- Allez dans `Fichier nouveau`
+- Tapez l’instruction suivante
+```xquery
+"Hello World !"
+```
+- Exécutez l’instruction en appuyant sur Entrée
+
+---
+
+# D’autres exemples
+
+## Plus intéressant, essayez :
+```xquery
+2 + 2
+```
+Sans surprise, le résultat devrait être `4`
+
+## Pour connaître l’heure :
+```xquery
+current-time()
+```
 
 ???
 
-Portabilité du code :
-- Basé sur des standards XQuery W3C
-- RESTXQ dans EXPATH
-Pas d’enfermement dans une solution propriétaire
+Exemples :
+- calcul arithmétique
+- utilisation d’une fonction
 
-Déclaratif
-- XQuery langage fonctionnel
-- Possibilité de déclarer des fonctions ressources associées à des URI
+Bien évidemment, aucune de ces requêtes ne sont très utiles en elles-mêmes, et ce qu’elles démontrent n’est pas de la haute science. Mais au sein d’un langage de requête, on peut avoir besoin de faire certains calculs, ce qui est possible avec XQuery. Nous verrons par ailleurs, que XQuery est un langage fonctionnel Turing complet.
 
-Avantages de l’interface REST
-- pleinement intégré dans l’architecture du web
-- logique web sémantique
-- interface uniforme
-Porductivité
+XQuery est aussi conçu de manière à ce que les expressions soient complètement imbricables. N’importe quelle expression peut être employée dans n’importe quelle autre expression pourvu qu’elle délivre une valeur du type approprié. Ce qui implique que les expressions qui sont essentiellement employées pour selectionner des données au sein d’une clause `where` par exemple, peuvent aussi être employées comme des requêtes autonomes.
 
-Travail sur le modèle de données
-- au plus proche du modèle de données (côté chercheur)
-- réduire les transformations coûteuses (ex. SGBD-R)
-Peut également travailler avec des données stockées dans d’autre format mais une abstraction XML commune.
+---
 
-Possibilité de mise à jour + index
-- XQuery Update facility
-- index Lucenne, XQuery Full-text
+# Accéder à des documents XML
+
+Chemin du document que nous allons utiliser :
+`exemples/document.xml`
+
+```xquery
+fn:doc('chemin/document.xml')
+```
+
+## Lister les `persName` dans le document
+
+en XPath :
+```
+//tei:persName
+```
+
+en XQuery :
+```
+fn:doc( 'chemin/document.xml' )//tei:persName
+```
+
+Compter les `persName`
+```
+fn:count( fn:doc('chemin/document.xml')//tei:persName )
+```
+
+???
+Même s’il est capable de prendre en charge des tâches telles que celles décrites précédemment, XQuery est principalement conçu pour accéder à des données XML. Regardons maintenant un exemple qui requiert en entrée un document XML.
+
+Un exemple en XML est contenu dans le répertoire `exemple/` au sein du dossier de la formation. C’est un document XML-TEI qui comporte plusieurs divisions.
+- Vous pouvez ouvrir le document en XQuery avec la fonction `fn:doc`
+- Vous pouvez également accéder aux divisions du document
+
+---
+
+# Les expressions FLOWR
+
+---
+
+# Exemple de FLOWR expression
+
+For $var in expr
+Let $var := expr
+Where condition
+Order by expr
+Return expr
+
+???
+Itérer sur ensemble et lier variable
+affecter variable
+Condition d’après expression
+Tri
+Retour, évaluation expression
+
+
+---
+
+# Les Types
+
+---
+
+# Les opérateurs
+
+- `>`, `<`, `=`, `>=`, `<=` comparaison, égalité
+- `+`, `-`, `*`, `/` addition, soustraction, multiplication, division
+- % modulo [vérifier]
+
+---
+
+# Booléens
+
+`fn:true()`, `fn:false()`
+`!=`
+eq
+
+---
+
+# Exemple de FLOWR expression
+
 
 ---
 
 # Sources et Bibliographie
+
+- [Michael Kay, Learn XQuery in 10 Minutes: An XQuery Tutorial](http://www.stylusstudio.com/xquery-primer-new.html)
+- [Michael Kay, Blooming FLOWR, An Introduction to the XQuery FLOWR Expression](http://www.stylusstudio.com/xquery_flwor.html)
+- [Michael Kay, Defining your own Functions in XQuery](http://www.stylusstudio.com/xquery/xquery_functions.html)
+
 
 
     </textarea>

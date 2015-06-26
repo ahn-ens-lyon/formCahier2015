@@ -8,7 +8,7 @@
     <body>
       <textarea id="source">
 
-title: 00-xquery00
+title: Hello world XQuery Ex5
 description: Atelier outillage XML (langages et logiciels), consortium Cahier 2015, Emmanuel Château, Maud Ingarao
 theme: ../themes/remark-dark.css
 name: inverse
@@ -19,7 +19,7 @@ class: inverse
 name: index
 class: center middle
 
-# 00-XQuery00 Démo
+# 00-Programme
 
 ## Atelier outillage XML (langages et logiciels)
 
@@ -32,48 +32,17 @@ name: presentation
 layout: false
 class: left
 
-# Ouvrir une base de données
-
-# Lister les titres (XPath)
-```xquery
-  db:open('maBase')//*:title
-```
-
-# Compter les titres (fonction XPath)
-```xquery
-  fn:count(db:open('maBase')//*:title)
-```
-
-# Créer une fonction (fonction XPath)
-```xquery
-  declare function local:listeTitres(...)
-  local:listeTitres()
-```
-
----
-
-# Servir du HTML
-```xquery
-
-```
-
----
-
-# Exemple de réalisation avec BaseX
-
-- Exploration du site
-- Visualisation des données (données hétérogènes)
-- Exposition OAI-PMH
+# titre
 
     </textarea>
     <script src="js/remark-0.6.5.min.js" type="text/javascript"></script>
     <script type="text/javascript">var hljs = remark.highlighter.engine;</script>
     <script src="remark.language.js" type="text/javascript"></script>
     <script type="text/javascript">
-var slideshow = remark.create({
-highlightStyle: 'monokai',
-highlightLanguage: 'remark'
-}) ;
+    var slideshow = remark.create({
+    highlightStyle: 'monokai',
+    highlightLanguage: 'remark'
+    }) ;
     </script>
   </body>
 </html>

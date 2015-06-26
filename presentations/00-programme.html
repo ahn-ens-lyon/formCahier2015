@@ -10,13 +10,6 @@ name: inverse
 layout: true
 class: inverse
 
-class: center middle
-
-00-programme
-Programme de l’Atelier SynopsX Cahier 2015
-
-.footnote[https://ahn-ens-lyon/formCahier2015]
-
 ---
 name: index
 class: center middle
@@ -24,7 +17,7 @@ class: center middle
 # 00-Programme
 Atelier SynopsX | consortium cahier 2015
 
-.footnote[[entrepôt GitHub](https://ahn-ens-lyon/formCahier2015) | [jour1](#jour1) | [jour2](#jour2)
+.footnote[[entrepôt GitHub](https://ahn-ens-lyon/formCahier2015) | [jour1](#jour1) | [jour2](#jour2)]
 
 ---
 name: presentation
@@ -66,11 +59,19 @@ name: jour1
 
 ## .red[Première] journée
 
-- 11h00-12h00 : [Présentation de BaseX](03-basex.md) [Présentation de SynopsX](01-synopsx.md)(02-synopsx.md)
+- 11h00-12h00 : [Outillage de corpus XML]()
 - 12h00-13h30 : Repas
-- 13h30-15h30 : [Les technologies XML : XPath, XSLT, Xquery] [Le langage XPath] [1](xpath01.md), [2](xpath02.md), [3](xpath03.md), [4](xpath04.md)
+- 13h30-14h : [Démo (XPath, XQuery)]()
+- 14h-14h15 : [Le modèle de données XML (XDM)]()
+- 14h15-14h30 : [ex1 sérialisation]()
+- 14h30-14h45 : [XPath]()
+- 14H45-15h30 : [ex2 Sélection dans un arbre]()
 - 15h30-15h45 : Pause
-- 15h45-17h45 : [Le langage XQuery](xquery01.md)[TP XQuery](xquery02.md)[TP XQuery](xquery02.md)
+- 15h45-16h00 : [XQuery]()
+- 16h00-16h30 : [Expressions FLOWR]()
+- 16h30-16h45 : [ex3 XPath](factbook)
+- 16h45-17h00 : Pause
+- 17h00-17h45 : [XPath avec XQuery avancées]()
 
 ???
 
@@ -105,29 +106,53 @@ Comment profiter de l’infrastructure associée aux techno XML
 
 Diapo gimmick
 
-13h30-14h : Démo XPath Xquery
+- 13h30-14h : Démo XPath Xquery
 Introduction, dire que pas XSLT, mais que ce que va voir utile pour XSLT. Car langage qui opère sur le même modèle de données.
-14h-14h15 : XDM
-14h15-14h30 : TP 1 sérialation
-14h30-14h45 : XPath
-14H45-15h30 : TP 2 Sélection dans un arbre
-15h30-15h45 : Pause (ou plusieurs ?)
-15h45-16h00 : XQuery
-16h00-16h30 : FLOWR
-16h30-16h45 : TP XPath (factbook)
-16h45-17h00 : pause
-17h00-17h45 : XPath + XQuery avancées + cas pratiques corpus TEI
+- 14h-14h15 : XDM
+- 14h15-14h30 : ex1 sérialation
+- 14h30-15h00 : XPath
+- 14H00-15h30 : ex2 Sélection dans un arbre
+- 15h30-15h45 : Pause
+- 15h45-16h00 : XQuery
+- 16h00-16h30 : FLOWR
+- 16h30-16h45 : ex3 XPath (factbook)
+- 16h45-17h00 : pause
+- 17h00-17h45 : ex4 XPath + XQuery avancées + cas pratiques corpus TEI
 
+---
+
+# Alternative avec .red[XSLT]
+
+- 11h00-12h00 : [Outillage de corpus XML]()
+- 12h00-13h30 : Repas
+- 13h30-14h : [Démo (XPath, XSLT)]()
+- 14h-14h30 : [Le modèle de données XML (XDM) + dialectes]()
+- 14h30-14h45 : [ex1 sérialisation]()
+- 14h45-15h15 : [XPath]()
+- 14H45-15h30 : [ex2 Sélection dans un arbre]()
+- 15h30-15h45 : Pause
+- 15h45-16h00 : [XSLT]()
+- 16h00-16h30 : [ex3 Traitement par défaut]()
+- 16h30-16h45 : [XSLT]()
+- 16h45-17h00 : Pause
+- 17h00-17h45 : [ex4 Transformation de document TEI]()
 
 ---
 name: jour2
 
-- 9h30-10h45 : [À la découverte de BaseX]()[À la découverte de SynopsX](03-synopsx.md)
+# Programme de la 2ème journée
+
+- 9h30-10h00 : [SynopsX principes de conception]()
+- 10h00-10h30 : [BaseX]()
+- 10h30-10h45 : [ex1 démo BaseX]()
 - 10h45-11h00 : Pause
-- 11h00-12h00 : [SynopsX : créer un projet]()
-- 12h00-13h30 : Repas
-- 13h30-15h30 : [SynopsX : RESTXQ]()
-- 15h30-17h00 : [On essaie avec vos propres données !]
+- 11h00-11h30 : [RestXQ]()
+- 11h30-12h00 : [ex2 Scheme d’URI, négociation de contenu]()
+-12h00-13h30 : Repas
+- 13h30-14h00 : [SynopsX fonctionnement]()
+- 14h00-14h30 : [ex3 Afficher vos données dans SynopsX (whow !)]
+- 14h30-15h00 : [SynopsX dans les coins]()
+- 15h00-17h00 : [ex4 Créer son application avec SynopsX]
 
 ???
 
@@ -149,6 +174,25 @@ Simplicité des templates
 Indépendance des URI, choix des clefs.
 - 14h30-15h00 : templating, common, etc.
 - 15h00-15h30 :
+
+---
+# Alternative .red[XSLT]
+
+- 09h30-09h45 : [Démo XQuery]()
+- 09h45-10h00 : [XQuery]()
+- 10h00-10h30 : [Expressions FLOWR]()
+- 10h30-10h45 : [ex5 Hello world Basex]()
+- 10h45-11h00 : Pause
+- 11h00-11h15 : [Fonctions XQuery]()
+- 11h15-12h00 : [ex6 Factbook]()
+- 12h00-13h30 : Repas
+- 13h30-14h15 : [Les modules et les APIs de BaseX]()
+- 14h15-14h30 : [ex7 démo connexion BaseX]()
+- 14h30-15h00 : [SynopsX conception fonctionnement général]()
+- 15h00-15h15 : [ex8 Afficher vos données dans SynopsX (whow !)]()
+- 15h15-15h45 : pause
+- 15h15-15h45 : [SynopsX sous le capot (heritage, mvc)]()
+- 15h45-17h00 : [ex9 Construire son application]()
 
 ---
 

@@ -19,7 +19,7 @@ class: inverse
 name: index
 class: center middle
 
-# 00-Programme
+# 00-XQuery ex5
 
 ## Atelier outillage XML (langages et logiciels)
 
@@ -32,7 +32,140 @@ name: presentation
 layout: false
 class: left
 
-# titre
+# Hello World !
+
+---
+
+## Exécuter une requête XQuery "Hello World", 2+2, etc.
+## Créer une base de données à partir du fichier `factbook.xml`
+## Explorer le fichier factbook avec XPath
+## Explorer le fichier avec XQuery
+
+---
+
+## Quels sont les éléments fils de `<mondial>` ?
+```xquery
+  fn:distinct-values(/mondial/*/name())
+```
+
+## Quelle est la liste des noms de pays disponibles ?
+```xquery
+  /mondial/country/name
+```
+
+## Combien y a-t-il de pays ?
+```xquery
+  fn:count(/mondial/country)
+```
+
+---
+
+## Trier les pays dans l’ordre alphabétique
+
+```xquery
+  for $nom in /mondial/country/name
+  order by $nom
+  return $nom
+```
+
+```xquery
+  for $pays in /mondial/country
+  order by $pays/name
+  return $pays/name
+```
+
+---
+
+# Trier par population
+
+### Clause `order by`
+
+```xquery
+  for $pays in /mondial/country
+  order by $pays/@population
+  return $pays/name
+```
+
+`order by -- ascending` (par défaut)
+
+`order by -- descending`
+
+
+### Ajoutons des éléments
+
+```xquery
+  for $pays in /mondial/country
+  order by $pays/@population
+  return <pays>{$pays/name/text(), fn:string($pays/@population)}</pays>
+```
+
+### Est-ce bien trié par population ?
+
+???
+
+Est-ce que le tri par population fonctionne ?
+Pourquoi ?
+
+---
+
+# Solution (typage)
+
+```xquery
+  for $pays in /mondial/country
+  order by xs:integer($pays/@population)
+  return <pays>
+           {$pays/name/text(), fn:string($pays/@population)}
+         </pays>
+```
+
+# Séparez les valeurs par un espace
+
+```xquery
+  for $pays in /mondial/country
+  order by xs:integer($pays/@population) descending
+  return <pays>
+           {$pays/name[1] || ' ' || $pays/@population}
+         </pays>
+```
+
+---
+
+# Créer un élément `<pays>` qui contient deux sous-éléments `<nom>` et `<pays>`
+
+```xquery
+  for $pays in /mondial/country
+  order by xs:integer($pays/@population) descending
+  return <pays>{
+  $pays/name, <population>{fn:string($pays/@population)}</population>
+  }</pays>
+```
+
+---
+
+# Bonus
+
+**ex1.xql** Afficher la liste des pays dont la population est supérieure à 10000, par ordre décroissant de population :
+
+```xquery
+    for $c in //country
+    let $pop := number($c/@population)
+    where $pop > 10000
+    order by $pop descending
+    return $c/name
+```
+
+**ex2.xql** Afficher la liste des villes dont la population est supérieure à 1000 dans les pays dont la population est supérieure à 10000 :
+
+```xquery
+    for $c in //country
+    let $pop := number($c/@population)
+    where $pop > 10000
+    order by $pop descending
+    let $name := $c/name
+    for $city in $c/city
+    where $city/population > 1000
+    return $city/name
+```
 
     </textarea>
     <script src="js/remark-0.6.5.min.js" type="text/javascript"></script>

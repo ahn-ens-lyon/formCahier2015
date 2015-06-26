@@ -4,11 +4,11 @@ Traduction extraction des standards W3C par Patrick Durusau, http://www.durusau.
 
 Un __caractère (_character_)__ est une instance de [CharXML](http://www.w3.org/TR/REC-xml/#NT-Char) production de [Extensible Markup Language (XML) 1.0 (Première édition)](http://www.durusau.net/publications/xpxqfando-alldefs.html#xml).
 
-Une __chaîne de caractères (_string_)__ est une séquence de zéro ou plusieurs caractères, ou de manière équivalente une valeur dans l’espace de valeur du type de données `xs:sting`.
+Une __chaîne de caractères (_string_)__ est une séquence de zéro ou plusieurs caractères, ou de manière équivalente une valeur dans l’espace de valeur du type de données `xs:string`.
 
 Un __point de code (_codepoint_)__ est un entier non-négatif assigné à un caractère par le consortium Unicode, ou réservé pour être assigné dans le futur à un caractère.
 
-Un __QName-développé (_expanded-QName_)__ est une parie de valeurs qui consiste en une URI d’espace de nom et un nom local. Ils appartiennnet à l’espace de valeur du type de donnnées `xs:QName` de [XML Schema Part 2: Datatypes Second Edition](http://www.durusau.net/publications/xpxqfando-alldefs.html#xmlschema-2). Lorsque ce document réfère à xs:QName, on désigne toujours l’espace de valeur, par exemple une parie URI d’espace de nom et nom local (et non pas l’espace lexical référencé par des constructions de la forme preix:nom-local).
+Un __QName-développé (_expanded-QName_)__ est une paire de valeurs qui consiste en une URI d’espace de nom et un nom local. Il  appartient à l’espace de valeur du type de donnnées `xs:QName` de [XML Schema Part 2: Datatypes Second Edition](http://www.durusau.net/publications/xpxqfando-alldefs.html#xmlschema-2). Lorsque ce document réfère à xs:QName, on désigne toujours l’espace de valeur, par exemple une paire URI d’espace de nom et un nom local (et non pas l’espace lexical référencé par des constructions de la forme prefixe:nom-local).
 
 Au sein de cette spécification, le terme URI réfère à des Universal Resource Identifiers tels que définis dans [RFC 3986](http://www.durusau.net/publications/xpxqfando-alldefs.html#rfc3986) et étendus par [RFC 3987](http://www.durusau.net/publications/xpxqfando-alldefs.html#rfc3987) sous la dénomination d’IRI. Le terme Référence d’URI, à moins de mention contraire, réfère à une chaîne dans l’espace lexical du type de donné `xs:anyURI` tel que défini par [XML Schema Part 2: Datatypes Second Edition](http://www.durusau.net/publications/xpxqfando-alldefs.html#xmlschema-2).
 
@@ -40,4 +40,10 @@ Au sein de cette spécification, le terme URI réfère à des Universal Resource
 
 [Definition] A map consists of a set of entries. Each entry comprises a key which is an arbitrary atomic value, and an arbitrary sequence called the associated value.
 
-[Definition] Within a map, no two entries have the same key. Two atomic values K1 and K2 are the same key for this purpose if the relation deep-equal(K1, K2, $UCC) holds, where $UCC is the Unicode codepoint collation.
+
+
+
+
+[Definition] Un map consiste en un ensemble d’entrées. Chaque entrée comprend une clef qui est une valeur atomique arbitraire, et une séquence arbitraire appellée valeur associée.
+
+[Definition] Au sein d’un map, deux entrées ne peuvent avoir la même clef. Deux valeurs atomiques K1 et K2 sont la même clef si la relation deep-equal(K1, K2, $UCC) tient, où $UCC est la collation de codepoint Unicode.

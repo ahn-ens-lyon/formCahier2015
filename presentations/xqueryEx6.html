@@ -28,25 +28,90 @@ Consortium cahier | 1er et 2 juin 2015
 
 .footnote[[entrepôt GitHub](https://ahn-ens-lyon/formCahier2015) | [jour1](#jour1) | [jour2](#jour2)]
 
+
 ---
 name: presentation
 layout: false
 class: left
 
+# FLOWR power
 
 ### Créez une base de données avec le fichier `xml/desgodetsBiblioSample.tei.xml`
 
 ### Affichez le fichier
 
-### Identifier les auteurs de plusieurs ouvrages
+### Listez les références bibliographiques (`<biblStruct>`)
+  
+### Comptez les références bibliographiques 
+
+
+???
+
+---
+
+# 
+
+### Affichez les références bibliographiques par ordre chronologique de publication
+
+### Créez une liste HTML des titres de publications 
+```xml
+   <ul>
+        <li>Item 1</li>
+        <li>Item 2</li>
+   </ul>
+```
+
+### Ajouter un attribut id qui a la valeur de l'identifiant xml:id de la publication
+```xml
+  <ul>
+    <li id="carvais2012">Item 1</li>
+    <li id="ferriere1740">Item 2</li>
+  </ul>
+  ```
+
+???
+### Affichez les références bibliographiques par ordre chronologique de publication
+Clause order by
+
+### Créez une liste HTML des titres de publications 
+Constructeur direct
+Inclusion
 
 
 
+---
 
 
+### Afficher les auteurs sous la forme Prénom Nom et dans l'ordre alphabétique des noms
+```xml
+  <div>
+    <h1>Auteurs</h1>
+    <ul>
+      <li>Patrick Arabeyre</li>
+      <li>Christopher Drew Armstrong</li>
+      <li>Gregorio Astengo</li>
+        [...]
+    </ul>
+  </div>
+```
+
+### Lister les auteurs avec leur nombre de publications
+
+```xml
+  <ul>
+    <li>Patrick Arabeyre (2)</li>
+    <li>Christopher Drew Armstrong (2)</li>
+    <li>Gregorio Astengo (1)</li>
+    [...]
+  </ul>
+ ```
 
 
+---
+### Regrouper les publications par année
 
+
+```
 ```
 
     </textarea>

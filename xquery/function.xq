@@ -3,9 +3,9 @@
  : @param $named content to process
  : @return concatenate forename and surname
  :)
-declare function local:getName($named as element()*){
-  for $person in $named//*:persName 
-  return ($person/*:forename || ' ' || $person/*:surname)
+declare function local:getName($personnes as element()*) as xs:string* {
+  for $personne in $personnes
+  return $personne/*:forename || ' ' || $personne/*:surname
 };
 
 <body>
@@ -13,14 +13,14 @@ declare function local:getName($named as element()*){
   <h1>Références</h1>
   <ul>{
     for $reference in //*:biblStruct
-    return <li>{local:getName($reference)}, <em>{fn:normalize-space($reference/*:monogr/*:title[1])}</em></li>
+    return <li><strong>{$reference//*:date/text()}</strong> - {local:getName($reference)}, <em>{fn:normalize-space($reference/*:monogr/*:title[1])}</em></li>
   }</ul>
 </div>
 
 <div>
   <h1>Auteurs</h1>
   {let $personnes := 
-    for $personne in (//*:author, //*:principal)
+    for $personne in (//*:author/*:persName | //*:principal/*:persName)
     order by $personne/*:surname
     return local:getName($personne)
   return <ul>{
@@ -31,15 +31,35 @@ declare function local:getName($named as element()*){
 </div>
 
 <div>
-  <h1>Auteurs deep-equal</h1>
+ <h1>Auteurs + nombre d´ouvrages</h1>
   {let $personnes := 
-    for $personne in (//*:author, //*:principal)
+   for $personne in (//*:author/*:persName | //*:principal/*:persName)
     order by $personne/*:surname
     return local:getName($personne)
   return <ul>{
     for $personne in fn:distinct-values($personnes)
-    return <li>{$personne}</li>
+    return <li>{$personne} ({fn:count(//*:biblStruct[local:getName(.//*:persName) = $personne])})</li>
     }</ul>
   }
 </div>
+
+
+<div>
+  <h1>Références par années</h1>
+  <ul>{
+    for $reference in //*:biblStruct
+    let $date := $reference//*:imprint/*:date/(@when | @from)
+    order by $date
+    group by $date
+    return
+        <li><span>{$date}</span>
+        <ul>
+        {for $ref in //*:biblStruct[.//*:imprint/*:date/(@when | @from) = $date]
+      return 
+      <li><strong>{$ref//*:date/text()}</strong> - {local:getName($reference)}, <em>{fn:normalize-space($ref/*:monogr/*:title[1])}</em></li>}
+        </ul>        
+        </li>
+  }</ul>
+</div>
+
 </body>

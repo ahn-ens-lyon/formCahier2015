@@ -36,11 +36,20 @@ Adam Retter
 
 ---
 
-# REST
-[[cf dia Gdp]]
-- Thèse de Roy Felding
-- Ressource
-- Identifiant
+# Le paradigme REST (Representational State Transfer)
+
+### Implémentation de Web Service
+RPC, SOAP, REST
+
+### Representational State Transfer
+- Thèse de Roy Fielding, 2000 http://www.ics.uci.edu/~fielding/pubs/dissertation/top.htm
+- Modèle de programmation pour des systèmes hypemédia distribués
+- Architecture orientée ressource (ressource / URI)
+
+### World Wide Web
+- HTTP
+- URI
+- proxy, etc.
 
 ???
 Ces dernières années, le paradigme REST s’est largement imposé dans le développement Web.
@@ -91,7 +100,109 @@ Possibilité de mise à jour + index
 
 ---
 
+# Notion de service
+
+Un service dit RESTful possède les propriétés suivantes :
+- collections de ressources
+- ressources adressables par des URIs
+- focalisation sur la publication web (HTTP, négociation de contenu)
+- généralement asynchrone
+
+???
+La notion de service recouvre des significations différentes selon le contexte. Lorsque l’on évoque un service web, il s’agit plutôt d’une manière de considérer les contenus en mettant l’accent sur le fait qu’ils s’agit de collections de ressources.
+
+La représentation interne des ressources peut très bien être en XML, certains protocoles de service web définissent d’ailleurs des transaction en XML.
+
+**On privilégie actuellement plutôt la seule utilisation de HTTP et la négociation de contenu.**
+
+---
+
+# Notion de ressource
+
+« By design a URI identifies one resource. We do not limit the scope of what might be a resource. The term "resource" is used in a general sense for whatever might be identified by a URI. It is conventional on the hypertext Web to describe Web pages, images, product catalogs, etc. as “resources”. The distinguishing characteristic of these resources is that all of their essential characteristics can be conveyed in a message. We identify this set as “information resources.” »
+
+« Other things, such as cars and dogs (and, if you've printed this document on physical sheets of paper, the artifact that you are holding in your hand), are resources too. They are not information resources, however, because their essence is not information. »
+
+http://www.w3.org/TR/2004/REC-webarch-20041215/#id-resources
+
+???
+
+Une entité abstraite qui possède des propriétés, une structure et une identité. Elle dispose nécessairement d’une adresse dans le système sinon elle n’existe pas. Elle peut, plus ou moins implicitement, disposer d’un schéma.
+
+Une ressource ne peut pas être récupérée directement. On fournit la représentation de l’état de cette ressource à un moment donné dans le système.
+C’est pourquoi on parle de Representational State Transfer = REST.
+
+« By design a URI identifies one resource. We do not limit the scope of what might be a resource. The term "resource" is used in a general sense for whatever might be identified by a URI. It is conventional on the hypertext Web to describe Web pages, images, product catalogs, etc. as “resources”. The distinguishing characteristic of these resources is that all of their essential characteristics can be conveyed in a message. We identify this set as “information resources.”
+
+This document is an example of an information resource. It consists of words and punctuation symbols and graphics and other artifacts that can be encoded, with varying degrees of fidelity, into a sequence of bits. There is nothing about the essential information content of this document that cannot in principle be transfered in a message. In the case of this document, the message payload is the representation of this document.
+
+However, our use of the term resource is intentionally more broad. Other things, such as cars and dogs (and, if you've printed this document on physical sheets of paper, the artifact that you are holding in your hand), are resources too. They are not information resources, however, because their essence is not information. Although it is possible to describe a great many things about a car or a dog in a sequence of bits, the sum of those things will invariably be an approximation of the essential character of the resource.
+
+We define the term “information resource” because we observe that it is useful in discussions of Web technology and may be useful in constructing specifications for facilities built for use on the Web. »
+
+http://www.w3.org/TR/2004/REC-webarch-20041215/#id-resources
+
+---
+
+# Notion de collection
+
+- une liste ou une file de ressources en rapport les unes avec les autres
+- pas nécessairement physique (une vue)
+- adressable = service
+- un objet abstrait
+
+???
+
+Une collection est une liste ou une file de ressources qui sont en rapport les unes avec les autres. Cette collection n’a pas besoin d’exister physiquement, mais elle doit pouvoir être adressable. Aussi lui assigne-t-on une adresse tout comme les items individuels.
+
+L’adresse d’une collection constitue un service REST. De ce point de vue, un service est un point sur le web que l’on peut contacter pour obtenir une ressource.
+
+Lorsque l’on envisage la ressource proprement dit, il s’agit d’un objet abstrait. La représentation donne suffisamment d’information pour réaliser un certain nombre d’opérations nécessaires. Par exemple, pour une collection obtenir les titres, dates, auteurs, ou des informations de catégorisations, etc. On peut donc avoir plusieurs représentations différentes de la même ressource.
+
+Les collections virtuelles, ou les vues sont construites à partir de collections de ressources existentes via XQuery. Elles sont équivalentes à des vues SQL. Du point de vue du client, il n’y a pas de différence entre une collection réelle ou virtuelle.
+
+Une collection peut donc être représentée comme un conteneur qui contient une ou plusieurs entrées. Un format de syndication comme ATOM fournit ce type de représentations. Mais d’autres représentations dans des formats utiles peuvent être adressées, telles qu’en XML, HTML, JSON, SQL, et même PDF.
+
+---
+
+# Notion d’URI
+
+« URI is an agreement about how the Internet community allocates names and associates them with the resources they identify. »
+
+Constraint: URIs Identify a Single Resource
+
+http://www.w3.org/TR/2004/REC-webarch-20041215/#id-resources
+
+???
+
+Assign distinct URIs to distinct resources.
+Since the scope of a URI is global, the resource identified by a URI does not depend on the context in which the URI appears (see also the section about indirect identification (§2.2.3)).
+
+[URI] is an agreement about how the Internet community allocates names and associates them with the resources they identify. URIs are divided into schemes (§2.4) that define, via their scheme specification, the mechanism by which scheme-specific identifiers are associated with resources. For example, the "http" URI scheme ([RFC2616]) uses DNS and TCP-based HTTP servers for the purpose of identifier allocation and resolution. As a result, identifiers such as "http://example.com/somepath#someFrag" often take on meaning through the community experience of performing an HTTP GET request on the identifier and, if given a successful response, interpreting the response as a representation of the identified resource. (See also Fragment Identifiers (§2.6).) Of course, a retrieval action like GET is not the only way to obtain information about a resource. One might also publish a document that purports to define the meaning of a particular URI. These other sources of information may suggest meanings for such identifiers, but it's a local policy decision whether those suggestions should be heeded.
+
+http://www.w3.org/TR/2004/REC-webarch-20041215/#id-resources
+
+---
+
+# HTTP
+
+Le protocole HTTP définit plusieurs manières d’adresser des ressources REST avec les **verbes HTTP** :
+- `Get` récupère une collection ou une ressource
+- `Post` ajoute une ressource à une collection
+- `Put` remplace une ressource existante avec une autre
+- `Delete` retire une ressource d’une collection
+- `Head` rapporte un résumé d’une ressource ou d’une collection
+
+---
+
+# Négociation de contenu
+
+---
+
 # Sources et Bibliographie
+
+- http://www.w3.org/TR/2004/REC-webarch-20041215/#id-resources
+
 
 
     </textarea>

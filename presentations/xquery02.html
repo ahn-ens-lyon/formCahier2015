@@ -58,6 +58,15 @@ Module de bibliothèque
 Extension de fichiers
 
 ---
+```xquery
+declare namespace functx = "http://www.functx.com";
+declare function functx:num-descendant-elements
+($el as element()) as xs:integer { sum(for $child in $el/*
+return functx:num-descendant-elements($child) + 1)
+};
+```
+
+---
 
 # Références
 

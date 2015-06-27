@@ -19,7 +19,8 @@ class: inverse
 name: index
 class: center middle
 
-# 00-XQuery Ex6 Fonctions
+# 00-XQuery Ex6
+# Créez votre bibliothèque de fonction !
 
 ## Atelier outillage XML (langages et logiciels)
 
@@ -32,25 +33,12 @@ name: presentation
 layout: false
 class: left
 
-# Créez votre bibliothèque de fonction !
 
+### Créez une base de données avec le fichier `xml/desgodetsBiblioSample.tei.xml`
 
+### Affichez le fichier
 
-```xquery
-  declare namespace functx = "http://www.functx.com";
-  declare function functx:num-descendant-elements
-  ($el as element()) as xs:integer { sum(for $child in $el/*
-  return functx:num-descendant-elements($child) + 1)
-};
-```
-
----
-
-# Créez une base de données avec le fichier `xml/desgodetsBiblioSample.tei.xml`
-
-# Affichez le fichier
-
-# Identifier les auteurs de plusieurs ouvrages
+### Identifier les auteurs de plusieurs ouvrages
 
 
 

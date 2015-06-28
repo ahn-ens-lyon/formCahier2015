@@ -7,25 +7,22 @@
     </head>
     <body>
       <textarea id="source">
-title: 00-XQuery
-description: Atelier SynopsX Cahier 2015, Emmanuel Château, Maud Ingarao
+title: xquery01 : une introduction
+description: Atelier outillage XML (langages et logiciels), consortium Cahier 2015, Emmanuel Château, Maud Ingarao
 theme: ../themes/remark-dark.css
 name: inverse
 layout: true
 class: inverse
 
-class: center middle
-00-XQuery
-Une Introduction
-
-.footnote[[entrepôt GitHub](https://ahn-ens-lyon/formCahier2015) | [jour1](00-programme.html#jour1) | [jour2](00-programme.html#jour2)
-
 ---
 name: index
 class: center middle
 
-# .red[S]ommaire
-Atelier SynopsX | consortium cahier 2015
+# 00-XQuery01, Une Introduction
+
+### Consortium cahier | 1er et 2 juin 2015
+
+.footnote[[entrepôt GitHub](https://ahn-ens-lyon/formCahier2015) | [jour1](#jour1) | [jour2](#jour2)]
 
 ---
 name: presentation
@@ -34,20 +31,41 @@ class: left
 
 # XQuery
 
-- Standardisé par le le W3C
-- version 1
-- version 2
-- extension XQuery Update
-- version 3
+### Standardisé par le le W3C
+### Opère sur XML Data Model ([XDM](http://www.w3.org/TR/xpath-datamodel-30/))
+### en 2007 [version 1 du langage](http://www.w3.org/TR/xquery/)
+### en 2011 extension [XQuery Update Facility](http://www.w3.org/TR/xquery-update-10/)
+### en 2011 extension [XQuery Full-text](http://www.w3.org/TR/xpath-full-text-10/)
+### en 2014 [version 3](http://www.w3.org/TR/xquery-30/) du langage
+
+???
+- Language standardisé par le W3C pour requêter des données XML.
+- Publication d’une première version du language en 2007
+- Extension pour le plein-texte et la mise à jour publiées en 2011
+- Nouvelle version 3 publiée standardisée cette année en mars 2014.
+
+Références :
+
+- XQuery 1.0: An XML Query Language (Second Edition), Don Chamberlin, Jonathan Robie, Anders Berglund, Scott Boag, et. al., Editors. World Wide Web Consortium, 14 December 2010. http://www.w3.org/TR/xquery/.
+
+- XQuery 1.0 and XPath 2.0 Data Model (XDM) (Second Edition), Anders Berglund, Mary Fernández, Ashok Malhotra, Jonathan Marsh, Marton Nagy, Norman Walsh, Editors. World Wide Web Consortium, 14 December 2010. http://www.w3.org/TR/xpath-datamodel/.
+- XQuery 1.0 and XPath 2.0 Formal Semantics (Second Edition), Jérôme Siméon, Denise Draper, Peter Frankhauser, et. al., Editors. World Wide Web Consortium, 14 December 2010. http://www.w3.org/TR/xquery-semantics/.
+
+- XQuery 3.0 Requirements, Daniel Engovatov, Jonathan Robie, Editors. World Wide Web Consortium, 08 April 2014. http://www.w3.org/TR/xquery-30-requirements/
+- World Wide Web Consortium. XML Query Use Cases. W3C Working Draft, 8 June 2006. http://www.w3.org/TR/xquery-use-cases/.
+- XQuery and XPath Functions and Operators 3.0, Michael Kay, Editor. World Wide Web Consortium, 08 April 2014. http://www.w3.org/TR/xpath-functions-30/
+- XSLT and XQuery Serialization 3.0, Henry Zongaro, Andrew Coleman, Michael Sperberg-McQueen, Editors. World Wide Web Consortium, 08 April 2014. http://www.w3.org/TR/xslt-xquery-serialization-30/
+
+- XQuery and XPath Data Model (XDM) 3.0, Norman Walsh, Anders Berglund, John Snelson, Editors. World Wide Web Consortium, 08 April 2014. http://www.w3.org/TR/xpath-datamodel-30/.
 
 ---
 
 # À quoi sert XQuery ?
 
-## requêter des données stockées en XML
-## manipuler des fichiers
-## transporter des messages entre applications
-## rendre du XML en HTMl ou dans un autre format
+### requêter des données stockées en XML
+### manipuler des fichiers
+### transporter des messages entre applications
+### rendre du XML en HTMl ou dans un autre format
 
 ???
 XQuery a d’abord été conçu comme un langage pour requêter des données stockées en XML. Son principal rôle intervient donc avec les bases de données XML qu’il s’agisse de bases de données nativement XML ou bien de XML stockées dans des bases de données relationnelles.
@@ -60,39 +78,47 @@ Certains aprécient tellement XQuery qu’ils cherchent à l’employer pour tra
 
 # XQuery vs XSLT
 
-- opère sur le même modèle de données
-- partage de XPath et fonctions prédéfinies
-- fonctionnalités comparables
-- expressivité comparable
-- efficience comparable
-- XQuery plus adapté pour la requête
-- pas de règles modèles dans XQuery (xsl:template)
+### opère sur le même modèle de données
+### partage de XPath et fonctions prédéfinies
+### fonctionnalités comparables
+### expressivité / efficience comparables
+### XQuery plus adapté pour la requête
+### pas de règles modèles dans XQuery (`<xsl:template>`)
 
 ???
 XQuery plus "pull" que "push"
 XSLT charge l’ensemble du document
 tandis que XQuery peut utiliser des index
+
 ---
 
 # Installation de BaseX
 
-Vérifiez que vous disposez de Java 8.0
+### Vérifiez que vous disposez de [Java 8.0](https://www.java.com/fr/download/help/index_installing.xml)
 
-Télécharger l’archive appropriée sur :
+### Télécharger l’archive appropriée sur :
+
 http://basex.org/products/download/all-downloads/
 
-Exécuter BaseX
+(choisir l’archive zip sur MacOS et Linux)
+
+### Pour exécuter BaseX
+- double-cliquez sur `BaseX.jar`
+- lancez le script d’exécution de la GUI : `bin/basexgui`
+- lancez le script d’exécution du client : `bin/basex`
+- lancez le script d’exécution du serveur HTTP : `bin/basexhttp`
 
 ---
 
 # Votre première requête XQuery
 
-- Allez dans `Fichier nouveau`
-- Tapez l’instruction suivante
+### Allez dans `Fichier nouveau`
+
+### Tapez l’instruction suivante
 ```xquery
-"Hello World !"
+"Hello World !"
 ```
-- Exécutez l’instruction en appuyant sur Entrée
+### Exécutez l’instruction en appuyant sur Entrée
 
 ---
 

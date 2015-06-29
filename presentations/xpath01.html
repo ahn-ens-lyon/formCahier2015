@@ -9,8 +9,7 @@
     <textarea id="source">
 title: XPath01 : une introduction
 description: Atelier outillage XML (langages et logiciels), consortium Cahier 2015, Emmanuel Château, Maud Ingarao
-theme: ../themes/remark-dark.css
-name: inverse
+theme: themes/remark-dark.css
 layout: true
 class: inverse
 
@@ -25,9 +24,7 @@ class: center middle
 .footnote[[entrepôt GitHub](https://ahn-ens-lyon/formCahier2015) | [jour1](#jour1) | [jour2](#jour2)]
 
 ---
-name: introduction
-layout: false
-class: left
+class: center middle
 
 ## Introduction
 
@@ -37,6 +34,7 @@ Lorsque l’on veut appliquer des traitements à des documents XML (transformati
 Le language XPath a précisément cette vocation.
 
 ---
+layout: false
 
 ### "XPath is a language for addressing parts of an XML document, designed to be used by both XSLT and XPointer"
 
@@ -59,10 +57,9 @@ Plusieurs utilisations de XPath sont donc possibles
 - pour paralléliser des textes
 
  XPath est donc un langage ensembliste qui vous permet de désigner des ensembles de nœuds à l’intérieur d’un arbre XML.
- 
+
 ---
 
-layout: false
 .left-column[
   ## Historique
 ]
@@ -96,7 +93,6 @@ La seconde version du langage, XPath 2.0, a été spécifiée en 2007 et a serv
 La seconde version de XPath, s’appuie sur XML Data Model publié en même temps que la spécification XPath 2.0.
 
 ---
-layout: false
 .left-column[
   ## Programme
 ]
@@ -237,12 +233,13 @@ Autrement dit, les nœuds qui sont accessibles lors d’une session de travail s
 
 
 ---
-template: inverse
+class: inverse
+class: center middle
 
 ## Exercice 01
 
 ---
-## Exercice
+## Exercice 01
 
 Produire la représentation arborescente de [phares.tei.xml](./exemplesTEI/phares.tei.xml) suivant :
 
@@ -276,6 +273,7 @@ Produire la représentation arborescente de [phares.tei.xml](./exemplesTEI/phare
 ---
 name: last-page
 template: inverse
+class: center middle
 
 ## [On continue](xpath02.html) ?!
 

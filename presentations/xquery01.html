@@ -76,9 +76,9 @@ Pour mémoire XQuery Use Cases 2001 http://www.w3.org/TR/2001/WD-xmlquery-use-ca
 
 # À quoi sert XQuery ?
 
-### requêter des données stockées en XML
-### manipuler des fichiers
-### transporter des messages entre applications
+### .red[requêter] des données stockées en XML
+### .red[manipuler] des fichiers
+### .red[transporter] des messages entre applications
 ### rendre du XML en HTMl ou dans un autre format
 
 ???
@@ -133,11 +133,11 @@ Ces index permettent de retrouver facilement et rapidement la localisation d’u
 
 # Instruction XQuery
 
-Une expression XQuery peut-être
+### Une expression XQuery peut-être
 - une simple expression XPath
 - ou une expression FLOWR
 
-L’évaluation d’une expression XQuery est toujours une séquence
+### L’évaluation d’une expression XQuery est .red[toujours une séquence]
 - soit une séquence `xs:element()*`
 - soit une singleton (une valeur atomique `xs:anyAtomicType` ou `xs:element()`)
 
@@ -191,14 +191,12 @@ Ce qui implique que les expressions qui sont essentiellement employées pour sel
 Chemin du document que nous allons utiliser :
 `exemples/document.xml`
 
-La fonction `fn:doc()` retourne le nœud document de la ressource à l’URI spécifiée
+`fn:doc()` retourne le nœud document de la ressource à l’URI spécifiée
 
 ```xquery
   fn:doc('chemin/document.xml')
 ```
-¡ Attention aux guillemets !
-
-## Lister les `persName` dans le document avec XPath
+## Lister les `<persName>` avec XPath
 
 en XPath :
 ```xquery
@@ -210,7 +208,7 @@ en XQuery :
   fn:doc( 'chemin/document.xml' )//tei:persName
 ```
 
-Compter les `persName`
+Compter les `<persName>`
 ```xquery
   fn:count( fn:doc('chemin/document.xml')//tei:persName )
 ```
@@ -250,6 +248,8 @@ XQuery utilise XPath pour naviguer dans des documenst.
 - La clause `where` permet de définir un filtre analogue aux prédicats
 - La clause (optionnelle) `order by` permet de spécifier un tri
 - La clause `return` génère la sortie
+
+Le nom FLOWR correspond aux 5 clauses utilisées pour produire une expression. La plus grande partie d’entre elles sont optionnelles. Seule la clause `return` est obligatoire, toutefois elle doit être au moins précédée ou bien par une clause `let` ou bien par une clause `for`.
 
 ---
 
@@ -298,6 +298,7 @@ La clause `return` retourne les résultats qui satisfont à la condition exprim�
 Les expressions peuvent être imbriquées
 
 ???
+
 Cette expression XQuery est une expression FLOWR qui utilise les clauses `for`, `let`, `where`, `order by` et `return`.
 
 Elle itère sur sur un ensemble décrit par une première expression et lie successivement une variable $var.
@@ -327,8 +328,8 @@ Retour, évaluation expression
 
 - Les espaces sont généralement non significatifs
 - L’utilisation des parenthèses est libre mais elles doivent être apariées
-- Les guillemets, simples ou double, dénotent du texte littéral. ex : `'ceci est une string'`
-- Les noms de variables sont précédés par `$`. ex: `$var`
+- Les guillemets, simples ou double, dénotent du texte littéral. (ex : `'ceci est une string'`)
+- Les noms de variables sont précédés par `$`. (ex: `$var`)
 - Les fonctions pré-définies sont préfixées avec `fn:`
 
 ---
@@ -341,8 +342,17 @@ Retour, évaluation expression
 ```
 
 ???
+La clause `let` permet simplement de déclarer une variable et de lui donner une valeur.
 
-Ici on affecte une variable `$document` avec la clause let, puis on retourne la variable `$document`
+Ici, on affecte une variable `$document` avec la clause let, puis on retourne la variable `$document`
+
+Dans une clause `for`, la variable est liée successivement à chaque item de la séquence.
+
+Généralement, on emploie des variables par commodité pour simplifier une expression lorsque l’on a besoin d’utiliser plusieurs fois la même valeur. Cela peut aussi être utile pour permettre au processeur de faire une l’évaluation de cette expression seulement une fois.
+
+RMQ : comme en XSLT, en XQuery les variables ne peuvent pas être mise à jour. XQuery est un langage déclaratif sans effet de bord, il n’est donc pas possible d’effectuer une boucle incrémentée comme dans les langages procéduraux.
+
+Dans un tel mode de programmation on déclare le résultat que l’on veut obtenir plutôt que la manière de l’obtenir.
 
 ---
 
@@ -358,6 +368,11 @@ Ici on affecte une variable `$document` avec la clause let, puis on retourne la 
   return <item>{ $i }</item>
 ```
 
+???
+Le comportement de la clause `for` est plutôt intuitif : elle itère sur une séquence donnée en entrée et calcule pour la valeur de chaque item de cette séquence en retournant une séquence obtenue par la concaténation de ces calculs.
+
+Notons qu’une expression FLORW est seulement une expression, elle peut donc être utilisée partour où une expression est autorisée. Autrement dit, on peut imbriquer des expressions.
+
 ---
 
 # La clause `where`
@@ -369,12 +384,25 @@ Ici on affecte une variable `$document` avec la clause let, puis on retourne la 
 ```
 
 ???
+Il est possible d’ajouter un peu de substance à notre requête avec la clause `where`
 
 La clause `where` élimine de la séquence les items qui ne satisfont pas une condition particulière. La clause `return` est seulement évaluée pour les items qui répondent à cette condition.
 
+Si vous connaissez SQL, vous reconnaîtrez probablement une requête du genre :
+
+```sql
+  SELECT v.title from book v WHERE v.price > 50.00
+```
+
+En XPath, cette expression peut simplement s’exprimer ave un prédicat
+
+```xpath
+  doc('books.xml')//book[price < 50.00]
+```
+
 ---
 
-# Exemples d’utilisation de la clause `order by`
+# Utilisation de la clause `order by`
 
 ### Tri dans l’ordre ascendant (par défaut)
 
@@ -454,12 +482,6 @@ else _expression_
 
 ---
 
-# Les Types
-
-
-
----
-
 # Les opérateurs
 
 - `>`, `<`, `=`, `>=`, `<=` comparaison, égalité
@@ -501,19 +523,28 @@ Liste de fonctions utiles
 - Morgan, Kyle, and Kyle Schutt. Final project report for CS 5604, Fall 2012 (Project Byron), December, 2012.	https://vtechworks.lib.vt.edu/bitstream/handle/10919/19082/ProjByronFinal.pdf
 - Burghart, Marjorie. "EXist-db, Une Base XML Native Pour L’exploitation De Corpus TEI - Les Raisons D’un Choix Et Les Modalités De Son Implémentation." In Exploiter Les Données Structurées En XML. Paris, France, 2011. https://halshs.archives-ouvertes.fr/halshs-00980843.
 
-# Sources
+---
 
+# Sources & bibliographie
+
+### Sources
 - [Michael Kay, Learn XQuery in 10 Minutes: An XQuery Tutorial](http://www.stylusstudio.com/xquery-primer-new.html)
 - Eisenberg, David J.. "Comparing XSLT and XQuery." http://www.xml.com/pub/a/2005/03/09/xquery-v-xslt.html (accessed June 27, 2014).
 
----
-
-# Bibliographie
-
+### Bibliographie
 - Walmsley, Priscilla. XQuery. Beijing ; Sebastopol, Calif.: O'Reilly, 2007. isbn 0596006349
 - Brundage, Michael. XQuery : The XML Query Language. Boston: Addison-Wesley, 2004.	isbn 0321165810
 - Le Maitre, Jacques, and Emmanuel Bruno. XQuery Pour Interroger Des Données et Éléments Du Langage Et Mise En Oeuvre : Cours Et Exercices Corrigés. Paris: Ellipses, 2013. isbn 2729883487
 - Ronald Bourret, XML et les bases de données, Patrick Peccatte (traducteur), novembre 2003.
+
+---
+name: last-page
+template: inverse
+
+## [Un peu plus loin](xquery02.html) !
+
+
+.left[.footnote[[revenir au début](#index) | [programme](00-programme.html)]]
 
     </textarea>
     <script src="js/remark-0.6.5.min.js" type="text/javascript"></script>

@@ -37,13 +37,20 @@ class: left
 ## Fonctions personnalisées
 
 ???
-Les fonctions sont une fonctionnalité 
+Les fonctions sont une fonctionnalité
 XQuery prévoit un certain nombre de fonctions pré-définies telles ques fn:doc, fn:string, etc.
 
 
 ---
 
 # Déclaration d’une fonction XQuery
+
+```
+  declare function local:order-value($po as element(purchase-order))
+  as xs:double {
+    sum($po/order-item/(@price * @quantity))
+  };
+```
 
 ---
 
@@ -53,22 +60,92 @@ XQuery prévoit un certain nombre de fonctions pré-définies telles ques fn:doc
 
 # Appel d’une fonction
 
+local:order-value(doc('purchaseOrder.xml')/purchase-order)
+
+---
+
+# Nom de la fonction
+
+---
+
+# Arguments de la fonction
+
+---
+
+# Les Types
+
+# Occurence
+
+Occurrence indicator	Meaning
+none (blank)	exactly one item
+?	zero or one items
++	one or more items
+*	any number of items (zero or more)
+
+---
+
+# Documentation
+
+Here's what the previous function looks like with xqDoc comments:
+
+```xquery
+  declare namespace xhtml="http://www.w3.org/1999/xhtml";
+
+  (:~
+    : This function generates an XHTML <a>---</a> element,
+    : representing a hyperlink.
+    :
+    : @param $href the URI of the target page, the destination
+    : of the hyperlink
+    : @param $text the user-visible text that is displayed
+    : @return a newly-constructed <a>---</a> element
+    : in the XHTML namespace
+    :)
+
+  declare function local:hyperlink($href as xs:anyURI, $text as xs:string) as element(xhtml:a) {
+ <xhtml:a href="{$href}">{$text}</xhtml:a> };
+
+ local:hyperlink(xs:anyURI("index.html"), "contents")
+```
+
 ---
 
 # Modules et bibliothèques de fonctions
 
-Module de bibliothèque
+Module principal (main module)
+Module de bibliothèque (library modules)
 ...
 Extension de fichiers
 
+module namespace m1 = "http://example.org/module1";
+
+import module namespace m1 = "http://example.org/module1";
+
+???
+Application complexe
+Découper votre code en composant
+
+Un module principal peut importer un ou plusieurs module de bibliothèque.
+
+L’importation d’un module vous donne accès aux fonctions déclarées dans ce module ainsi qu’à ses variables globales.
+
+Chaque module de bibliothèque possède son propre namespace.
+
 ---
+
+# Exemple de bibliothèque
+
 ```xquery
-declare namespace functx = "http://www.functx.com";
-declare function functx:num-descendant-elements
-($el as element()) as xs:integer { sum(for $child in $el/*
-return functx:num-descendant-elements($child) + 1)
-};
+  declare namespace functx = "http://www.functx.com";
+  declare function functx:num-descendant-elements
+  ($el as element()) as xs:integer { sum(for $child in $el/*
+    return functx:num-descendant-elements($child) + 1)
+  };
 ```
+
+---
+
+# Exemple de fonction récursive
 
 ---
 

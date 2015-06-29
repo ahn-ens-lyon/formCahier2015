@@ -7,13 +7,20 @@ declare function local:getName($personnes as element()*) as xs:string* {
   for $personne in $personnes
   return $personne/*:forename || ' ' || $personne/*:surname
 };
-
+<html>
+<head>
+<title>Biblio</title>
+<meta charset="utf-8"/>
+</head>
 <body>
 <div>
   <h1>Références</h1>
   <ul>{
     for $reference in //*:biblStruct
-    return <li><strong>{$reference//*:date/text()}</strong> - {local:getName($reference)}, <em>{fn:normalize-space($reference/*:monogr/*:title[1])}</em></li>
+    return <li>{
+      let $date := $reference//*:date/(@when | @from)
+      return if (fn:empty($date)) then ()
+      else  (<strong>[{fn:data($date)}]</strong>, ''), local:getName($reference//*:persName)}, <em>{fn:normalize-space($reference/*:monogr/*:title[1])}</em></li>
   }</ul>
 </div>
 
@@ -56,10 +63,11 @@ declare function local:getName($personnes as element()*) as xs:string* {
         <ul>
         {for $ref in //*:biblStruct[.//*:imprint/*:date/(@when | @from) = $date]
       return 
-      <li><strong>{$ref//*:date/text()}</strong> - {local:getName($reference)}, <em>{fn:normalize-space($ref/*:monogr/*:title[1])}</em></li>}
+      <li><strong>[{fn:data($date)}]</strong>, {local:getName($ref//*:persName)}, <em>{fn:normalize-space($ref/*:monogr/*:title[1])}</em></li>}
         </ul>        
         </li>
   }</ul>
 </div>
 
 </body>
+</html>

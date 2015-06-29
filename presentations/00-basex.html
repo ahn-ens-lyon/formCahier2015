@@ -1,0 +1,114 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Programme</title>
+    <link href="themes/remark-dark.css" rel="stylesheet" media="all" type="text/css">
+  </head>
+  <body>
+    <textarea id="source">
+
+title: 00-basex
+description: Atelier outillage XML (langages et logiciels), consortium Cahier 2015, Emmanuel Château, Maud Ingarao
+theme: ../themes/remark-dark.css
+name: inverse
+layout: true
+class: inverse
+
+---
+name: index
+class: center middle
+
+# 00-Basex
+
+## Base de données XML native et processeur Xquery
+
+Consortium cahier | 1er et 2 juin 2015
+
+.footnote[[entrepôt GitHub](https://ahn-ens-lyon/formCahier2015) | [jour1](#jour1) | [jour2](#jour2)]
+
+---
+name: presentation
+layout: false
+class: left
+
+## Plusieurs outils en un : une organisation modulaire
+
+[schema](../images/basex-schema.pdf)
+
+
+## Le contexte de développement
+
+### Une équipe universitaire d'informatique : [DBIS Université de Constance](http://dbis.uni-konstanz.de/)
+### Deux objectifs : performance ; respect strict des spécifications w3c
+### Diffusion en open source : une société commerciale pour la maintenance, la communication, la formation : [BaseX GmbH](http://basex.org)
+
+---
+### Créer une base de données
+- En local : via BaseX GUI ; via le client BaseX
+- Distant : via cURL ; via BaseX DBA
+
+### Interroger les données
+- En local : via BaseX GUI ; via le client BaseX
+- Distant : via cURL ; via BaseX REST
+
+### Construire des web services, web applications
+- RESTXQ : lier une url à une fonction Xquery
+- [Example d'exposition en OAI](http://editions.ihpc.huma-num.fr/hyperdonat/oai?verb=ListSets)
+- Exemples de sites d'éditions [Archives de Marc Michel Rey](http://editions.ihpc.huma-num.fr/rey) [Bibliothèque et éditions Montesquieu](http://editions.ihpc.huma-num.fr/bvm)
+
+---
+# SynopsX : un usage de BaseX, avec 3 objectifs
+
+## .red[collaborer]
+- La recherche est de plus en plus financée par projets, une manière depérenniser une solution logicielle en la partageant entre projets
+- qualité du code et bonnes pratiques de développement logiciel
+
+## .red[mutualiser]
+- ne pas réinventer la roue
+- soutenabilité, partager et répartir l'effort de développement et de maintenance
+
+## .red[genericiser]
+- pour faciliter la maintenabilité et la réutilisation d'un projet à l'autre, incitation à génériciser les mécanismes
+
+---
+
+# SynopsX : les principes qui ont guidé la conception
+
+### Liberté totale du ou des modèles de données
+Tant qu'on est en XML, on peut mélanger et croiser TEI, EAD, MARCXML, etc. ou différents schémas TEI, etc. (```data driven```)
+
+### Liberté totale du schème d'URI
+Dans un CMS, on est obligé d'adopter les URI du systèle utilisé, ou bien de faire des mappings et de dédoubler les URI. Ici, on crée son propre schème d'URI en toute liberté (```RESTXQ```)
+
+### Templating
+Séparation stricte requêtes sur les données XML/ représentation des résultats des requêtes (HTML, XML, JSON, etc.)
+---
+
+## Utiliser ces diapositives
+
+* ←, ↑, Pg Up, k&nbsp;: aller à la page précédente
+
+* →, ↓, Pg Dn, Espace, j&nbsp;: aller à la page suivante
+
+* Home&nbsp;: aller à la première diapositive
+
+* End&nbsp;: aller à la dernière diapositive
+
+* f&nbsp;: afficher en plein écran
+
+* Esc&nbsp;: quitter le mode plein écran
+
+* ?, h&nbsp;: afficher l’aide
+
+    </textarea>
+    <script src="js/remark-0.6.5.min.js" type="text/javascript"></script><script type="text/javascript">
+        var hljs = remark.highlighter.engine;
+      </script><script src="remark.language.js" type="text/javascript"></script><script type="text/javascript">
+        var slideshow = remark.create({
+        highlightStyle: 'monokai',
+        highlightLanguage: 'remark'
+        }) ;
+      </script>
+  </body>
+</html>

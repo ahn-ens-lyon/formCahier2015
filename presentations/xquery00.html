@@ -7,7 +7,7 @@
     </head>
     <body>
       <textarea id="source">
-title: 00-xquery00
+title: 00-xquery00 Démo
 description: Atelier outillage XML (langages et logiciels), consortium Cahier 2015, Emmanuel Château, Maud Ingarao
 theme: ../themes/remark-dark.css
 name: inverse
@@ -43,17 +43,67 @@ class: left
   fn:count(db:open('maBase')//*:title)
 ```
 
-# Créer une fonction (fonction XPath)
+# Mettre ces titres dans des éléments `<h1>`
 ```xquery
-  declare function local:listeTitres(...)
-  local:listeTitres()
+  for $titre in db:open('maBase')//*:title
+  return <h1>{$titre/text()}</h1>
 ```
+
+# Créer une fonction ressource pour la liste de titres
+```xquery
+  declare function local:listeTitres(){
+    fn:count(db:open('maBase')//*:title)
+  }
+```
+
+```xquery
+  xquery version "3.0" ;
+  module namespace demo = 'demo' ;
+
+  declare default function namespace 'demo' ;
+
+  (:~
+   : resource function demo
+   :)
+  declare
+    %restxq:path('/demo')
+  function titres() {
+    demo:listeTitres()
+  };
+```
+???
+Possibilité de fournir un argument à la fonction pour sélectionner un corpus en particulier, etc.
 
 ---
 
 # Servir du HTML
-```xquery
 
+```xquery
+  xquery version "3.0" ;
+  module namespace demo = 'demo' ;
+  declare default function namespace 'demo' ;
+  (:~
+   : resource function demo
+   :)
+  declare
+    %restxq:path('/demo')
+    %rest:produces('text/html')
+    %output:method('html')
+    %output:html-version('5.0')
+  function titres() {
+    <html lang="fr" xml:lang="fr" xmlns="htpp://www.w3.org/1999/xhtml">
+      <head>
+        <meta charset="utf-8"/>
+        <title>Liste de titres</title>
+      </head>
+      <body>
+        <header class="header">
+          <h1>Liste de titres</h1>
+        </header>
+        <main>{demo:listeTitres()}</main>
+      </body>
+    </html>
+    };
 ```
 
 ---

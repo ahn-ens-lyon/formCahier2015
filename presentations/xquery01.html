@@ -118,7 +118,7 @@ http://basex.org/products/download/all-downloads/
 ???
 Pour les exercices qui vont suivre, nous allons utiliser la base de données XML native BaseX. Des bases de données comme BaseX fonctionne en stockang les fichiers XML bruts dans des index persistants.
 
-Ces index permettent de retrouver facilement et rapidmeent la localisation d’un élément d’information. Lorsque l’on charge un document dans la base, le fichier et parsé et l’ensemble du document est indexé. Ainsi, pour l’évaluation de n’importe quelle expression XPath, le document n’est analysé qu’une fois ce qui accélère les requêtes.
+Ces index permettent de retrouver facilement et rapidement la localisation d’un élément d’information. Lorsque l’on charge un document dans la base, le fichier et parsé et l’ensemble du document est indexé. Ainsi, pour l’évaluation de n’importe quelle expression XPath, le document n’est analysé qu’une fois ce qui accélère les requêtes.
 
 ---
 
@@ -165,7 +165,7 @@ Ce qui implique que les expressions qui sont essentiellement employées pour sel
 
 ---
 
-# Accéder à des documents XML
+# Accéder à des données XML
 
 Chemin du document que nous allons utiliser :
 `exemples/document.xml`
@@ -232,6 +232,23 @@ XQuery utilise XPath pour naviguer dans des documenst.
 
 ---
 
+# Salut Lille avec un `let`
+
+```xquery
+  xquery version "3.0";
+  let $message := 'Salut Lille !'
+  return
+  <resultat>
+    <message>{$message}</message>
+  </resultat>
+```
+
+On utilise ici l’affectation d’une variable avec `let`
+
+---
+
+# Exemple avec la clause `where`
+
 ```
   for $var in doc("books.xml")//book
   where $var/@year = "2015"
@@ -280,6 +297,12 @@ Retour, évaluation expression
 - Commentaires
 ```xquery
   (: xquery et un langage souriant :)
+```
+```xquery
+  (:~
+   : Commentaire
+   : multi-lignes
+   :)
 ```
 
 - Les espaces sont généralement non significatifs

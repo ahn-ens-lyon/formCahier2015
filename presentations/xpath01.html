@@ -7,28 +7,36 @@
   </head>
   <body>
     <textarea id="source">
+title: XPath01 : une introduction
+description: Atelier outillage XML (langages et logiciels), consortium Cahier 2015, Emmanuel Château, Maud Ingarao
+theme: ../themes/remark-dark.css
 name: inverse
 layout: true
-class: center, middle, inverse
+class: inverse
 
 ---
+name: index
+class: center middle
 
-# 01-XPath, Introduction
+# 00-XPath01, Une Introduction
 
-Formation TEI | ENC 26-29 mai 2015
+### Consortium cahier | 1er et 2 juin 2015
 
-.footnote[[Répertoire GitHub](https://github.com/tei-fr/formationEnc2015-05) | [Programme](00-programme.html)]
+.footnote[[entrepôt GitHub](https://ahn-ens-lyon/formCahier2015) | [jour1](#jour1) | [jour2](#jour2)]
 
 ---
-template: inverse
+name: introduction
+layout: false
+class: left
 
 ## Introduction
 
 ???
 Lorsque l’on veut appliquer des traitements à des documents XML (transformation de documents p.e. pour produire une page web, création de liens hypertextes, extraction sélective d’informations p.e. dans une base de données XML native), il est souvent nécessaire de pouvoir localiser des fragments précis au sein de documents XML.
 
+Le language XPath a précisément cette vocation.
+
 ---
-layout: false
 
 ### "XPath is a language for addressing parts of an XML document, designed to be used by both XSLT and XPointer"
 
@@ -50,6 +58,8 @@ Plusieurs utilisations de XPath sont donc possibles
 - pour contrôler la qualité d’un document XML (exploration, analyse, vérification)
 - pour paralléliser des textes
 
+ XPath est donc un langage ensembliste qui vous permet de désigner des ensembles de nœuds à l’intérieur d’un arbre XML.
+ 
 ---
 
 layout: false
@@ -168,7 +178,7 @@ layout: false
 
 Les éléments d’un document XML bien formé répondent à plusieurs contraintes
 
-![diagramme UML](../images/contraintes.png)
+![diagramme UML](../images/xdmconstraints.svg)
 
 ]
 

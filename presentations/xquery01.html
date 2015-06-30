@@ -41,18 +41,18 @@ class: left
 Comme XSLT, XQuery utilise XPath comme language inclus.
 
 ???
-- Language standardisé par le W3C pour requêter des données XML.
-- Publication d’une première version du language en 2007
+- Langage standardisé par le W3C pour requêter des données XML.
+- Publication d’une première version du langage en 2007
 - Extension pour le plein-texte et la mise à jour publiées en 2011
 - Nouvelle version 3 publiée standardisée cette année en mars 2014.
 
-Comme XSLT, XQuery utilise XPath comme language inclus.
+Comme XSLT, XQuery utilise XPath comme langage inclus (XQuery est un langage hôte pour XPath).
 
 ---
 
 # Standards (version 1)
 
-- XQuery 1.0: An XML Query Language (Second Edition), Don Chamberlin, Jonathan Robie, Anders Berglund, Scott Boag, et. al., Editors. World Wide Web Consortium, 14 December 2010. http://www.w3.org/TR/xquery/.
+- XQuery 1.0 : An XML Query Language (Second Edition), Don Chamberlin, Jonathan Robie, Anders Berglund, Scott Boag, et. al., Editors. World Wide Web Consortium, 14 December 2010. http://www.w3.org/TR/xquery/.
 - XQuery 1.0 and XPath 2.0 Data Model (XDM) (Second Edition), Anders Berglund, Mary Fernández, Ashok Malhotra, Jonathan Marsh, Marton Nagy, Norman Walsh, Editors. World Wide Web Consortium, 14 December 2010. http://www.w3.org/TR/xpath-datamodel/.
 - XQuery 1.0 and XPath 2.0 Formal Semantics (Second Edition), Jérôme Siméon, Denise Draper, Peter Frankhauser, et. al., Editors. World Wide Web Consortium, 14 December 2010. http://www.w3.org/TR/xquery-semantics/.
 
@@ -86,7 +86,7 @@ XQuery a d’abord été conçu comme un langage pour requêter des données sto
 
 On peut également utiliser XQuery pour manipuler des fichiers XML stockées dans un système de fichier, ou bien pour transformer des messages en les passant d’une application à l’autre. Ici, l’utilisation de XQuery entre en concurrence avec XSLT et est principalement une question de choix.
 
-Certains aprécient tellement XQuery qu’ils cherchent à l’employer pour transformer du XML en HTML présentationnel. Ce n’est pas réellement l’utilisation pour laquelle ce langaeg a été conçu (pas forcément conseillé).
+Certains apprécient tellement XQuery qu’ils cherchent à l’employer pour transformer du XML en HTML présentationnel. Ce n’est pas réellement l’utilisation pour laquelle ce langaeg a été conçu (pas forcément conseillé).
 
 ---
 
@@ -125,7 +125,7 @@ http://basex.org/products/download/all-downloads/
 - lancez le script d’exécution du serveur HTTP : `bin/basexhttp`
 
 ???
-Pour les exercices qui vont suivre, nous allons utiliser la base de données XML native BaseX. Des bases de données comme BaseX fonctionne en stockang les fichiers XML bruts dans des index persistants.
+Pour les exercices qui vont suivre, nous allons utiliser la base de données XML native BaseX. Des bases de données comme BaseX fonctionne en stockant les fichiers XML bruts dans des index persistants.
 
 Ces index permettent de retrouver facilement et rapidement la localisation d’un élément d’information. Lorsque l’on charge un document dans la base, le fichier et parsé et l’ensemble du document est indexé. Ainsi, pour l’évaluation de n’importe quelle expression XPath, le document n’est analysé qu’une fois ce qui accélère les requêtes.
 
@@ -149,7 +149,7 @@ Ces index permettent de retrouver facilement et rapidement la localisation d’u
 
 ### Tapez l’instruction suivante
 ```xquery
-"Salut Lille !"
+  "Salut Lille !"
 ```
 
 ### Exécutez l’instruction en appuyant sur Entrée
@@ -181,8 +181,8 @@ Bien évidemment, aucune de ces requêtes ne sont très utiles en elles-mêmes.
 
 Mais au sein d’un langage de requête, on peut avoir besoin de faire certains calculs, or c’est possible avec XQuery. Nous verrons par ailleurs, que XQuery est un langage fonctionnel Turing complet.
 
-XQuery est aussi conçu de manière à ce que les expressions soient complètement imbricables. N’importe quelle expression peut être employée dans n’importe quelle autre expression pourvu qu’elle délivre une valeur du type approprié.
-Ce qui implique que les expressions qui sont essentiellement employées pour selectionner des données au sein d’une clause `where` par exemple, peuvent aussi être employées comme des requêtes autonomes.
+XQuery est aussi conçu de manière à ce que les expressions soient complètement imbriquables. N’importe quelle expression peut être employée dans n’importe quelle autre expression pourvu qu’elle délivre une valeur du type approprié.
+Ce qui implique que les expressions qui sont essentiellement employées pour sélectionner des données au sein d’une clause `where` par exemple, peuvent aussi être employées comme des requêtes autonomes.
 
 ---
 
@@ -224,7 +224,7 @@ Ouvrir un document ou une base de données
 
 **!! remarquez qu’il faut fournir cette URI entre guillemets, car l’argument de la fonction `fn:doc()` doit être de type chaîne de caractère `xs:string`.**
 
-XQuery utilise XPath pour naviguer dans des documenst.
+XQuery utilise XPath pour naviguer dans des documents.
 
 - En ajoutant immédiatement à la suite une expression XPath, vous pouvez afficher la liste des division `<div>`, lister les `<persNames>`, etc.
 
@@ -301,7 +301,7 @@ Les expressions peuvent être imbriquées
 
 Cette expression XQuery est une expression FLOWR qui utilise les clauses `for`, `let`, `where`, `order by` et `return`.
 
-Elle itère sur sur un ensemble décrit par une première expression et lie successivement une variable $var.
+Elle itère sur un ensemble décrit par une première expression et lie successivement une variable $var.
 
 La seconde ligne affecte à la variable $var une expression
 
@@ -394,7 +394,7 @@ Si vous connaissez SQL, vous reconnaîtrez probablement une requête du genre :
   SELECT v.title from book v WHERE v.price > 50.00
 ```
 
-En XPath, cette expression peut simplement s’exprimer ave un prédicat
+En XPath, cette expression peut simplement s’exprimer avec un prédicat
 
 ```xpath
   doc('books.xml')//book[price < 50.00]

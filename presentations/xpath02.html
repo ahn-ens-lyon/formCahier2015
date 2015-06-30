@@ -731,14 +731,14 @@ Liste complète des fonctions XPath dans la spécification XPath (http://www.w3.
 ???
 ### Fonctions dans des expressions XPath
 
-XPath propose également un certain nombre de fonctions prédéfinies qui permettent de manipuler des données à partir de noeuds ou de fournir des prédicats.
+XPath propose également un certain nombre de fonctions prédéfinies qui permettent de manipuler des données à partir de nœuds ou de fournir des prédicats.
 
-Ces fonctions peuvent s'avérer très utiles pour manipuler des chaînes textuelles, vérifier la valeur d'une clef de travail ou son type, ou encore réaliser des calculs.
+Ces fonctions peuvent s’avérer très utiles pour manipuler des chaînes textuelles, vérifier la valeur d’une clef de travail ou son type, ou encore réaliser des calculs.
 
 Voici quelques unes des fonctions XPath communes :
 
 `concat()`
-Cette fonction permet de combiner un nombre quelconque de chaînes de caractères avec des données extraites de noeuds en respectant l'ordre dans lequel les paramètres sont spécifiés.
+Cette fonction permet de combiner un nombre quelconque de chaînes de caractères avec des données extraites de nœuds en respectant l’ordre dans lequel les paramètres sont spécifiés.
 On peut indiquer des chemins XPath en tant que paramètres.
 Les chaînes de caractères littérales sont fournies entre apostrophes.
 Par exemple :
@@ -746,15 +746,15 @@ concat('chaîneDeCaractères', {expressionXPath})
 
 
 `normalize-space()`
-Permet d'enlever tous les espaces de début et de fin du paramètre d'entrée et de normaliser l'ensemble de l'espace dans l'entrée en caractères espace et sauts de ligne uniques. Par exemple :
+Permet d’enlever tous les espaces de début et de fin du paramètre d’entrée et de normaliser l’ensemble de l’espace dans l’entrée en caractères espace et sauts de ligne uniques. Par exemple :
 normalize-space(/Job/Address/Line1)
 
 `string()`
-Permet de convertir le paramètre en type de données chaîne. Cette fonction permet de s'assurer que des noeuds numériques ou de date sont traités en tant que chaînes. Par exemple :
+Permet de convertir le paramètre en type de données chaîne. Cette fonction permet de s’assurer que des nœuds numériques ou de date sont traités en tant que chaînes. Par exemple :
 string(/PurchaseOrder/VendorID)
 
 `translate()`
-Permet de remplacer des caractères par d'autres caractères dans le premier paramètre que vous spécifiez. Le deuxième paramètre est le ou les caractères à remplacer et le troisième paramètre correspond aux caractères de remplacement. Cette fonction peut s'avérer utile pour vous assurer que des clés de travail sont toutes en majuscules, par exemple.
+Permet de remplacer des caractères par d’autres caractères dans le premier paramètre que vous spécifiez. Le deuxième paramètre est le ou les caractères à remplacer et le troisième paramètre correspond aux caractères de remplacement. Cette fonction peut s’avérer utile pour vous assurer que des clés de travail sont toutes en majuscules, par exemple.
 translate(/Issue/ShortDescr,
 
 'abcdefghijklmnopqrstuvwxyz',
@@ -766,20 +766,20 @@ Vous trouverez la liste complète des fonctions XPath dans la spécification XPa
 ---
 ## Autres fonction utiles
 
-Voici d'autres fonctions XPath très utiles :
+Voici d’autres fonctions XPath très utiles :
 
 - `false()`, `true()`, `not(arg)` booléennes
 
 ```xpath
-//l[not(@n="5")]
+  //l[not(@n="5")]
 ```
 - `number(arg)`, `count(sequence)`, sum(sequence),...
 ```xpath
-count(//l)
+  count(//l)
 ```
 - `position()`
 ```xpath
-position(//l[@n="6"])
+  position(//l[@n="6"])
 ```
 
 Les .red[opérateurs] `=`, `!=`, `<`, `>`, `<=`, `>=` peuvent être employées pour les types numériques, chaînes et boooléens.
@@ -795,7 +795,7 @@ Liste complète des fonctions XPath dans la spécification XPath (http://www.w3.
 ## Les fonctions numériques peuvent vous permettre des réaliser des opérations arithmétiques sur des séquences de nœuds
 
 `count()`
-Vous permet de compter le nombre de noeuds dans le paramètre que vous spécifiez. En règle générale, le paramètre est une expression de chemin XPath qui identifie plusieurs noeuds, par exemple, tous les noeuds Item qui sont des enfants de PODetail. Par exemple :
+Vous permet de compter le nombre de nœuds dans le paramètre que vous spécifiez. En règle générale, le paramètre est une expression de chemin XPath qui identifie plusieurs nœuds, par exemple, tous les nœuds Item qui sont des enfants de PODetail. Par exemple :
 count({expressionXPath})
 
 

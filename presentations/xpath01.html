@@ -219,7 +219,7 @@ Un document XML (ou un fragment de document) est composé d’une hiérarchie de
 
 Autrement dit, les nœuds qui sont accessibles lors d’une session de travail sont munis d’un ordre, qu’on appelle **ordre du document**. Cet ordre est défini tel que correspondant à l’ordre dans lequel le premier caractère de la représentation XML de chaque nœud apparaît dans le document XML balisé (après expansion des entités générales).
 
-- le nœud racine est le premier nœud element après le nœud document, il contient tous les autres éléments
+- le nœud racine est le premier nœud `element` après le nœud document, il contient tous les autres éléments
 
 - les nœuds `element` précèdent leurs nœuds fils
 
@@ -244,30 +244,30 @@ class: center middle
 Produire la représentation arborescente de [phares.tei.xml](./exemplesTEI/phares.tei.xml) suivant :
 
 ```xml
-<?xml version="1.0" encoding="UTF-8"?>
-<body xmlns="http://www.tei-c.org/ns/1.0" n="spleenEtIdeal">
-  <div type="longPoem">
-    <head>Les Phares</head>
-    <lg type="stanza">
-<l n="1">Rubens, fleuve d’oubli, jardin de la paresse,</l>
-<l n="2">Oreiller de chair fraîche où l’on ne peut aimer,</l>
-<l n="3">Mais où la vie afflue et s’agite sans cesse,</l>
-<l n="4">Comme l’air dans le ciel et la mer dans la mer ;</l>
-<!-- nœud commentaire -->
-    </lg>
-    <lg type="stanza">
-<l n="5">Léonard de Vinci, miroir profond et sombre,</l>
-<l n="6">Où des anges charmants, avec un doux souris</l>
-<l n="7">Tout chargé de mystère, apparaissent à l’ombre</l>
-<l n="8">Des glaciers et des pins qui ferment leur pays ;</l>
-    </lg>
-    <gap reason="sampling" quantity="9" unit="stanza"/>
-  </div>
-  <div type="shortPoem">
-    <head>La Muse malade</head>
-    <gap reason="sampling" quantity="4" unit="stanza"/>
-  </div>
-</body>
+  <?xml version="1.0" encoding="UTF-8"?>
+  <body xmlns="http://www.tei-c.org/ns/1.0" n="spleenEtIdeal">
+    <div type="longPoem">
+      <head>Les Phares</head>
+      <lg type="stanza">
+          <l n="1">Rubens, fleuve d’oubli, jardin de la paresse,</l>
+          <l n="2">Oreiller de chair fraîche où l’on ne peut aimer,</l>
+          <l n="3">Mais où la vie afflue et s’agite sans cesse,</l>
+          <l n="4">Comme l’air dans le ciel et la mer dans la mer ;</l>
+          <!-- nœud commentaire -->
+      </lg>
+      <lg type="stanza">
+        <l n="5">Léonard de Vinci, miroir profond et sombre,</l>
+        <l n="6">Où des anges charmants, avec un doux souris</l>
+        <l n="7">Tout chargé de mystère, apparaissent à l’ombre</l>
+        <l n="8">Des glaciers et des pins qui ferment leur pays ;</l>
+      </lg>
+      <gap reason="sampling" quantity="9" unit="stanza"/>
+    </div>
+    <div type="shortPoem">
+      <head>La Muse malade</head>
+      <gap reason="sampling" quantity="4" unit="stanza"/>
+    </div>
+  </body>
 ```
 
 ---

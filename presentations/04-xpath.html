@@ -473,8 +473,8 @@ XPath fournit enfin un axe particulier nommé `self`
 ![solution](../images/diagramAxes04.svg)
 
 ---
-
 template: inverse
+class: center middle
 
 ## Notation XPath
 
@@ -531,6 +531,7 @@ pour un chemin relatif
 ```
 
 ---
+
 .left-column[
 ## Notation XPath
 ]
@@ -550,7 +551,8 @@ Pour chaque étape, on peut préciser :
 
 ```xpath
 axe::testNode[prédicat]/.../axe::testNode[prédicat][...]
-```]
+```
+]
 
 ???
 ## Structure d’une étape de chemin XPath
@@ -659,7 +661,9 @@ child::l
 div/attribute::type
 ```
 ]
+
 ???
+
 ### Exemples
 
 En conséquence que signifient les expressions suivantes ?
@@ -690,6 +694,7 @@ En pratique, on peut utiliser une notation abrégée qui permet d’alléger l�
 - `*` sélectionne un nœud de nom quelconque de type `element` sur un axe permettant de sélectionner des éléments, ou de type `attribut` sur l’axe `attribute`, ou de type espace de nom sur l’axe `namespace`
 
 ]
+
 ???
 ### Raccourcis
 
@@ -727,6 +732,7 @@ div/*/@*
 
 ---
 template: inverse
+class: middle center
 
 ## Les fonctions XPath
 
@@ -827,11 +833,12 @@ count({expressionXPath})
 ---
 name: last-page
 template: inverse
+class: middle center
 
-## [puisque vous êtes rodés](xpath03.html) !
+## [puisque vous êtes rodés](ex2-xpath.html) !
 
 
-.left[.footnote[[revenir au début](#index) | [programme](00-programme.html)]]
+.footnote[[revenir au début](#index) | [programme](00-programme.html)]
 
 </textarea>
 <!--<script src="http://gnab.github.com/remark/downloads/remark-0.6.5.min.js" type="text/javascript"></script>-->

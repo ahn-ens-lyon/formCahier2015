@@ -7,7 +7,7 @@
     </head>
     <body>
       <textarea id="source">
-title: xquery01 : une introduction
+title: XQuery : une introduction
 description: Atelier outillage XML (langages et logiciels), consortium Cahier 2015, Emmanuel Château, Maud Ingarao
 theme: themes/remark-dark.css
 name: inverse
@@ -22,7 +22,7 @@ class: center middle
 
 ### Consortium cahier | 1er et 2 juin 2015
 
-.footnote[[entrepôt GitHub](https://ahn-ens-lyon/formCahier2015) | [jour1](#jour1) | [jour2](#jour2)]
+.footnote[[entrepôt GitHub](https://ahn-ens-lyon/formCahier2015) | [jour1](00-programme.html#jour1) | [jour2](00-programme.html#jour2)]
 
 ---
 name: presentation
@@ -36,41 +36,17 @@ class: left
 ### en 2007 [version 1 du langage](http://www.w3.org/TR/xquery/)
 ### en 2011 extension [XQuery Update Facility](http://www.w3.org/TR/xquery-update-10/)
 ### en 2011 extension [XQuery Full-text](http://www.w3.org/TR/xpath-full-text-10/)
-### en 2014 [version 3](http://www.w3.org/TR/xquery-30/) du langage
+### en 2015 [version 3](http://www.w3.org/TR/xquery-30/) du langage
 
-Comme XSLT, XQuery utilise XPath comme language inclus.
+Comme XSLT, XQuery utilise XPath comme langage inclus.
 
 ???
 - Langage standardisé par le W3C pour requêter des données XML.
 - Publication d’une première version du langage en 2007
 - Extension pour le plein-texte et la mise à jour publiées en 2011
-- Nouvelle version 3 publiée standardisée cette année en mars 2014.
+- Nouvelle version 3 publiée standardisée cette année en mars 2015.
 
 Comme XSLT, XQuery utilise XPath comme langage inclus (XQuery est un langage hôte pour XPath).
-
----
-
-# Standards (version 1)
-
-- XQuery 1.0 : An XML Query Language (Second Edition), Don Chamberlin, Jonathan Robie, Anders Berglund, Scott Boag, et. al., Editors. World Wide Web Consortium, 14 December 2010. http://www.w3.org/TR/xquery/.
-- XQuery 1.0 and XPath 2.0 Data Model (XDM) (Second Edition), Anders Berglund, Mary Fernández, Ashok Malhotra, Jonathan Marsh, Marton Nagy, Norman Walsh, Editors. World Wide Web Consortium, 14 December 2010. http://www.w3.org/TR/xpath-datamodel/.
-- XQuery 1.0 and XPath 2.0 Formal Semantics (Second Edition), Jérôme Siméon, Denise Draper, Peter Frankhauser, et. al., Editors. World Wide Web Consortium, 14 December 2010. http://www.w3.org/TR/xquery-semantics/.
-
-Pour mémoire XQuery Use Cases 2001 http://www.w3.org/TR/2001/WD-xmlquery-use-cases-20010215
-
----
-
-# Standards (version 2)
-
-- XQuery 3.0 Requirements, Daniel Engovatov, Jonathan Robie, Editors. World Wide Web Consortium, 08 April 2014. http://www.w3.org/TR/xquery-30-requirements/
-- World Wide Web Consortium. XML Query Use Cases. W3C Working Draft, 8 June 2006. http://www.w3.org/TR/xquery-use-cases/.
-- XQuery and XPath Functions and Operators 3.0, Michael Kay, Editor. World Wide Web Consortium, 08 April 2014. http://www.w3.org/TR/xpath-functions-30/
-- XSLT and XQuery Serialization 3.0, Henry Zongaro, Andrew Coleman, Michael Sperberg-McQueen, Editors. World Wide Web Consortium, 08 April 2014. http://www.w3.org/TR/xslt-xquery-serialization-30/
-
-- XQuery and XPath Data Model (XDM) 3.0, Norman Walsh, Anders Berglund, John Snelson, Editors. World Wide Web Consortium, 08 April 2014. http://www.w3.org/TR/xpath-datamodel-30/.
-
-- EXPath, http://expath.org
-- EXPath Wiki, http://wiki.expath.org/wiki/EXPath
 
 ---
 
@@ -137,9 +113,12 @@ Ces index permettent de retrouver facilement et rapidement la localisation d’u
 - une simple expression XPath
 - ou une expression FLOWR
 
-### L’évaluation d’une expression XQuery est .red[toujours une séquence]
-- soit une séquence `xs:element()*`
-- soit une singleton (une valeur atomique `xs:anyAtomicType` ou `xs:element()`)
+### L’évaluation d’une expression XQuery est .red[toujours une séquence] d’items
+- 0, 1 ou plusieurs éléments
+- 0, 1 ou plusieurs items de type atomique
+- ou un mélange d’items de plusieurs types
+- etc.
+
 
 ---
 
@@ -232,10 +211,10 @@ XQuery utilise XPath pour naviguer dans des documents.
 
 # Les expressions FLOWR
 
-### `let` affectation de variable
 ### `for` itération sur une séquence
-### `where` filtre (optionnel)
+### `let` affectation de variable
 ### `order by` tri (optionnel)
+### `where` filtre (optionnel)
 ### `return` génère la sortie
 
 ???
@@ -253,38 +232,6 @@ Le nom FLOWR correspond aux 5 clauses utilisées pour produire une expression. L
 
 ---
 
-# Salut Lille ! avec un `let`
-
-```xquery
-  xquery version "3.0";
-  let $message := 'Salut Lille !'
-  return
-  <resultat>
-    <message>{$message}</message>
-  </resultat>
-```
-
-On utilise ici l’affectation d’une variable avec `let`
-
----
-
-# Exemple avec la clause `where`
-
-```xquery
-  for $var in doc("books.xml")//book
-  where $var/@year = "2015"
-  return $var/title
-```
-
-???
-Cette expression lie successivement une variable `$var` à chaque élément `livre` de la séquence que rapporte l’expression `doc("books.xml")//book`.
-
-La clause `where` évalue à chaque fois l’expression `$var/@year = "2015"` et filtre les résultats.
-
-La clause `return` retourne les résultats qui satisfont à la condition exprimée par la clause `where`.
-
----
-
 # Construction d’une expression FLOWR
 
 ```xquery
@@ -296,6 +243,8 @@ La clause `return` retourne les résultats qui satisfont à la condition exprim�
 ```
 
 Les expressions peuvent être imbriquées
+
+TODO
 
 ???
 
@@ -327,10 +276,12 @@ Retour, évaluation expression
 ```
 
 - Les espaces sont généralement non significatifs
-- L’utilisation des parenthèses est libre mais elles doivent être apariées
 - Les guillemets, simples ou double, dénotent du texte littéral. (ex : `'ceci est une string'`)
 - Les noms de variables sont précédés par `$`. (ex: `$var`)
 - Les fonctions pré-définies sont préfixées avec `fn:`
+- L’utilisation des parenthèses autour des expressions est libre mais elles doivent être apariées
+- Les accolades servent à désigner les contenus interprétés
+
 
 ---
 
@@ -341,12 +292,19 @@ Retour, évaluation expression
   return $document
 ```
 
+TODO exemple let dans For
+
 ???
 La clause `let` permet simplement de déclarer une variable et de lui donner une valeur.
 
 Ici, on affecte une variable `$document` avec la clause let, puis on retourne la variable `$document`
 
 Dans une clause `for`, la variable est liée successivement à chaque item de la séquence.
+
+**En informatique, une variable est un symbole (habituellement un nom) qui renvoie à un contenu mis en mémoire auquel on peut par exemple faire référence plusieurs fois.
+
+**Autrement dit** vous pouvez vous représenter une variable comme une boite avec une étiquette
+
 
 Généralement, on emploie des variables par commodité pour simplifier une expression lorsque l’on a besoin d’utiliser plusieurs fois la même valeur. Cela peut aussi être utile pour permettre au processeur de faire une l’évaluation de cette expression seulement une fois.
 
@@ -359,27 +317,46 @@ Dans un tel mode de programmation on déclare le résultat que l’on veut obten
 # Exemples d’utilisation de la clause `for`
 
 ```xquery
-  for $i in (1, 2, 3)
-  return $i
+  for $book in doc("books.xml")//book
+  return $book
 ```
 
 ```xquery
-  for $i in (1, 2, 3)
-  return <item>{ $i }</item>
+  for $book in doc("books.xml")//book
+  return <title>$book/title</title>
 ```
 
 ???
 Le comportement de la clause `for` est plutôt intuitif : elle itère sur une séquence donnée en entrée et calcule pour la valeur de chaque item de cette séquence en retournant une séquence obtenue par la concaténation de ces calculs.
 
-Notons qu’une expression FLORW est seulement une expression, elle peut donc être utilisée partour où une expression est autorisée. Autrement dit, on peut imbriquer des expressions.
+**autrement dit** ici on prend successivement chaque élément de la séquence et on les lie successivement à la variable $i.
+
+Notons qu’une expression FLOWR est seulement une expression, elle peut donc être utilisée partout où une expression est autorisée. Autrement dit, on peut imbriquer des expressions.
 
 ---
 
 # La clause `where`
 
 ```xquery
-  for $book in doc('books.xml')//book
+  for $book in doc("books.xml")//book
   where $book/price < 50.00
+  return $book/title
+```
+
+En SQL
+
+```sql
+  SELECT 'title' FROM 'book' WHERE 'price' < 50.00
+```
+
+En XPath
+
+```xpath
+  doc("books.xml")//book[price < 50.00]
+```
+
+```xquery
+  for $book in doc("books.xml")//book[price < 50.00]
   return $book/title
 ```
 
@@ -391,14 +368,20 @@ La clause `where` élimine de la séquence les items qui ne satisfont pas une co
 Si vous connaissez SQL, vous reconnaîtrez probablement une requête du genre :
 
 ```sql
-  SELECT v.title from book v WHERE v.price > 50.00
+  SELECT 'title' FROM 'book' WHERE 'price' < 50.00
 ```
 
 En XPath, cette expression peut simplement s’exprimer avec un prédicat
 
 ```xpath
-  doc('books.xml')//book[price < 50.00]
+  doc("books.xml")//book[price < 50.00]
 ```
+
+Cette expression lie successivement une variable `$var` à chaque élément `livre` de la séquence que rapporte l’expression `doc("books.xml")//book`.
+
+La clause `where` évalue à chaque fois l’expression `$var/@year = "2015"` et filtre les résultats.
+
+La clause `return` retourne les résultats qui satisfont à la condition exprimée par la clause `where`.
 
 ---
 
@@ -459,12 +442,6 @@ constructeur calculé
   return <item n={$i}>{$i}</item>
 ```
 
-```xquery
-  for $i in (1, 2, 3)
-  return element item { $i }
-  TODO attribute
-```
-
 ???
 Ajouté un élément XML dans la sortie
 - constructeurs direct
@@ -474,34 +451,18 @@ Utilisation des accolades (`{`, `}`) pour inclure les expressions XQuery qui doi
 
 ---
 
-# Les expressions conditionnelles
+# Salut Lille ! avec un `let`
 
-if (_condition_)
-then _expression_
-else _expression_
+```xquery
+  xquery version "3.0";
+  let $message := 'Salut Lille !'
+  return
+  <resultat>
+    <message>{$message}</message>
+  </resultat>
+```
 
----
-
-# Les opérateurs
-
-- `>`, `<`, `=`, `>=`, `<=` comparaison, égalité
-- `+`, `-`, `*`, `/` addition, soustraction, multiplication, division
-- % modulo [vérifier]
-
----
-
-# Booléens
-
-`fn:true()`, `fn:false()`
-`!=`
-eq
-
----
-
-# Travailler avec des chaînes
-
-Liste de fonctions utiles
-
+On utilise ici l’affectation d’une variable avec `let`
 
 ---
 
@@ -523,6 +484,36 @@ Liste de fonctions utiles
 - Morgan, Kyle, and Kyle Schutt. Final project report for CS 5604, Fall 2012 (Project Byron), December, 2012.	https://vtechworks.lib.vt.edu/bitstream/handle/10919/19082/ProjByronFinal.pdf
 - Burghart, Marjorie. "EXist-db, Une Base XML Native Pour L’exploitation De Corpus TEI - Les Raisons D’un Choix Et Les Modalités De Son Implémentation." In Exploiter Les Données Structurées En XML. Paris, France, 2011. https://halshs.archives-ouvertes.fr/halshs-00980843.
 
+---
+
+# Standards (version 1)
+
+- XQuery 1.0 : An XML Query Language (Second Edition), Don Chamberlin, Jonathan Robie, Anders Berglund, Scott Boag, et. al., Editors. World Wide Web Consortium, 14 December 2010. http://www.w3.org/TR/xquery/.
+- XQuery 1.0 and XPath 2.0 Data Model (XDM) (Second Edition), Anders Berglund, Mary Fernández, Ashok Malhotra, Jonathan Marsh, Marton Nagy, Norman Walsh, Editors. World Wide Web Consortium, 14 December 2010. http://www.w3.org/TR/xpath-datamodel/.
+- XQuery 1.0 and XPath 2.0 Formal Semantics (Second Edition), Jérôme Siméon, Denise Draper, Peter Frankhauser, et. al., Editors. World Wide Web Consortium, 14 December 2010. http://www.w3.org/TR/xquery-semantics/.
+
+Pour mémoire XQuery Use Cases 2001 http://www.w3.org/TR/2001/WD-xmlquery-use-cases-20010215
+
+---
+
+# Standards (version 3)
+
+- XQuery 3.0 Requirements, Daniel Engovatov, Jonathan Robie, Editors. World Wide Web Consortium, 08 April 2014. http://www.w3.org/TR/xquery-30-requirements/
+- World Wide Web Consortium. XML Query Use Cases. W3C Working Draft, 8 June 2006. http://www.w3.org/TR/xquery-use-cases/.
+- XQuery and XPath Functions and Operators 3.0, Michael Kay, Editor. World Wide Web Consortium, 08 April 2014. http://www.w3.org/TR/xpath-functions-30/
+- XSLT and XQuery Serialization 3.0, Henry Zongaro, Andrew Coleman, Michael Sperberg-McQueen, Editors. World Wide Web Consortium, 08 April 2014. http://www.w3.org/TR/xslt-xquery-serialization-30/
+
+- XQuery and XPath Data Model (XDM) 3.0, Norman Walsh, Anders Berglund, John Snelson, Editors. World Wide Web Consortium, 08 April 2014. http://www.w3.org/TR/xpath-datamodel-30/.
+
+- EXPath, http://expath.org
+- EXPath Wiki, http://wiki.expath.org/wiki/EXPath
+
+TODO Spec
+
+### en 2007 [version 1 du langage](http://www.w3.org/TR/xquery/)
+### en 2011 extension [XQuery Update Facility](http://www.w3.org/TR/xquery-update-10/)
+### en 2011 extension [XQuery Full-text](http://www.w3.org/TR/xpath-full-text-10/)
+### en 2015 [version 3](http://www.w3.org/TR/xquery-30/) du langage
 ---
 
 # Sources & bibliographie

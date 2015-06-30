@@ -28,27 +28,221 @@ class: center middle
 
 ## Introduction
 
-Nous avons déjà en partie abordé
-
----
-layout: false
-
-## Sommaire
-
-1. [Questions de pratique](#part1)
-
-1. [Exploiter ses données](#part2)
-
-1. [Publier ses données](#part3)
-
-
 ---
 name: part1
 template: inverse
 class: center middle
 
-# Questions pratiques
+# Comment publier ses données ?
 
+???
+# Comment publier ses données ?
+
+En ayant recours à la Text Encoding Initiative (TEI), on adopte le principal standard informatique actuellement employé dans le domaine de l’édition critique numérique. La TEI fournit tout à la fois un cadre de travail pour traiter et analyser les sources, et enregistrer le résultat de l’activité scientifique qui aura été menée. Toutefois, les fichiers sources XML-TEI ne sont pas directement destinés à la consultation.
+La TEI constitue plutôt un format pivot à partir duquel on produit diverses "manifestations" du texte en fonction des besoins et des contextes de lecture (pages xhtml, fichiers epub, pdf, api, etc.). Le manque d’outils adaptés, faciles d’emploi, pour le traitement, l’analyse et la publication de ces fichiers est souvent considéré comme un des principaux freins à l’utilisation de la TEI.
+
+Du fait de l’utilisation courante de la TEI dans des projets de recherche, plusieurs solutions pour la publication d’édition critiques électroniques ont été développées ces dernières années, soit sous la forme de chaînes éditoriales propres soit sous la forme de logiciels libres ou open source.
+Il convient de choisir une solution de publication adaptée à nos besoins mais qui puisse être également maintenue dans la durée.
+Plusieurs solutions s’offrent à nous qui peuvent plus ou moins bien répondre aux besoins du projet, ou s’inscrire dans la politique générale de votre institution. Dans tous les cas, il n’y a pas de solution miracle, et le choix d’un outil résulte d’un arbitrage entre la complexité technique et l’étendue des fonctionnalités attendues.
+
+---
+
+# Un format pivot
+
+### Sorties HTML
+
+### Sorties EPub, Kindle, etc.
+
+### Sorties papier (PDF, LateX, etc.)
+
+---
+
+# Le stockage des données
+
+### Stockage des fichiers à plat (Flat File Storage)
+
+### Bases de données relationnelles et orientées objet
+
+### Le stockage natif des données XML
+
+
+???
+### Le stockage des données
+
+Travailler avec des données XML nécessite de pouvoir effectuer trois types d’opérations distinctes :
+- ajouter de l’information dans l’entrepôt,
+- chercher et retrouver l’information dans l’entrepôt,
+- et mettre à jour l’information contenue dans l’entrepôt.
+
+Plusieurs solutions pour les bases de données XML ont été proposés parmi lesquelles :
+- le stockage de fichiers à plat,
+- l’utilisation de bases de données relationnelles,
+- le stockage natif des données XML comme dans des bases de données XML natives ou d’autres systèmes de gestion.
+
+---
+
+# Le Stockage des fichiers à plat
+
+(Flat File Storage)
+
+### Solution la plus simple
+### L’entité principale est le document
+### Simple système de fichier
+### Efficace et peu coûteux
+### Recherches dans le document prohibitives
+
+???
+# Stockage des fichiers à plat (Flat File Storage)
+
+C’est la solution la plus simple, le document complet constitue l’entité principale, les structures internes ne jouant aucun rôle. Cette solution peut être implémentée avec n’importe quel système de fichiers. Si le stockage est efficace et peu coûteux, d’autres opérations comme la recherche qui requièrent un accès à la structure interne du document peuvent devenir prohibitives.
+Le stockage à plat n’est pas le plus approprié lorsque la recherche est fréquente car le niveau de granularité du stockage est le document entier et non pas son contenu.
+
+---
+
+# Bases de données relationnelles et orientées objet
+
+### Fonctionnalités d’indexation
+### Nécessitent une conversion dans un modèle relationnel (jointures coûteuses)
+### Proposition de bases de données orientées objet pour refléter les structures imbriquées
+### Certains SGBDR proposent des APIs XML (XQuery, XPath)
+
+???
+# Bases de données relationnelles et orientées objet
+
+Les données XML peuvent être stockées dans des bases de données relationnelles. Elles peuvent ainsi bénéficier des fonctionnalités d’indexation, de transaction et d’optimisation des requêtes habituellement offertes par ces systèmes. Cependant, comme les données XML sont des données semi-structurées, elles nécessitent une conversion dans un modèle de données relationnelles. Compte-tenu des différences significatives inhérentes aux modèles relationnels et aux structures imbriquées des données semi-structurées, ces conversions impliquent généralement des jointures coûteuses pour le traitement des requêtes. L’utilisation de bases de données relationnelles orientées objet a été proposée pour refléter les structures imbriquées des données semi-structurées afin de réduire les redondances et ces jointures.
+
+---
+
+# Le stockage natif des données XML
+
+### Préservent la structure physique des documents XML (éléments, attributs, entités)
+### Stockent des documents sans déclaration préalable du schéma
+### Permettent d’accéder aux documents à partir des API spécifiques à XML (XPath, XQuery)
+
+cf. http://www.rpbourret.com/xml/ProdsNative.htm
+
+???
+# Le stockage natif des données XML
+
+### Préservent la structure physique des documents XML (éléments, attributs, entités)
+### Stockent des documents sans déclaration préalable du schéma
+### Permettent d’accéder aux documents à partir des API spécifiques à XML (XPath, XQuery)
+
+cf. http://www.rpbourret.com/xml/ProdsNative.htm
+
+Conçus spécialement pour gérer des données XML, les systèmes natifs ont l’avantage de ne pas nécessiter d’opérations de conversion. Les techniques de stockage et de traitement des requêtes adoptées par les bases de données XML sont habituellement plus efficientes que celles basées sur le stockage de fichiers à plats et les bases de données relationnelles.
+
+Plusieurs langages de requêtes ont été proposés pour manipuler des données XML (XML-QL, XML-GL, Quilt, XPath et XQuery). Le principal langage de requête pour XML qui ait été standardisé est XQuery. Il repose sur l’utilisation d’expressions de chemins XPath qui adressent des ensembles des parties spécifiques des documents XML.
+
+---
+
+# Arguments en faveur de l’utilisation d’une base de données XML
+
+### Orientation document qui facilite le développement d’application
+### Accès à la structure et aux données facilité
+### Fonctionnalités qui s’inscrivent dans le respect des normes et l’implémentation des standards XML (XSL, XProc, XForms, XLink, etc.)
+
+---
+name: part2
+template: inverse
+class: center middle
+
+# Stratégies de publication
+
+---
+
+# La transformation de XML
+
+## des langages de transformation de XML (XSLT, XSL-FO)
+### capables de générer d’autres formats à partir du document source
+
+## des langages de requêtes (XQuery)
+
+???
+
+### La transformation
+
+L’utilisation de XML comme format pivot en vue d’une publication de sources textuelles dans un autre format est un cas typique d’utilisation de cette technologie. Plusieurs langages de transformation de segments XML ont été proposés, notamment XSLT et XSL-FO qui reposent tous deux sur le langage XPath.
+
+Si XSLT constitue une solution très efficace pour passer d’un format XML donné à un autre, comme par exemple XHTML, les processeurs disponibles pour réaliser cette transformation sont limités à la version 1.0 du langage dans l’environnement courant LAMP (Linux Apache PHP). Les processeurs XSLT 2.0 et XQuery sont généralement incompatibles avec cet environnement, c’est une des raisons pour lesquelles la plupart des applications pour travailler avec des sources XML sont développées en Java pour pleinement tirer parti des possibilités de ces langages et du modèle de données.
+
+---
+
+# Transformation XSLT
+
+![xsltProcessing](../images/xsltProcessing.svg)
+
+???
+
+Ce schéma présente le processus à l’œuvre lorsque l’on associe une feuille de style et un document source.
+
+Un programme XSLT spécifie une sortie à produire à partir d’un segment ou d’un fichier XML, si ce segment existe dans le document fourni en entrée et répond à certains critères.
+
+Le résultat est une fonction de l’entrée.
+
+---
+
+# Utilisation de bases de données XML natives
+
+### production d’un site web dynamique
+
+- BaseX http://basex.org
+- eXist DB http://exist-db.org
+- MarkLogic http://www.marklogic.com
+- Sedna http://www.modis.ispras.ru/sedna/
+- ...
+
+---
+
+XQuery (Standard W3C)
+
+SynopsX https://github.com/ahn-ens-lyon/synopsx
+
+---
+
+# L’hébergement des données TEI
+
+### Le problème de l’environnement
+
+### La grille de service de la TGIR Huma-Num
+
+http://www.huma-num.fr/service/grille-de-services
+
+???
+
+Comment les créateurs de données en TEI dans des petites institutions peuvent-ils publier et archiver leurs données, et disposer d’un support technique pour leurs projets ?
+
+Une question d’échelle
+Intérêt de la publication de regroupement de textes
+Mutualisation et économie.
+
+Question de la vulnérabilité des ressources produites.
+Choix de technologies libres et ouvertes pour la publication qui garantissent l’indépendance à l’égard d’une infrastructure commerciale.
+Le médium numérique requiert néanmoins une attention particulière à sa conservation. La production d’une édition électronique nécessite d’envisager sa maintenance dans le temps sans quoi elle risque de devenir obsolète ou de ne plus être disponible.
+
+Grille de service du TGIR HumaNum offre un hébergement web adapté pour accueillir des servlets java. Environnement sécurisé et robuste fournit dans le cadre d’un partenariat avec le centre de calcul xxxx à Lyon. Solution semble-t-il favorisée par le CNRS pour les projets en Digital Humanities car elle permet une mutualisation au niveau de l’infrastructure serveur, virtualisation, maintenance, montée en charge, performance, évolutivité en fonction des besoins, etc. Cette solution a en outre l’avantage de la gratuité pour les projets ANR et réalisés dans le cadre de Labex.
+
+Outre l’hébergement web, l’offre de la TGIR HumaNum un ensemble de services qui peuvent s’avérer nécessaires. Pérennisation des données, et archivage à long terme réalisé en partenariat avec le XXXX de Montpellier. Serveur de document, accès SSH, etc.
+
+---
+
+# Sources et orientations bibliographiques
+
+- Boot, Peter. "Some Digital Editions and Some Remaining Challenges." Janus, Estudios sobre el siglo de oro , no. 1 (2012). http://www.janusdigital.es/articulo.htm?id=7 (accessed December 28, 2013).
+
+- Pape, Sebastian, Christof Schöch, and Lutz Wegner. "TEICHI and the Tools Paradox." Journal of the Text Encoding Initiative , no. 2, Selected Papers from the 2010 TEI Conference (2012). http://jtei.revues.org/432 (accessed December 28, 2013).
+
+- Stapelfeldt, Kirsta, and Donald Moses. "Islandora and TEI: Current and Emerging Applications/Approaches." Journal of the Text Encoding Initiative , no. 5 (2013). http://jtei.revues.org/790 (accessed December 28, 2013).
+- Beaulieu, Anne, Karina van Dalen-Oskam, and Joris van Zundert. "Between Tradition and Web 2.0 : ELaborate As a Social Experiment in Humanities Scholarship." In Social Software and the Evolution of User Expertise. Edited by Tatjana Takševa. 2013.
+
+- Flanders, Julia, and Scott Hamlin. "TAPAS: Building a TEI Publishing and Repository Service." Journal of the Text Encoding Initiative 5 (2013). http://jtei.revues.org/788 (accessed December 30, 2013).
+
+- Roberto Rosselli Del Turco, Giancarlo Buomprisco, Chiara Di Pietro, Julia Kenny, Raffaele Masotti, and Jacopo Pugliese, « Edition Visualization Technology: A Simple Tool to Visualize TEI-based Digital Editions », Journal of the Text Encoding Initiative [Online], Issue 8 - PREVIEW | 2014-2015, Online since 28 December 2014, connection on 28 June 2015. URL : http://jtei.revues.org/1077 ; DOI : 10.4000/jtei.1077
+
+---
+name: part2
+template: inverse
+class: center middle
 
 # Quelques outils pour travailler avec ses données
 
@@ -128,219 +322,6 @@ http://wiki.tei-c.org/index.php/Category:Tools
 - Philologie à venir, http://philologia.hypotheses.org
 - http://textvis.lnu.se
 - http://www.tapor.ca
-
----
-name: part2
-template: inverse
-class: center middle
-
-# Comment publier ses données ?
-
-???
-# Comment publier ses données ?
-
-En ayant recours à la Text Encoding Initiative (TEI), on adopte le principal standard informatique actuellement employé dans le domaine de l’édition critique numérique. La TEI fournit tout à la fois un cadre de travail pour traiter et analyser les sources, et enregistrer le résultat de l’activité scientifique qui aura été menée. Toutefois, les fichiers sources XML-TEI ne sont pas directement destinés à la consultation.
-La TEI constitue plutôt un format pivot à partir duquel on produit diverses "manifestations" du texte en fonction des besoins et des contextes de lecture (pages xhtml, fichiers epub, pdf, api, etc.). Le manque d’outils adaptés, faciles d’emploi, pour le traitement, l’analyse et la publication de ces fichiers est souvent considéré comme un des principaux freins à l’utilisation de la TEI.
-
-Du fait de l’utilisation courante de la TEI dans des projets de recherche, plusieurs solutions pour la publication d’édition critiques électroniques ont été développées ces dernières années, soit sous la forme de chaînes éditoriales propres soit sous la forme de logiciels libres ou open source.
-Il convient de choisir une solution de publication adaptée à nos besoins mais qui puisse être également maintenue dans la durée.
-Plusieurs solutions s’offrent à nous qui peuvent plus ou moins bien répondre aux besoins du projet, ou s’inscrire dans la politique générale de votre institution. Dans tous les cas, il n’y a pas de solution miracle, et le choix d’un outil résulte d’un arbitrage entre la complexité technique et l’étendue des fonctionnalités attendues.
-
----
-
-# Un format pivot
-
-### Sorties HTML
-
-### Sorties EPub, Kindle, etc.
-
-### Sorties papier (PDF, LateX, etc.)
-
----
-
-# Le stockage des données
-
-### Stockage des fichiers à plat (Flat File Storage)
-
-### Bases de données relationnelles et orientées objet
-
-### Le stockage natif des données XML
-
-
-???
-### Le stockage des données
-
-Travailler avec des données XML nécessite de pouvoir effectuer trois types d’opérations distinctes :
-- ajouter de l’information dans l’entrepôt,
-- chercher et retrouver l’information dans l’entrepôt,
-- et mettre à jour l’information contenue dans l’entrepôt.
-
-Plusieurs solutions pour les bases de données XML ont été proposés parmi lesquelles :
-- le stockage de fichiers à plat,
-- l’utilisation de bases de données relationnelles,
-- le stockage natif des données XML comme dans des bases de données XML natives ou d’autres systèmes de gestion.
-
----
-
-# Le Stockage des fichiers à plat
-
-(Flat File Storage)
-
-### Solution la plus simple
-### L’entité principale est le document
-### Simple système de fichier
-### Efficace et peu coûteur
-### Recherches dans le document prohibitives
-
-???
-# Stockage des fichiers à plat (Flat File Storage)
-
-C’est la solution la plus simple, le document complet constitue l’entité principale, les structures internes ne jouant aucun rôle. Cette solution peut être implémentée avec n’importe quel système de fichiers. Si le stockage est efficace et peu coûteux, d’autres opérations comme la recherche qui requièrent un accès à la structure interne du document peuvent devenir prohibitives.
-Le stockage à plat n’est pas le plus approprié lorsque la recherche est fréquente car le niveau de granularité du stockage est le document entier et non pas son contenu.
-
----
-
-# Bases de données relationnelles et orientées objet
-
-### Fonctionnalités d’indexation
-### Nécessitent une conversion dans un modèle relationnel (jointures coûteuses)
-### Proposition de bases de données orientées objet pour refléter les structures imbriquées
-### Certains SGBDR proposent des APIs XML (XQuery, XPath)
-
-???
-# Bases de données relationnelles et orientées objet
-
-Les données XML peuvent être stockées dans des bases de données relationnelles. Elles peuvent ainsi bénéficier des fonctionnalités d’indexation, de transaction et d’optimisation des requêtes habituellement offertes par ces systèmes. Cependant, comme les données XML sont des données semi-structurées, elles nécessitent une conversion dans un modèle de données relationnelles. Compte-tenu des différences significatives inhérentes aux modèles relationnels et aux structures imbriquées des données semi-structurées, ces conversions impliquent généralement des jointures coûteuses pour le traitement des requêtes. L’utilisation de bases de données relationnelles orientées objet a été proposée pour refléter les structures imbriquées des données semi-structurées afin de réduire les redondances et ces jointures.
-
----
-
-# Le stockage natif des données XML
-
-### Préservent la structure physique des documents XML (éléments, attributs, entités)
-### Stockent des documents sans déclaration préalable du schéma
-### Permettent d’accéder aux documents à partir des API spécifiques à XML (XPath, XQuery)
-
-cf. http://www.rpbourret.com/xml/ProdsNative.htm
-
-???
-# Le stockage natif des données XML
-
-### Préservent la structure physique des documents XML (éléments, attributs, entités)
-### Stockent des documents sans déclaration préalable du schéma
-### Permettent d’accéder aux documents à partir des API spécifiques à XML (XPath, XQuery)
-
-cf. http://www.rpbourret.com/xml/ProdsNative.htm
-
-Conçus spécialement pour gérer des données XML, les systèmes natifs ont l’avantage de ne pas nécessiter d’opérations de conversion. Les techniques de stockage et de traitement des requêtes adoptées par les bases de données XML sont habituellement plus efficientes que celles basées sur le stockage de fichiers à plats et les bases de données relationnelles.
-
-Plusieurs langages de requêtes ont été proposés pour manipuler des données XML (XML-QL, XML-GL, Quilt, XPath et XQuery). Le principal langage de requête pour XML qui ait été standardisé est XQuery. Il repose sur l’utilisation d’expressions de chemins XPath qui adressent des ensembles des parties spécifiques des documents XML.
-
----
-
-# Arguments en faveur de l’utilisation d’une base de données XML
-
-### Orientation document qui facilite le développement d’application
-### Accès à la structure et aux données facilité
-### Fonctionnalités qui s’inscrivent dans le respect des normes et l’implémentation des standards XML (XSL, XProc, XForms, XLink, etc.)
-
----
-name: part3
-template: inverse
-class: center middle
-
-# Stratégies de publication
-
----
-
-# La transformation de XML
-
-## des langages de transformation de XML (XSLT, XSL-FO)
-### capables de générer d’autres formats à partir du document source
-
-## des langages de requêtes (XQuery)
-
-???
-
-### La transformation
-
-L’utilisation de XML comme format pivot en vue d’une publication de sources textuelles dans un autre format est un cas typique d’utilisation de cette technologie. Plusieurs langages de transformation de segments XML ont été proposés, notamment XSLT et XSL-FO qui reposent tous deux sur le langage XPath.
-
-Si XSLT constitue une solution très efficace pour passer d’un format XML donné à un autre, comme par exemple XHTML, les processeurs disponibles pour réaliser cette transformation sont limités à la version 1.0 du langage dans l’environnement courant LAMP (Linux Apache PHP). Les processeurs XSLT 2.0 et XQuery sont généralement incompatibles avec cet environnement, c’est une des raisons pour lesquelles la plupart des applications pour travailler avec des sources XML sont développées en Java pour pleinement tirer parti des possibilités de ces langages et du modèle de données.
-
----
-
-.left-column[
-## Processus de transformation .red[XSLT]
-]
-
-.right-column[
-
-![xsltProcessing](../images/xsltProcessing.svg)
-]
-???
-
-Ce schéma présente le processus à l’œuvre lorsque l’on associe une feuille de style et un document source.
-
-Un programme XSLT spécifie une sortie à produire à partir d’un segment ou d’un fichier XML, si ce segment existe dans le document fourni en entrée et répond à certains critères.
-
-Le résultat est une fonction de l’entrée.
-
----
-
-# Systèmes de bases de données XML natives
-
-- BaseX http://basex.org
-- eXist DB http://exist-db.org
-- MarkLogic http://www.marklogic.com
-- Sedna http://www.modis.ispras.ru/sedna/
-- ...
-
----
-
-XQuery (Standard W3C)
-
-SynopsX https://github.com/ahn-ens-lyon/synopsx
-
----
-
-# L’hébergement des données TEI
-
-### Le problème de l’environnement
-
-### La grille de service de la TGIR Huma-Num
-
-http://www.huma-num.fr/service/grille-de-services
-
-???
-
-Comment les créateurs de données en TEI dans des petites institutions peuvent-ils publier et archiver leurs données, et disposer d’un support technique pour leurs projets ?
-
-Une question d’échelle
-Intérêt de la publication de regroupement de textes
-Mutualisation et économie.
-
-Question de la vulnérabilité des ressources produites.
-Choix de technologies libres et ouvertes pour la publication qui garantissent l’indépendance à l’égard d’une infrastructure commerciale.
-Le médium numérique requiert néanmoins une attention particulière à sa conservation. La production d’une édition électronique nécessite d’envisager sa maintenance dans le temps sans quoi elle risque de devenir obsolète ou de ne plus être disponible.
-
-Grille de service du TGIR HumaNum offre un hébergement web adapté pour accueillir des servlets java. Environnement sécurisé et robuste fournit dans le cadre d’un partenariat avec le centre de calcul xxxx à Lyon. Solution semble-t-il favorisée par le CNRS pour les projets en Digital Humanities car elle permet une mutualisation au niveau de l’infrastructure serveur, virtualisation, maintenance, montée en charge, performance, évolutivité en fonction des besoins, etc. Cette solution a en outre l’avantage de la gratuité pour les projets ANR et réalisés dans le cadre de Labex.
-
-Outre l’hébergement web, l’offre de la TGIR HumaNum un ensemble de services qui peuvent s’avérer nécessaires. Pérennisation des données, et archivage à long terme réalisé en partenariat avec le XXXX de Montpellier. Serveur de document, accès SSH, etc.
-
----
-
-# Sources et orientations bibliographiques
-
-- Boot, Peter. "Some Digital Editions and Some Remaining Challenges." Janus, Estudios sobre el siglo de oro , no. 1 (2012). http://www.janusdigital.es/articulo.htm?id=7 (accessed December 28, 2013).
-
-- Pape, Sebastian, Christof Schöch, and Lutz Wegner. "TEICHI and the Tools Paradox." Journal of the Text Encoding Initiative , no. 2, Selected Papers from the 2010 TEI Conference (2012). http://jtei.revues.org/432 (accessed December 28, 2013).
-
-- Stapelfeldt, Kirsta, and Donald Moses. "Islandora and TEI: Current and Emerging Applications/Approaches." Journal of the Text Encoding Initiative , no. 5 (2013). http://jtei.revues.org/790 (accessed December 28, 2013).
-- Beaulieu, Anne, Karina van Dalen-Oskam, and Joris van Zundert. "Between Tradition and Web 2.0 : ELaborate As a Social Experiment in Humanities Scholarship." In Social Software and the Evolution of User Expertise. Edited by Tatjana Takševa. 2013.
-
-- Flanders, Julia, and Scott Hamlin. "TAPAS: Building a TEI Publishing and Repository Service." Journal of the Text Encoding Initiative 5 (2013). http://jtei.revues.org/788 (accessed December 30, 2013).
-
-- Roberto Rosselli Del Turco, Giancarlo Buomprisco, Chiara Di Pietro, Julia Kenny, Raffaele Masotti, and Jacopo Pugliese, « Edition Visualization Technology: A Simple Tool to Visualize TEI-based Digital Editions », Journal of the Text Encoding Initiative [Online], Issue 8 - PREVIEW | 2014-2015, Online since 28 December 2014, connection on 28 June 2015. URL : http://jtei.revues.org/1077 ; DOI : 10.4000/jtei.1077
 
 ---
 template: inverse

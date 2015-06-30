@@ -7,7 +7,7 @@
   </head>
   <body>
     <textarea id="source">
-title: XPath01 : une introduction
+title: XDM : Le Modèle de données de XML
 description: Atelier outillage XML (langages et logiciels), consortium Cahier 2015, Emmanuel Château, Maud Ingarao
 theme: themes/remark-dark.css
 layout: true
@@ -17,118 +17,35 @@ class: inverse
 name: index
 class: center middle
 
-# 00-XPath01, Une Introduction
+# XDM : Le Modèle de données de XML
 
 ### Consortium cahier | 1er et 2 juin 2015
 
 .footnote[[entrepôt GitHub](https://ahn-ens-lyon/formCahier2015) | [jour1](#jour1) | [jour2](#jour2)]
 
 ---
+template: inverse
 class: center middle
 
 ## Introduction
 
 ???
-Lorsque l’on veut appliquer des traitements à des documents XML (transformation de documents p.e. pour produire une page web, création de liens hypertextes, extraction sélective d’informations p.e. dans une base de données XML native), il est souvent nécessaire de pouvoir localiser des fragments précis au sein de documents XML.
+Lorsque l’on veut appliquer des traitements à des documents XML (que ce soit pour désigner des ensembles de nœuds, ou lorsqu’il s’agit de transformation pour produire une page web, de conversion de format, ou encore d’extraction sélective d’informations p.e. dans une base de données XML native), on peut avoir recours à plusieurs langages spécifiquement destinés à manipuler des données XML tels que XPath, XSLT ou XQuery.
 
-Le language XPath a précisément cette vocation.
+Tous ces langages ont la caractéristique d’opérer sur le modèle de données de XML. La syntaxe XML que nous vous avons rapidement présenté tout à l’heure sert à exprimer un modèle de données que nous allons maintenant vous présenter.
 
----
-layout: false
+Un modèle de données organise les éléments informationnels et standardise les relations qu’ils entretiennent entre eux.
 
-### "XPath is a language for addressing parts of an XML document, designed to be used by both XSLT and XPointer"
-
-### "The primary purpose of XPath is to address parts of an XML document."
-.footnote[[XML Path Language 2.0, 2003](http://www.w3.org/TR/xpath20/)]
-
-???
-
-C’est précisément la vocation du langage XPath développé par le W3C :
-- "XPath is a language for addressing parts of an XML document, designed to be used by both XSLT and XPointer"
-- "The primary purpose of XPath is to address parts of an XML document."
-
-Comme le suggère cette première citation, XPath a d’abord été conçu pour être utilisé au sein de langages dits hôtes ayant besoin d’identifier des portions précises dans un document. On utilise ainsi XPath avec XSLT pour sélectionner des nœuds, extraire des informations, ou encore effectuer des tests.
-
-Les expressions XPath peuvent aussi être utiles pour naviguer précisément dans des documents XML en créant des pointeurs hypertextes sophistiqués dans le contexte du langage XPointer.
-
-Plusieurs utilisations de XPath sont donc possibles
-- pour désigner des ensembles de nœuds dans une transformation XSLT
-- pour contrôler la qualité d’un document XML (exploration, analyse, vérification)
-- pour paralléliser des textes
-
- XPath est donc un langage ensembliste qui vous permet de désigner des ensembles de nœuds à l’intérieur d’un arbre XML.
-
----
-
-.left-column[
-  ## Historique
-]
-.right-column[
-
-- première version du langage publiée en 1999
-
-- immédiatement utilisée par **XSLT 1.0**
-
-- premier langage de la famille XML à opérer sur un modèle de données
-
-- seconde version du langage spécifiée en 2007
-
-- support aux langages **XSLT 2.0** et **XQuery 1.0**
-
-- s’appuie sur **XML Data Model** publié la même année[*]
-
-
-.footnote[.red[**] [XML Path Language (XPath) 2.0](http://www.w3.org/TR/xpath20/), [XQuery 1.0 and XPath 2.0 Data Model (XDM)](http://www.w3.org/TR/xpath-datamodel/), [XSL Transformations (XSLT) Version 2.0](http://www.w3.org/TR/xslt20/)]
-]
-
-???
-
-### Historique
-La première version du langage a été publiée en 1999 et fut immédiatement utilisée par XSLT 1.0.
-
-XPath est le premier langage de la famille XML à avoir opéré sur un **modèle de données** au sens d’un cadre formel permettant la représentation et la manipulation de données. La description de la version 1.0 de ce langage, publiée en 1999, contient en effet la description d’un modèle de données très simple où un document XML est représenté comme un arbre pouvant être composé de **sept types de nœuds**.
-
-La seconde version du langage, XPath 2.0, a été spécifiée en 2007 et a servi de support aux langages XSLT 2.0 et XQuery 1.0.
-
-La seconde version de XPath, s’appuie sur XML Data Model publié en même temps que la spécification XPath 2.0.
-
----
-.left-column[
-  ## Programme
-]
-.right-column[
-
-### [le modèle de données XML](xpath01.html)
-
-### [les expressions XPath](xpath02.html)
-
-### [évaluation des expressions](xpath03.html)
-
-### [fonctions XPath](xpath03.html)
-]
-
-???
-### Programme de l’après-midi
-Une des caractéristiques essentielles du langage XPath, est qu’il s’appuie sur un modèle de données (XPath/XQuery pour la version 2.0) dont la connaissance est essentielle pour une bonne compréhension du langage.
-
-Il s’agit d’un véritable langage fonctionnel typé. Ainsi, l’utilisateur manipule des expressions et non des instructions, et l’évaluation de ces expressions produit des valeurs appartenant à des types définis dans un système de types. La version 2.0 langage intègre le riche système de types de XML Schema.
-
-Au cours de cette première présentation, nous commencerons par examiner le modèle de données XML, puis nous aborderons les diverses expressions XPath et de leur types, avant de nous concentrer sur des expressions servant à décrire des chemins pour sélectionner des ensembles de nœuds dans un arbre XML.
-
----
-template: inverse
-
-## Les nœuds dans le modèle XDM
+XDM se situe dans la famille des modèles hiérarchique, il en existe d’autres comme le modèle relationnel, les modèles de graphe ou en réseau, les modèles orientés-objets, etc.
 
 ---
 layout: false
 .left-column[
 ## Les nœuds dans le modèle [XDM](http://www.w3.org/TR/xpath-datamodel/)
-####(rappel)
 ]
 
 .right-column[
-XDM considère un document XML comme une structure d’arbre pouvant être composée de sept types de nœuds.
+XDM considère un document XML comme une structure d’arbre pouvant être composée de **sept types de nœuds**.
 
 - `document node` (nœud document)
 - `element node` (nœud élément)
@@ -163,7 +80,32 @@ Ces **nœud** sont les sept types de nœuds définis dans le modèle de données
 - `namespace node` (nœud espace de nom)
 
 ---
-layout: false
+
+.left-column[
+## Le modèle [XDM](http://www.w3.org/TR/xpath-datamodel/)
+### (suite)
+]
+
+.right-column[
+## Les composants du modèle de données de XML
+![composants](../images/composants.svg)
+]
+
+???
+Une autre manière possible de visualiser les différentes composantes définies par le modèle de données XML.
+
+### identité d’un nœud
+Chaque nœud possède une identité unique. On peut avoir deux nœuds avec le même nom et le même contenu dans le document source, mais cela ne signifie pas qu’ils auront la même identité. L’identité est unique pour chaque nœud, elle est affectée par le processeur.
+
+### nom
+En outre, les éléments et les attributs possèdent un nom. Ces noms sont accessibles à l’aide des fonctions `node-name()`, `name()`, `local-name()`
+
+### Valeur textuelle
+Les nœuds peuvent avoir deux types de valeur, une valeur de chaîne et une valeur typée. Tous les nœuds ont un contenu textuel (string value). La valeur textuelle d’un élément est la concaténation des données caractères de cet élément et de ses descendants.
+
+On peut accéder à la valeur textuelle d’un élément avec la fonction `string()`
+
+---
 .left-column[
 ## Les nœuds dans le modèle [XDM](http://www.w3.org/TR/xpath-datamodel/)
 ####(rappel)
@@ -231,9 +173,37 @@ Autrement dit, les nœuds qui sont accessibles lors d’une session de travail s
 
 - l’ordre des nœuds `namespace` et `attribute` dépend de l’implantation
 
+---
+.left-column[
+## Le modèle [XDM](http://www.w3.org/TR/xpath-datamodel/)
+### (suite)
+]
+
+.right-column[
+## Les nœuds ont une .red[identité] :
+
+Deux nœuds créés par deux expressions différentes sont distincts même s’ils ont le même nom, les mêmes fils, etc.
+
+## Aux nœuds sont attachées différentes propriétés :
+
+Par exemple, pour chaque type de nœud, il est possible de déterminer ce que l’on appelle sa .red[valeur de chaîne] (`string value`) qui correspond schématiquement à son contenu textuel.
+
+On peut encore extraire d’un nœud sa .red[valeur typée] (`typed value`), son nom qualifié, etc.
+]
+
+???
+Les nœuds ont une identité. Deux nœuds créés par deux expressions différentes sont distincts même s’ils ont le même nom, les mêmes fils, etc.
+
+Aux nœuds sont attachées différentes propriétés :
+
+Par exemple, pour chaque type de nœud, il est possible de déterminer ce que l’on appelle sa valeur de chaîne (`string value`) qui correspond schématiquement à son contenu textuel.
+
+On peut encore extraire d’un nœud sa valeur typée (`typed value`), son nom qualifié, etc.
+
+Globalement : se souvenir qu’un nœud possède un nom, et une valeur textuelle à laquelle on pourra accéder à l’aide d’une expression XPath
 
 ---
-class: inverse
+template: inverse
 class: center middle
 
 ## Exercice 01

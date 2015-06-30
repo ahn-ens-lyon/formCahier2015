@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+   @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ 
+    fichier inclus des notes d’édition critique de C2 
+   @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ 
+-->
+<!-- RMQ fichier inclus pour faciliter le travail d’édition -->
+<!-- RMQ : identifiants composés de l’identifiant dans le corpus, suivi de Nc pour notes critiques, suivi d’un numéro d’ordre à quatre unités -->
+
+<!-- les liens bibliographiques étaient précédemment posés avec <ref type="biblio" target="#xxx"/>, il nous paraît plus explicite d’utiliser bibl avec un attribut copyOf à la place de ref -->
+
+<div xmlns="http://www.tei-c.org/ns/1.0" type="notesCritical" xml:id="c2BackFr02"
+    xml:lang="fre">
+    <head>Notes d’édition critique</head>
+    <note xml:id="c2Nc0001">
+        <p>« Or Caïn dit à son frère Abel : Sortons dehors. Et lorsqu’ils furent dans
+            les champs, Caïn se jeta sur son frère Abel, et le tua. », <bibl
+                copyOf="#BibleRondet"/>, Chapitre 4, verset 8.</p>
+    </note>
+    <note xml:id="c2Nc0002">
+        <!-- TODO : reprendre -->
+        <p><bibl corresp="#rykwert1976"/>, p. 30. et <bibl corresp="#vidler1995"
+            />.
+            Chercher ici les sources de Desgodets pour citer l’exemple du Nord.
+            Comparer également avec d’autres traités.</p>
+        <p>La référence au climat est notable.</p>
+    </note>
+    <note xml:id="c2Nc0003">
+        <p>Hénoch, « Et ayant connu sa femme, elle conçut et enfanta Hénoch. Il bâtit
+            ensuite une ville qu’il appela Hénoch, du nom de son fils. », <bibl
+                copyOf="#BibleRondet">op. cit.</bibl>, chapitre IV, verset 17.</p>
+    </note>
+    <note xml:id="c2Nc0004">
+        <p><bibl corresp="#Fleury"/>, livre...</p>
+    </note>
+
+    <note xml:id="c2Nc1001">
+        <p>Écrit "garderobe".</p>
+    </note>
+</div>

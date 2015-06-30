@@ -1,0 +1,1337 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<!-- fichier inclus de liste des figures de C2 -->
+<!-- RMQ le fichier est traité en fichier inclus pour faciliter le travail d’édition sur le document. -->
+<!-- figDesc est destiné à accueillir la légende normalisée des figures -->
+<!--La lettre des planches est pour ainsi dire identique, on peut simplement dire que les dessins du manuscrit C2 de la Bnf sont plus habiles que ceux du manuscrit C1 du Rijk. Parfois les deux manuscrits reproduisent les mêmes erreurs dans le titre des planches (pour le titre "églises monacale" par exemple) et il manque dans les deux témoins la planche IX des "Églises cathédrales". En revanche le volume C1 présente une erreur de numérotation c1Pl0012 absente de C2. Par ailleurs, dans C2, à la planche c2Pl0028, figure rayé un numéo "93" qui est celui de la même page dans C1, c’est aussi le cas aux planches c2Pl0040 et c2Pl0041 où figurent rayés les numéros 133 et 136 qui sont les numéros de page de C1. Les proportions du dessin des modénatures étant plus précises dans C2. Il semble que la première figure manque dans C1, mais cela est peut-être dû à une lacune dans la reproduction. Sous réserve d’une analyse textuelle et d’une vérification du manuscrit C1, il est probable que ces deux manuscrits aient été copiés d’une même source, le manuscrit C1 reproduisant exactement l’original et donc sa pagination. Le fait que l’on constate la même lacune dans les deux volumes pour la planche numéro IX du chapitre des Églises cathédrales tend à confirmer cette hypothèse. -->
+<div xmlns="http://www.tei-c.org/ns/1.0" type="figures" xml:id="c2BackFr03"
+    xml:lang="fre">
+    <head>Liste des figures</head>
+    <!-- *********************** -->
+    <!-- Ière partie, Chapitre I -->
+    <!-- *********************** -->
+    <figure xml:id="c2Pl0001" type="plate" facs="#c2FacsPl0001">
+        <!-- la partie encadrée est traitée comme un titre courant -->
+        <fw type="plateNum"><num n="1">I</num> dessein.</fw>
+        <fw type="header"><hi rend="capital"> Description</hi> des anciennes <hi
+                rend="capital">églises</hi>.</fw>
+        <fw type="chapterNum">Ch. <num n="1">I<hi rend="superscript">re</hi></num></fw>
+        <!-- TODO: Essayer d’encoder la numérotation -->
+        <head>Plan de lancienne Église de <placeName ref="#tyr">Tyr</placeName></head>
+        <!-- élément vide figDesc destiné à accueillir les légendes normalisées -->
+        <!-- essai d’encodage avec msDesc dans figDesc -->
+        <!-- <figDesc> <msDesc> <msIdentifier copyOf="#c2msIdentifier" /> <msContents> <msItemStruct> <locus from="#c2F9v" to="#c2F10" /> <author> <persName xml:lang="fre" full="yes">Desgodets, Antoine (1653-1728)</persName> </author> <respStmt> <resp key="com">compillateur</resp> <persName xml:lang="fre"> <forename>Jean</forename> <surname>Pinard</surname> </persName> </respStmt> <respStmt> <resp key="acp">artiste copiste</resp> <persName xml:lang="fre"> <forename>Jean</forename> <surname>Pinard</surname> </persName> </respStmt> <title type="supplied">Titre de la planche</title> </msItemStruct> </msContents> <physDesc> <objectDesc> <supportDesc> <support> <objectType>page du manuscrit</objectType> <material>papier</material> <watermark>raisins similaire à <ref>[référence]</ref>, <date>1570-1758</date></watermark> </support> <extent> <dimensions type="leaves"> <dim quantity="2" unit="leaves">1 folio</dim> <height quantity="410" unit="mm" /> <width quantity="250" unit="mm" /> <depth quantity="4" unit="mm" /> </dimensions> </extent> </supportDesc> </objectDesc> <decoDesc> <decoNote>dessin au lavis et mine de plomb</decoNote> </decoDesc> </physDesc> <history> <origin> <origDate>c. 1726</origDate> </origin> </history> </msDesc> </figDesc> -->
+        <!-- essai d’encodage directement dans figDesc -->
+        <!-- <figDesc> <title><num>figure 1</num>titre de la figure</title> <desc>texte de description</desc> <locus from="#c2F9v" to="#c2F10">folio f9v à f10</locus> <dimensions> <height quantity="999" unit="mm" /> <width quantity="999" unit="mm" /> </dimensions> <material>papier</material> </figDesc>-->
+        <!-- on a hésité à fournir la légende dans teiHeader, decoNote avec locus, ou msItem -->
+        <!-- la solution retenue est la suivante, plus directe et plus simple -->
+        <figDesc>
+            <locus from="#c2F6v" n="p10">p. 10</locus>
+            <label>
+                <num n="1">1</num>
+            </label>
+            <title>Plan de l’ancienne église de <placeName ref="#tyr"
+                >Tyr</placeName></title>
+            <desc>plume et encre noire</desc>
+            <dimensions>
+                <height quantity="21" unit="mm"/>
+                <width quantity="42" unit="mm"/>
+            </dimensions>
+        </figDesc>
+        <note>« 6 » barré en haut</note>
+    </figure>
+    <figure xml:id="c2Pl0002" type="plate" facs="#c2FacsPl0002">
+        <fw type="plateNum"><num n="2">II</num> dessein.</fw>
+        <fw type="header"><hi rend="capital">Description</hi> des anciennes <hi
+                rend="capital">églises</hi></fw>
+        <fw type="chapterNum">Ch <num n="1">I<hi rend="superscript">re</hi></num></fw>
+        <head>Plan de léglise de <placeName ref="#romeSteSabine"
+                >sainte Sabine <lb/>À Rome</placeName></head>
+        <figDesc>
+            <locus from="#c2F9v" n="p16">p. 16</locus>
+            <label>
+                <num n="2">2</num>
+            </label>
+            <title>Plan de l’<placeName ref="#romeSteSabine"
+                    >église de Sainte-Sabine à Rome</placeName></title>
+            <desc>plume et encre noire, lavis</desc>
+            <dimensions>
+                <height quantity="21" unit="mm"/>
+                <width quantity="42" unit="mm"/>
+            </dimensions>
+        </figDesc>
+    </figure>
+    <!--<pb xml:id="c2F11v" n="p20"/>-->
+    <figure xml:id="c2Pl0003" type="plate" facs="#c2FacsPl0003">
+        <fw type="plateNum"><num n="3">III.</num> dessein</fw>
+        <fw type="header"><hi rend="capital"> Description</hi> des anciennes <hi
+                rend="capital">églises</hi></fw>
+        <fw type="chapterNum">Ch. <num n="1">I</num></fw>
+        <head>Profil sur la longeur de l’<placeName ref="#romeSteSabine"
+                >église de Sainte Sabine<lb/> À Rôme</placeName></head>
+        <figDesc>
+            <locus from="#c2F11v" n="p20">p. 20</locus>
+            <label>
+                <num n="3">3</num>
+            </label>
+            <title>Coupe sur la longueur de l’église de <placeName ref="#romeSteSabine"
+                    >Sainte-Sabine</placeName></title>
+            <desc>plume et lavis, encres noire, jaune et rouge</desc>
+            <dimensions>
+                <height quantity="21" unit="mm"/>
+                <width quantity="42" unit="mm"/>
+            </dimensions>
+        </figDesc>
+    </figure>
+    <!-- On subdivise la planche en plusieurs figures. -->
+    <!--<pb xml:id="c2F13r" n="p23"/>-->
+    <figure xml:id="c2Pl0004" type="plate" facs="#c2FacsPl0004">
+        <fw type="plateNum"><num n="4">IIII.</num> dessein</fw>
+        <fw type="header"><hi rend="capital"> Description</hi> des anciennes <hi
+                rend="capital">églises</hi></fw>
+        <fw type="chapterNum">Ch. <num n="1">I</num></fw>
+        <figDesc>
+            <locus from="#c2F13r" n="p23">p. 23</locus>
+            <label>
+                <num n="4">4</num>
+            </label>
+            <title>Face, coupe et profil de la base des colonnes qui séparent la nef des bas-côtés.</title>
+            <desc>plume et lavis, encres noire, jaune et rouge</desc>
+            <dimensions>
+                <height quantity="21" unit="mm"/>
+                <width quantity="42" unit="mm"/>
+            </dimensions>
+        </figDesc>
+        <figure xml:id="c2Fig0004.01">
+            <head>Profil, sur la longeur de L’église de S<hi rend="superscript"
+                    >te</hi> Sabine à Rome <lb/><num n="1">I <choice>
+                        <choice>
+                            <abbr>Fig.<hi rend="superscript">e</hi></abbr>
+                            <expan>Figure</expan>
+                        </choice>
+                        <expan>Figure</expan>
+                    </choice></num></head>
+            <figDesc>
+                <label>
+                    <num n="1">1</num>
+                </label>
+                <title>Coupe sur la longueur de l’<placeName ref="#romeSteSabine"
+                        >église Sainte-Sabine</placeName></title>
+                <dimensions/>
+            </figDesc>
+        </figure>
+        <figure xml:id="c2Fig0004.03">
+            <head>Desseins des chapiteaux de Colonne qui Séparent la Nef des Latereaux <lb/>Profil Sur la Diagonale Et par le Milieu <lb/>Dessein de la face <num
+                    n="3">III <choice>
+                        <abbr>Fig.<hi rend="superscript">e</hi></abbr>
+                        <expan>Figure</expan>
+                    </choice>
+                </num></head>
+            <figDesc>
+                <label>
+                    <num n="3">3</num>
+                </label>
+                <title>Face, coupe et profil des chapiteaux qui séparent la nef des bas-côtés</title>
+                <dimensions/>
+            </figDesc>
+        </figure>
+        <figure xml:id="c2Fig0004.02">
+            <head><num n="2">II Figure</num>
+                <lb/>Base des Colonnes qui Séparent la Nef des latéreaux</head>
+            <figDesc>
+                <label>
+                    <num n="2">2</num>
+                </label>
+                <title>Profil de la base des colonnes qui séparent la nef des latéraux</title>
+                <dimensions/>
+            </figDesc>
+        </figure>
+    </figure>
+    <!--<pb xml:id="c2F15r" n="p27"/>-->
+    <figure xml:id="c2Pl0005" type="plate" facs="#c2FacsPl0005">
+        <fw type="plateNum"><num n="5">V</num> dessein</fw>
+        <fw type="header"><hi rend="capital"> Description</hi> des anciennes <hi
+                rend="capital">églises</hi></fw>
+        <fw type="chapterNum">Ch <num n="1">I</num></fw>
+        <head>Plan de l’église de <choice>
+                <abbr>S<hi rend="superscript">te</hi></abbr>
+                <expan>Sainte</expan>
+            </choice> Marie, Intrastéveré, à Rome</head>
+        <figDesc>
+            <locus from="#c2F15r" n="p27">p. 27</locus>
+            <label>
+                <num n="5">5</num>
+            </label>
+            <title>Plan de l’<placeName ref="#romeSteMarieInTrastevere"
+                    >église Sainte-Marie-in-Trastevere</placeName> à Rome</title>
+            <desc>plume et encre noire</desc>
+            <dimensions>
+                <height quantity="21" unit="mm"/>
+                <width quantity="42" unit="mm"/>
+            </dimensions>
+        </figDesc>
+    </figure>
+    <!--<pb xml:id="c2F17v" n="p32"/>-->
+    <figure xml:id="c2Pl0006" type="plate" facs="#c2FacsPl0006">
+        <fw type="plateNum"><num n="6">VI</num> dessein</fw>
+        <fw type="header"><hi rend="capital">Description</hi> des anciennes <hi
+                rend="capital">églises</hi></fw>
+        <fw type="chapterNum">Ch <num n="1">I</num></fw>
+        <head>Profil Sur la longeur de l’église <choice>
+                <abbr>S<hi rend="superscript">te</hi></abbr>
+                <expan>Sainte</expan>
+            </choice> Marie Jntrasteueré À Rome</head>
+        <figDesc>
+            <locus from="#c2F17v" n="p32">p. 32</locus>
+            <label>
+                <num n="6">6</num>
+            </label>
+            <title>Coupe sur la longueur de l’<placeName
+                    ref="#romeSteMarieInTrastevere"
+                    >église Sainte-Marie-in-Trastevere</placeName> à Rome</title>
+            <desc>plume et lavis, encres noire, jaune et rouge</desc>
+            <dimensions>
+                <height quantity="21" unit="mm"/>
+                <width quantity="42" unit="mm"/>
+            </dimensions>
+        </figDesc>
+    </figure>
+    <!--<pb xml:id="c2F19r" n="p35"/>-->
+    <figure xml:id="c2Pl0007" type="plate" facs="#c2FacsPl0007">
+        <fw type="plateNum"><num n="7">VII</num> dessein.</fw>
+        <fw type="header"><hi rend="capital"> Description</hi> des anciennes <hi
+                rend="capital">églises</hi></fw>
+        <fw type="chapterNum">Ch <num n="1">I</num></fw>
+        <figDesc>
+            <locus from="#c2F19r" n="p35">p. 35</locus>
+            <label>
+                <num n="7">7</num>
+            </label>
+            <title>Coupe transversale, profil de l’entablement de la nef et profil du chambranle de la porte d’entrée de l’<placeName
+                    ref="#romeSteMarieInTrastevere"
+                    >église Sainte-Marie-in-Trastevere</placeName> à Rome</title>
+            <desc>plume et lavis, encres noire, jaune et rouge</desc>
+            <dimensions>
+                <height quantity="21" unit="mm"/>
+                <width quantity="42" unit="mm"/>
+            </dimensions>
+        </figDesc>
+        <figure xml:id="c2Fig0007.01">
+            <head>Profil sur la largeur de l’église de Sainte Marie Instrasteveré à Rome <lb/><num
+                    n="1">1<hi rend="superscript">ère</hi> figure</num></head>
+            <figDesc>
+                <label>
+                    <num n="1">1</num>
+                </label>
+                <title>Coupe transversale</title>
+                <dimensions/>
+            </figDesc>
+        </figure>
+        <figure xml:id="c2Fig0007.02">
+            <head>Profil de l’entablemens sur les colomnes qui séparent la nef des lattéreaux <lb/><num
+                    n="2">II figure</num></head>
+            <figDesc>
+                <label>
+                    <num n="2">2</num>
+                </label>
+                <title>Profil de l’entablement sur les colonnes qui sépartent la nef des collatéraux</title>
+                <dimensions/>
+            </figDesc>
+        </figure>
+        <figure xml:id="c2Fig0007.03">
+            <head>Profil du chambranle de <lb/>la grande porte de l’entré de l’église <lb/><num
+                    n="2">III figure</num>
+                <lb/>Rez de chaussée, du porche ou portique.</head>
+            <figDesc>
+                <label>
+                    <num n="3">3</num>
+                </label>
+                <title>Profil chambranle de la grande porte d’entrée</title>
+                <dimensions/>
+            </figDesc>
+        </figure>
+    </figure>
+    <!--<pb xml:id="c2F22r" n="p41"/>-->
+    <figure xml:id="c2Pl0008" type="plate" facs="#c2FacsPl0008">
+        <fw type="plateNum"><num n="8">VIII</num> dessein</fw>
+        <fw type="header"><hi rend="capital">Description</hi> des anciennes <hi
+                rend="capital">églises</hi></fw>
+        <fw type="chapterNum">Cha <num n="1">I</num></fw>
+        <figDesc>
+            <locus from="#c2F22r" n="p41">p. 41</locus>
+            <label>
+                <num n="8">8</num>
+            </label>
+            <title>Plans, coupes, et élévations d’autels dans les anciennes églises</title>
+            <desc>plume et lavis, encres noire, jaune et rouge</desc>
+            <dimensions>
+                <height quantity="21" unit="mm"/>
+                <width quantity="42" unit="mm"/>
+            </dimensions>
+        </figDesc>
+        <figure xml:id="c2Fig0008.01">
+            <head>
+                <num n="1">I<hi rend="superscript">e</hi> Fig<hi rend="superscript"
+                        >e</hi></num>
+            </head>
+            <!-- TODO: traiter les abréviations -->
+            <!-- TODO: identifier les zones -->
+            <figDesc>
+                <label>
+                    <num n="1">1</num>
+                </label>
+                <title>Plan d’un autel</title>
+                <dimensions/>
+            </figDesc>
+        </figure>
+        <figure xml:id="c2Fig0008.02">
+            <head>
+                <num n="2">II<hi rend="superscript">e</hi> Fig<hi rend="superscript"
+                        >e</hi></num>
+            </head>
+            <figDesc>
+                <label>
+                    <num n="2">2</num>
+                </label>
+                <title>Coupe d’un autel</title>
+                <dimensions/>
+            </figDesc>
+        </figure>
+        <figure xml:id="c2Fig0008.03">
+            <head>
+                <num n="3">III<hi rend="superscript">e</hi> Fig<hi rend="superscript"
+                        >e</hi></num>
+            </head>
+            <figDesc>
+                <label>
+                    <num n="3">3</num>
+                </label>
+                <title>Élévation d’un autel</title>
+                <dimensions/>
+            </figDesc>
+        </figure>
+        <figure xml:id="c2Fig0008.04">
+            <head>
+                <num n="4">IV<hi rend="superscript">e</hi> Fig<hi rend="superscript"
+                        >e</hi></num>
+            </head>
+            <figDesc>
+                <label>
+                    <num n="4">4</num>
+                </label>
+                <title>Élévation d’un autel</title>
+                <dimensions/>
+            </figDesc>
+        </figure>
+        <figure xml:id="c2Fig0008.05">
+            <head>
+                <num n="5">V<hi rend="superscript">e</hi> Fig<hi rend="superscript"
+                        >e</hi></num>
+            </head>
+            <figDesc>
+                <label>
+                    <num n="5">5</num>
+                </label>
+                <title>Plan d’un autel avec baldaquin</title>
+                <dimensions/>
+            </figDesc>
+        </figure>
+        <figure xml:id="c2Fig0008.06">
+            <head>
+                <num n="6">VI<hi rend="superscript">e</hi> Fig<hi rend="superscript"
+                        >e</hi></num>
+            </head>
+            <figDesc>
+                <label>
+                    <num n="6">6</num>
+                </label>
+                <title>Élévation d’un autel avec baldaquin</title>
+                <dimensions/>
+            </figDesc>
+        </figure>
+        <figure xml:id="c2Fig0008.07">
+            <head>
+                <num n="7">VII<hi rend="superscript">e</hi> Fig<hi rend="superscript"
+                        >e</hi></num>
+            </head>
+            <figDesc>
+                <label>
+                    <num n="7">7</num>
+                </label>
+                <title>Coupe d’un autel avec baldaquin</title>
+                <dimensions/>
+            </figDesc>
+        </figure>
+        <figDesc/>
+    </figure>
+    <!--<pb xml:id="c2F25v" n="p48"/>-->
+    <figure xml:id="c2Pl0009" type="plate" facs="#c2FacsPl0009">
+        <fw type="header"><num n="9">IX dessein</num>
+            <hi rend="capital"> Description</hi> des anciennes <hi rend="capital"
+                >églises</hi> Cha. I</fw>
+        <figDesc>
+            <locus from="#c2F25v" n="p48">p. 48</locus>
+            <label>
+                <num n="9">9</num>
+            </label>
+            <title>Plan et élévation du <placeName
+                    ref="#romeSanGiovanniInFonteAlLaterano"
+                    >baptistère de Constantin</placeName> à Rome</title>
+            <desc>plume et lavis, encres noire, jaune et rouge</desc>
+            <dimensions>
+                <height quantity="21" unit="mm"/>
+                <width quantity="42" unit="mm"/>
+            </dimensions>
+        </figDesc>
+        <figure xml:id="c2Fig0009.01">
+            <head>
+                <num n="1">I<hi rend="superscript">e</hi> Fig<hi rend="superscript"
+                        >e</hi></num>
+            </head>
+            <figDesc>
+                <label>
+                    <num n="1">1</num>
+                </label>
+                <title>Plan du <placeName ref="#romeSanGiovanniInFonteAlLaterano"
+                        >baptistère de Constantin</placeName> à Rome</title>
+            </figDesc>
+        </figure>
+        <figure xml:id="c2Fig0009.02">
+            <head>
+                <num n="2">II Fig<hi rend="superscript">e</hi></num>
+            </head>
+        </figure>
+        <figDesc>
+            <label>
+                <num n="2">2</num>
+            </label>
+            <title>Plan du <placeName ref="#romeSanGiovanniInFonteAlLaterano"
+                    >baptistère de Constantin</placeName> à Rome</title>
+        </figDesc>
+    </figure>
+    <!-- ************************ -->
+    <!-- Ière partie, Chapitre II -->
+    <!-- ************************ -->
+    <!--<pb xml:id="c2F27v" n="p52"/>-->
+    <figure xml:id="c2Pl0010" type="plate" facs="#c2FacsPl0010">
+        <fw type="header"><num n="1">I dessein</num>
+            <hi rend="capital"> Église cathédrale</hi> Cha. II Section. I</fw>
+        <figDesc>
+            <locus from="#c2F27v" n="p52">p. 52</locus>
+            <label>
+                <num n="10">10</num>
+            </label>
+            <title>Plan de l’<term target="#egliseCathedrale"
+                >église cathédrale</term></title>
+            <desc>plume et encre noire</desc>
+            <dimensions>
+                <height quantity="21" unit="mm"/>
+                <width quantity="42" unit="mm"/>
+            </dimensions>
+        </figDesc>
+    </figure>
+    <!--<pb xml:id="c2F33v" n="p64"/>-->
+    <figure xml:id="c2Pl0011" type="plate" facs="#c2FacsPl0011">
+        <fw type="header"><num n="2">II dessein</num>
+            <hi rend="capital"> Église cathédrale</hi> Cha. II Section. I</fw>
+        <head>Plan des murs et fondations et des caves sous l’église</head>
+        <figDesc>
+            <locus from="#c2F33v" n="p64">p. 64</locus>
+            <label>
+                <num n="11">11</num>
+            </label>
+            <title>Plan des <term type="gT" ref="#cave">caves</term> et <term type="gT"
+                    ref="#fondation">fondations</term> de l’<term type="gT"
+                    target="#egliseCathedrale">église cathédrale</term></title>
+            <desc>plume et encre noire</desc>
+            <dimensions>
+                <height quantity="21" unit="mm"/>
+                <width quantity="42" unit="mm"/>
+            </dimensions>
+        </figDesc>
+    </figure>
+    <!--<pb xml:id="c2F35v" n="p68"/>-->
+    <figure xml:id="c2Pl0012" type="plate" facs="#c2FacsPl0012">
+        <fw type="header"><num n="3">III dessein</num>
+            <hi rend="capital"> Église cathédrale</hi> Cha. II Section. I</fw>
+        <figDesc>
+            <locus from="#c2F35v" n="p68">p. 68</locus>
+            <label>
+                <num n="12">12</num>
+            </label>
+            <title>Plan du <term type="gT" ref="#chevet"
+                    >chevet</term>, coupe transversale, et profil des <term type="gT"
+                    ref="#architrave">architraves</term> des <term type="gT"
+                    ref="#collateral">collatéraux</term> de l’<term type="gT"
+                    target="#egliseCathedrale">église cathédrale</term></title>
+            <desc>plume et lavis, encres noire, jaune et rouge</desc>
+            <dimensions>
+                <height quantity="21" unit="mm"/>
+                <width quantity="42" unit="mm"/>
+            </dimensions>
+        </figDesc>
+        <figure xml:id="c2Fig0012.01">
+            <head>
+                <num n="1">I<hi rend="superscript">e</hi> Figure</num>
+            </head>
+            <figDesc>
+                <label>
+                    <num n="1">1</num>
+                </label>
+                <title>Plan du <term type="gT" ref="#chevet">chevet</term> de l’<term
+                        type="gT" target="#egliseCathedrale"
+                    >église cathédrale</term></title>
+            </figDesc>
+
+        </figure>
+        <figure xml:id="c2Fig0012.02">
+            <head>
+                <num n="2">II<hi rend="superscript">e</hi> Figure</num>
+            </head>
+            <figDesc>
+                <label>
+                    <num n="2">2</num>
+                </label>
+                <title>Coupe transversale l’<term type="gT" ref="#egliseCathedrale"
+                        >église cathédrale</term></title>
+            </figDesc>
+        </figure>
+        <figure xml:id="c2Fig0012.03">
+            <head><num n="3">III<hi rend="superscript">e</hi> Figure</num>
+                <lb/>Profil des architraves <lb/>latérales</head>
+            <figDesc>
+                <label>
+                    <num n="3">3</num>
+                </label>
+                <title>Profil des <term type="gT" ref="#architrave"
+                        >architraves</term> des <term type="gT" ref="#collateral"
+                        >collatéraux</term> de l’<term type="gT"
+                        ref="#egliseCathedrale">église cathédrale</term></title>
+            </figDesc>
+        </figure>
+    </figure>
+    <!--<pb xml:id="c2F40r" n="p77"/>-->
+    <figure xml:id="c2Pl0013" type="plate" facs="#c2FacsPl0013">
+        <fw type="header"><num n="4">IIII dessein.</num>
+            <hi rend="capital">Église cathédrale</hi> Cha. II Section. I</fw>
+        <figDesc>
+            <locus from="#c2F40r" n="p77">p. 77</locus>
+            <label>
+                <num n="13">13</num>
+            </label>
+            <title>Plan du <term type="gT" ref="#premierEtage"
+                    >premier étage</term> de l’<term type="gT" ref="#egliseCathedrale"
+                    >église cathédrale</term></title>
+            <desc>plume et lavis, encres noire et bleue</desc>
+            <dimensions>
+                <height quantity="21" unit="mm"/>
+                <width quantity="42" unit="mm"/>
+            </dimensions>
+        </figDesc>
+    </figure>
+    <!--<pb xml:id="c2F42v" n="p82"/>-->
+    <figure xml:id="c2Pl0014" type="plate" facs="#c2FacsPl0014">
+        <fw type="header"><num n="5">V dessein.</num>
+            <hi rend="capital"> Église cathédrale</hi> Cha. II Section. I</fw>
+        <figDesc>
+            <locus from="#c2F42v" n="p82">p. 82</locus>
+            <label>
+                <num n="14">14</num>
+            </label>
+            <title>Plans du <term type="gT" ref="#dome"
+                    >dôme</term> et élévation de la façade principale de l’<term
+                    type="gT" ref="#egliseCathedrale">église cathédrale</term></title>
+            <desc>plume et lavis, encres noire, jaune et bleue</desc>
+            <dimensions>
+                <height quantity="21" unit="mm"/>
+                <width quantity="42" unit="mm"/>
+            </dimensions>
+        </figDesc>
+        <figure xml:id="c2Fig0014.01">
+            <head>Plan du Soubassement du dôme <lb/><num n="1">I Figure</num></head>
+            <figDesc>
+                <label>
+                    <num n="1"/>
+                    <title>Plan du <term type="gT" ref="#sousbassement"
+                            >sousbassement</term> du <term type="gT" ref="#dome"
+                            >dôme</term> de l’<term type="gT" ref="#egliseCathedrale"
+                            >église cathédrale</term></title>
+                    <!-- TODO vérifier si sousbassement est adapté -->
+                </label>
+            </figDesc>
+        </figure>
+        <figure xml:id="c2Fig0014.02">
+            <head>Plan du Corps du dôme <lb/><num n="2">II. Figure</num></head>
+            <figDesc>
+                <label>
+                    <num n="2"/>
+                </label>
+                <title>Plan du <term type="gT" ref="#tambour"
+                        >tambour</term> du dôme de l’<term type="gT"
+                        ref="#egliseCathedrale">église cathédrale</term></title>
+            </figDesc>
+        </figure>
+        <figure xml:id="c2Fig0014.03">
+            <head>
+                <num n="3">III Figure</num>
+            </head>
+            <figDesc>
+                <label>
+                    <num n="3"/>
+                </label>
+                <title>Plan de la <term type="gT" ref="#lanterne"
+                        >lanterne</term> du dôme de l’<term type="gT"
+                        ref="#egliseCathedrale">église cathédrale</term></title>
+            </figDesc>
+        </figure>
+        <figure xml:id="c2Fig0014.04">
+            <head>Élévation de la face de l’entré principalle <lb/><num n="4"
+                    >IV Figure</num></head>
+            <figDesc>
+                <label>
+                    <num n="4"/>
+                </label>
+                <title>Élévation de la façade principale de l’<term type="gT"
+                        ref="#egliseCathedrale">église cathédrale</term></title>
+            </figDesc>
+        </figure>
+        <!-- Sur C1, lettres V pour la porte, et X pour les dessous des niches du Rch. -->
+    </figure>
+    <!--<pb xml:id="c2F47r" n="p91"/>-->
+    <figure xml:id="c2Pl0015" type="plate" facs="#c2FacsPl0015">
+        <fw type="header"><num n="6">VI dessein.</num>
+            <hi rend="capital"> Église cathédrale</hi> Cha. II Section. I</fw>
+        <head>Élévation du flanc ou face de Costé.</head>
+        <figDesc>
+            <locus from="#c2F47r" n="p91">p. 91</locus>
+            <label>
+                <num n="15">15</num>
+            </label>
+            <title>Élévation latérale  de l’<term type="gT" ref="#egliseCathedrale"
+                    >église cathédrale</term></title>
+            <desc>plume et lavis, encres noire, jaune et bleue</desc>
+            <dimensions>
+                <height quantity="21" unit="mm"/>
+                <width quantity="42" unit="mm"/>
+            </dimensions>
+        </figDesc>
+    </figure>
+    <!--<pb xml:id="c2F49v" n="p96"/>-->
+    <figure xml:id="c2Pl0016" type="plate" facs="#c2FacsPl0016">
+        <fw type="header"><num n="7">VII dessein.</num>
+            <hi rend="capital"> Église cathédrale</hi> Cha. II Section. I</fw>
+        <figDesc>
+            <locus from="#c2F49v" n="p96">p. 96</locus>
+            <label>
+                <num n="16">16</num>
+            </label>
+            <title>Coupe transversale au niveau de la croisée du <term type="gT"
+                    ref="#transept">transept</term> de l’<term type="gT"
+                    ref="#egliseCathedrale">église cathédrale</term></title>
+            <desc>plume et lavis, encres noire, rouge et jaune</desc>
+            <dimensions>
+                <height quantity="21" unit="mm"/>
+                <width quantity="42" unit="mm"/>
+            </dimensions>
+        </figDesc>
+    </figure>
+    <!--<pb xml:id="c2F53v" n="p104"/>-->
+    <figure xml:id="c2Pl0017" type="plate" facs="#c2FacsPl0017">
+        <fw type="header"><num n="8">VIII dessein.</num>
+            <hi rend="capital"> Église cathédrale</hi> Cha. II Section. I</fw>
+        <figDesc>
+            <locus from="#c2F53v" n="p104">p. 104</locus>
+            <label>
+                <num n="17">17</num>
+            </label>
+            <title>Coupe transversale de la chapelle axiale et du <term type="gT"
+                    ref="#transept">transept</term>  de l’<term type="gT"
+                    ref="#egliseCathedrale">église cathédrale</term></title>
+            <desc>plume et lavis, encres noire, rouge et jaune</desc>
+            <dimensions>
+                <height quantity="21" unit="mm"/>
+                <width quantity="42" unit="mm"/>
+            </dimensions>
+        </figDesc>
+        <figure xml:id="c2Fig0017.01">
+            <head>
+                <num n="1">1 ère. figure.</num>
+            </head>
+            <figDesc>
+                <label>
+                    <num n="1">1</num>
+                </label>
+                <title>Coupe transversale de la chapelle axiale de l’<term type="gT"
+                        ref="#egliseCathedrale">église cathédrale</term></title>
+            </figDesc>
+        </figure>
+        <figure xml:id="c2Fig0017.02">
+            <head>
+                <num n="2">2. ème figure.</num>
+            </head>
+            <figDesc>
+                <label>
+                    <num n="2">2</num>
+                </label>
+                <title>Coupe transversale du <term type="gT" ref="#transept"
+                        >transept</term> de l’<term type="gT" ref="#egliseCathedrale"
+                        >église cathédrale</term></title>
+            </figDesc>
+        </figure>
+    </figure>
+    <!-- Il y a un saut dans la numérotation des planches -->
+    <!--<pb xml:id="c2F59r" n="p115"/>-->
+    <figure xml:id="c2Pl0018" type="plate" facs="#c2FacsPl0018">
+        <fw type="header"><num n="10">X dessein.</num>
+            <hi rend="capital"> Église cathédrale</hi> Cha. II</fw>
+        <!-- TODO: Vérifier qu’il s’agit bien de la X sur le manuscrit -->
+        <figDesc>
+            <locus from="#c2F59r" n="p115">p. 115</locus>
+            <label>
+                <num n="18">18</num>
+            </label>
+            <title>Plan du <term type="gT" ref="#chœur">chœur</term> de l’<term
+                    type="gT" ref="#egliseCathedrale">église cathédrale</term></title>
+            <desc>plume et encre noire</desc>
+            <dimensions>
+                <height quantity="21" unit="mm"/>
+                <width quantity="42" unit="mm"/>
+            </dimensions>
+        </figDesc>
+    </figure>
+    <!--<pb xml:id="c2F61v" n="p120"/>-->
+    <figure xml:id="c2Pl0019" type="plate" facs="#c2FacsPl0019">
+        <fw type="header"><num n="11">XI dessein.</num>
+            <hi rend="capital"> Église cathédrale</hi> Cha. II Sec. I</fw>
+        <!-- Lettre T en haut à gauche en vis à vis de V, non visible -->
+        <figDesc>
+            <locus from="#c2F61v" n="p120">p. 120</locus>
+            <label>
+                <num n="19">19</num>
+            </label>
+            <title>Élévation du <term type="gT" ref="#chœur">chœur</term> de l’<term
+                    type="gT" ref="#egliseCathedrale"
+                    >église cathédrale</term> en avant du <term type="gT"
+                    ref="#baldaquin">baldaquin</term> du <term type="gT"
+                    ref="#maitreAutel">maître autel</term></title>
+            <desc>plume et lavis à l’encre noire</desc>
+            <dimensions>
+                <height quantity="21" unit="mm"/>
+                <width quantity="42" unit="mm"/>
+            </dimensions>
+        </figDesc>
+    </figure>
+    <!--<pb xml:id="c2F64r" n="p125"/>-->
+    <figure xml:id="c2Pl0020" type="plate" facs="#c2FacsPl0020">
+        <fw type="header"><num n="12">XII dessein.</num>
+            <hi rend="capital"> Église cathédrale</hi> Cha. II Sec. I</fw>
+        <figDesc>
+            <locus from="#c2F64r" n="p125">p. 125</locus>
+            <label>
+                <num n="20">20</num>
+            </label>
+            <title>Coupe transversale du <term type="gT" ref="#baldaquin"
+                    >baldaquin</term> du <term type="gT" ref="#maitreAutel"
+                    >maître autel</term> de l’<term type="gT" ref="#egliseCathedrale"
+                    >église cathédrale</term></title>
+            <desc>plume et lavis, encres noire et rouge</desc>
+            <dimensions>
+                <height quantity="21" unit="mm"/>
+                <width quantity="42" unit="mm"/>
+            </dimensions>
+        </figDesc>
+    </figure>
+    <!-- ************************* -->
+    <!-- Ière partie, Chapitre III -->
+    <!-- ************************* -->
+    <!--<pb xml:id="c2F66v" n="p130"/>-->
+    <figure xml:id="c2Pl0021" type="plate" facs="#c2FacsPl0021">
+        <fw type="header"><num n="1">I dessein.</num>
+            <hi rend="capital"> Églises paroissiales</hi> Cha. III Sec. I</fw>
+        <figDesc>
+            <locus from="#c2F66v" n="p130">p. 130</locus>
+            <label>
+                <num n="21">21</num>
+            </label>
+            <title>Plan de l’<term type="gT" ref="#egliseParoissiale"
+                    >église paroissiale</term></title>
+            <desc>plume et encre noire</desc>
+            <dimensions>
+                <height quantity="21" unit="mm"/>
+                <width quantity="42" unit="mm"/>
+            </dimensions>
+        </figDesc>
+    </figure>
+    <!--<pb xml:id="c2F73v" n="p144"/>-->
+    <figure xml:id="c2Pl0022" type="plate" facs="#c2FacsPl0022">
+        <fw type="header"><num n="2">II dessein.</num>
+            <hi rend="capital"> Églises paroissiales</hi> Cha. III Sec. I</fw>
+        <!-- Il manque la lettre N au rond point -->
+        <figDesc>
+            <locus from="#c2F73v" n="p144">p. 144</locus>
+            <label>
+                <num n="22">22</num>
+            </label>
+            <title>Plan des <term type="gT" ref="#cave">caves</term> et <term type="gT"
+                    ref="#fondation">fondations</term> de l’<term type="gT"
+                    ref="#egliseParoissiale">église paroissiale</term></title>
+            <desc>plume et encre noire</desc>
+            <dimensions>
+                <height quantity="21" unit="mm"/>
+                <width quantity="42" unit="mm"/>
+            </dimensions>
+        </figDesc>
+    </figure>
+    <!--<pb xml:id="c2F76r" n="p149"/>-->
+    <figure xml:id="c2Pl0023" type="plate" facs="#c2FacsPl0023">
+        <fw type="header"><num n="3">III dessein.</num>
+            <hi rend="capital"> Églises paroissiales</hi> Cha. III Sec. I</fw>
+        <figDesc>
+            <locus from="#c2F76r" n="p149">p. 149</locus>
+            <label>
+                <num n="23">23</num>
+            </label>
+            <title>Coupe transversale de la <term type="gT" ref="#nef"
+                    >nef</term> et plan du <term type="gT" ref="#chœur"
+                    >chœur</term> de l’<term type="gT" ref="#egliseParoissiale"
+                    >église paroissiale</term></title>
+            <desc>plume et lavis à l’encre noire et rouge</desc>
+            <dimensions>
+                <height quantity="21" unit="mm"/>
+                <width quantity="42" unit="mm"/>
+            </dimensions>
+        </figDesc>
+        <figure xml:id="c2Fig0023.01">
+            <head>
+                <num n="1">I<hi rend="superscript">e</hi> Figure</num>
+            </head>
+            <figDesc>
+                <label>
+                    <num n="1">1</num>
+                </label>
+                <title>Plan du <term type="gT" ref="#chœur">chœur</term> de l’<term
+                        type="gT" ref="#egliseParoissiale"
+                    >église paroissiale</term></title>
+            </figDesc>
+        </figure>
+        <figure xml:id="c2Fig0023.02">
+            <head>
+                <num n="2">II<hi rend="superscript">e</hi> Figure</num>
+            </head>
+            <figDesc>
+                <label>
+                    <num n="2">2</num>
+                </label>
+                <title>Coupe transversale de l’<term type="gT" ref="#egliseParoissiale"
+                        >église paroissiale</term></title>
+            </figDesc>
+        </figure>
+    </figure>
+    <!--<pb xml:id="c2F79r" n="p155"/>-->
+    <figure xml:id="c2Pl0024" type="plate" facs="#c2FacsPl0024">
+        <fw type="header"><num n="4">IIII dessein.</num>
+            <hi rend="capital"> Églises paroissiales</hi> Cha. III Sec. I</fw>
+        <figDesc>
+            <locus from="#c2F79r" n="p155">p. 155</locus>
+            <label>
+                <num n="24">24</num>
+            </label>
+            <title>Plan du <term type="gT" ref="#premierEtage"
+                    >premier étage</term> de l’<term type="gT" ref="#egliseParoissiale"
+                    >église paroissiale</term></title>
+            <desc>plume et lavis à l’encre noire</desc>
+            <dimensions>
+                <height quantity="21" unit="mm"/>
+                <width quantity="42" unit="mm"/>
+            </dimensions>
+        </figDesc>
+    </figure>
+    <!--<pb xml:id="c2F81v" n="p160"/>-->
+    <figure xml:id="c2Pl0025" type="plate" facs="#c2FacsPl0025">
+        <fw type="header"><num n="5">V dessein.</num>
+            <hi rend="capital"> Églises paroissiales</hi> Cha. III Sec. I</fw>
+        <head>Coupe ou profil Sur la longueur du dedans de léglise paroissiale.</head>
+        <figDesc>
+            <locus from="#c2F81v" n="p160">p. 160</locus>
+            <label>
+                <num n="25">25</num>
+            </label>
+            <title>Coupe longitudinale de l’<term type="gT" ref="#egliseParoissiale"
+                    >église paroissiale</term></title>
+            <desc>plume et lavis, encres noire, jaune et rouge</desc>
+            <dimensions>
+                <height quantity="21" unit="mm"/>
+                <width quantity="42" unit="mm"/>
+            </dimensions>
+        </figDesc>
+    </figure>
+    <!--<pb xml:id="c2F86r" n="p169"/>-->
+    <figure xml:id="c2Pl0026" type="plate" facs="#c2FacsPl0026">
+        <fw type="header"><num n="6">VI dessein.</num>
+            <hi rend="capital"> Églises paroissiales</hi> Cha. III Sec. I</fw>
+        <figDesc>
+            <locus from="#c2F86r" n="p169">p. 169</locus>
+            <label>
+                <num n="26">26</num>
+            </label>
+            <title>Coupe transversale et élévations du chevet et de la façade principale de l’<term
+                    type="gT" ref="#egliseParoissiale"
+                >église paroissiale</term></title>
+            <desc>plume et lavis, encres noire, jaune et rouge</desc>
+            <dimensions>
+                <height quantity="21" unit="mm"/>
+                <width quantity="42" unit="mm"/>
+            </dimensions>
+        </figDesc>
+        <figure xml:id="c2Fig0026.01">
+            <head>
+                <num n="1">1<hi rend="superscript">ère</hi> Figure</num>
+            </head>
+            <figDesc>
+                <label>
+                    <num n="1">1</num>
+                </label>
+                <title>Coupe transversale de l’<term type="gT" ref="#egliseParoissiale"
+                        >église paroissiale</term></title>
+            </figDesc>
+        </figure>
+        <figure xml:id="c2Fig0026.02">
+            <head>
+                <num n="2">2 Figure</num>
+            </head>
+            <figDesc>
+                <label>
+                    <num n="2">2</num>
+                </label>
+                <title>Élévation de la façade principale de l’<term type="gT"
+                        ref="#egliseParoissiale">église paroissiale</term></title>
+            </figDesc>
+        </figure>
+        <figure xml:id="c2Fig0026.03">
+            <head>
+                <num n="3">3 Figure.</num>
+            </head>
+            <figDesc>
+                <label>
+                    <num n="3">3</num>
+                </label>
+                <title>Élévation du <term type="gT" ref="#chevet"
+                        >chevet</term> de l’<term type="gT" ref="#egliseParoissiale"
+                        >église paroissiale</term></title>
+            </figDesc>
+        </figure>
+    </figure>
+    <!--<pb xml:id="c2F90v" n="p178"/>-->
+    <figure xml:id="c2Pl0027" type="plate" facs="#c2FacsPl0027">
+        <fw type="header"><num n="7">VII dessein.</num>
+            <hi rend="capital"> Églises paroissiales</hi> Cha. III Sec. I</fw>
+        <figDesc>
+            <locus from="#c2F90v" n="p178">p. 178</locus>
+            <label>
+                <num n="27">27</num>
+            </label>
+            <title>Plan du <term type="gT" ref="#chœur">chœur</term> de l’<term
+                    type="gT" ref="#egliseParoissiale"
+                >église paroissiale</term></title>
+            <desc>plume et encre noire</desc>
+            <dimensions>
+                <height quantity="21" unit="mm"/>
+                <width quantity="42" unit="mm"/>
+            </dimensions>
+        </figDesc>
+    </figure>
+    <!--<pb xml:id="c2F92v" n="p182"/>-->
+    <figure xml:id="c2Pl0028" type="plate" facs="#c2FacsPl0028">
+        <fw type="header"><num n="8">VIII dessein.</num>
+            <hi rend="capital"> Églises paroissiales</hi> Cha. III Sec. I</fw>
+        <!-- n° 93 rayé, ce n° correspond au n° de la page dans C1 -->
+        <figDesc>
+            <locus from="#c2F92v" n="p182">p. 182</locus>
+            <label>
+                <num n="28">28</num>
+            </label>
+            <title>Élévation du <term type="gT" ref="#maitreAutel"
+                    >maître autel</term> de l’<term type="gT" ref="#egliseParoissiale"
+                    >église paroissiale</term></title>
+            <desc>plume et lavis, encres noire et rouge</desc>
+            <dimensions>
+                <height quantity="21" unit="mm"/>
+                <width quantity="42" unit="mm"/>
+            </dimensions>
+        </figDesc>
+    </figure>
+    <!-- ************************ -->
+    <!-- Ière partie, Chapitre IV -->
+    <!-- ************************ -->
+    <!--<pb xml:id="c2F94v" n="p186"/>-->
+    <figure xml:id="c2Pl0029" type="plate" facs="#c2FacsPl0029">
+        <fw type="header"><num n="1">I dessein.</num>
+            <hi rend="capital"> Églises monacales</hi> Cha. IV Sec. I</fw>
+        <!-- Intervertion des n° 5 et 4 des piliers du chœur. Absence du n° 19 par rapport à C1 -->
+        <figDesc>
+            <locus from="#c2F94v" n="p186">p. 186</locus>
+            <label>
+                <num n="29">29</num>
+            </label>
+            <title>Plan de l’<term type="gT" ref="#egliseMonacale"
+                    >église monacale</term></title>
+            <desc>plume et encre noire</desc>
+            <dimensions>
+                <height quantity="21" unit="mm"/>
+                <width quantity="42" unit="mm"/>
+            </dimensions>
+        </figDesc>
+    </figure>
+    <!--<pb xml:id="c2F100r" n="p197"/>-->
+    <figure xml:id="c2Pl0030" type="plate" facs="#c2FacsPl0030">
+        <fw type="header"><num n="2">II dessein.</num>
+            <hi rend="capital"> Églises monacales</hi> Cha. IV Sec. I</fw>
+        <!-- Inversion des cotes au niveau des piliers -->
+        <figDesc>
+            <locus from="#c2F100r" n="p197">p. 197</locus>
+            <label>
+                <num n="30">30</num>
+            </label>
+            <title>Coupe transversale de l’<term type="gT" ref="#egliseMonacale"
+                    >église monacale</term></title>
+            <desc>plume et lavis à l’encre noire</desc>
+            <dimensions>
+                <height quantity="21" unit="mm"/>
+                <width quantity="42" unit="mm"/>
+            </dimensions>
+        </figDesc>
+    </figure>
+    <!--<pb xml:id="c2F105r" n="p207"/>-->
+    <figure xml:id="c2Pl0031" type="plate" facs="#c2FacsPl0031">
+        <fw type="header"><num n="3">III dessein.</num>
+            <hi rend="capital"> Églises monacales</hi> Cha. IV Sec. I</fw>
+        <figDesc>
+            <locus from="#c2F105r" n="p207">p. 197</locus>
+            <label>
+                <num n="31">31</num>
+            </label>
+            <title>Coupe longitudinale de l’<term type="gT" ref="#egliseMonacale"
+                    >église monacale</term></title>
+            <desc>plume et lavis, encres noire, jaune et rouge</desc>
+            <dimensions>
+                <height quantity="21" unit="mm"/>
+                <width quantity="42" unit="mm"/>
+            </dimensions>
+        </figDesc>
+    </figure>
+    <!--<pb xml:id="c2F107v" n="p211"/>-->
+    <figure xml:id="c2Pl0032" type="plate" facs="#c2FacsPl0032">
+        <fw type="header"><num n="4">IV dessein.</num>
+            <hi rend="capital"> Églises monacales</hi> Cha. IV Sec. I</fw>
+        <figDesc>
+            <locus from="#c2F107r" n="p211">p. 211</locus>
+            <label>
+                <num n="32">32</num>
+            </label>
+            <title>Coupe transversale en avant du <term type="gT" ref="#baldaquin"
+                    >baldaquin</term> du <term type="gT" ref="#maitreAutel"
+                    >maître autel</term> et élévation de la façade principale de l’<term
+                    type="gT" ref="#egliseMonacale">église monacale</term></title>
+            <desc>plume et lavis, encres noire, jaune et rouge</desc>
+            <dimensions>
+                <height quantity="21" unit="mm"/>
+                <width quantity="42" unit="mm"/>
+            </dimensions>
+        </figDesc>
+        <figure xml:id="c2Fig0032.01">
+            <head>
+                <num n="1">I figure</num>
+            </head>
+            <figDesc>
+                <label>
+                    <num n="1">1</num>
+                </label>
+                <title>Coupe transversale en avant du <term type="gT" ref="#baldaquin"
+                        >baldaquin</term> du <term type="gT" ref="#maitreAutel"
+                        >maître autel</term> de l’<term type="gT" ref="#egliseMonacale"
+                        >église monacale</term></title>
+            </figDesc>
+        </figure>
+        <figure xml:id="c2Fig0032.02">
+            <head>
+                <num n="2">II. figure</num>
+            </head>
+            <figDesc>
+                <label>
+                    <num n="2">2</num>
+                </label>
+                <title>Élévation de la façade principale de l’<term type="gT"
+                        ref="#egliseMonacale">église monacale</term></title>
+            </figDesc>
+        </figure>
+    </figure>
+    <!-- *********************** -->
+    <!-- Ière partie, Chapitre V -->
+    <!-- *********************** -->
+    <!--<pb xml:id="c2F111v" n="p219"/>-->
+    <figure xml:id="c2Pl0033" type="plate" facs="#c2FacsPl0033">
+        <fw type="header"><num n="1">I dessein.</num>
+            <hi rend="capital"> Églises <sic>conventuelle</sic></hi> Ch. V Se. I</fw>
+        <figDesc>
+            <locus from="#c2F111v" n="p219">p. 219</locus>
+            <label>
+                <num n="33">33</num>
+            </label>
+            <title>Plan de l’<term type="gT" ref="#egliseConventuelle"
+                    >église conventuelle</term></title>
+            <desc>plume et encre noire</desc>
+            <dimensions>
+                <height quantity="21" unit="mm"/>
+                <width quantity="42" unit="mm"/>
+            </dimensions>
+        </figDesc>
+    </figure>
+    <!--<pb xml:id="c2F115v" n="p227"/>-->
+    <figure xml:id="c2Pl0034" type="plate" facs="#c2FacsPl0034">
+        <fw type="header"><num n="2">II dessein.</num>
+            <hi rend="capital"> Églises <sic>conventuelle</sic></hi> Ch. V Se. I</fw>
+        <figDesc>
+            <locus from="#c2F115v" n="p227">p. 227</locus>
+            <label>
+                <num n="34">34</num>
+            </label>
+            <title>Coupe longitudinale et plan du <term type="gT" ref="#premierEtage"
+                    >premier étage</term> de l’<term type="gT"
+                    ref="#egliseConventuelle">église conventuelle</term></title>
+            <desc>plume et lavis, encres noire, jaune et rouge</desc>
+            <dimensions>
+                <height quantity="21" unit="mm"/>
+                <width quantity="42" unit="mm"/>
+            </dimensions>
+        </figDesc>
+        <figure xml:id="c2Fig0034.01">
+            <head>
+                <num n="1">I Figure</num>
+            </head>
+            <figDesc>
+                <label>
+                    <num n="1">1</num>
+                </label>
+                <title>Coupe longitudinale dans l’axe du chœur des religieuses de l’<term
+                        type="gT" ref="#egliseConventuelle"
+                    >église conventuelle</term></title>
+            </figDesc>
+        </figure>
+        <figure xml:id="c2Fig0034.02">
+            <head>
+                <num n="2">II Figure</num>
+            </head>
+            <figDesc>
+                <label>
+                    <num n="2">2</num>
+                </label>
+                <title>Plan du <term type="gT" ref="#premierEtage"
+                        >premier étage</term> de l’<term type="gT"
+                        ref="#egliseConventuelle">église conventuelle</term></title>
+            </figDesc>
+        </figure>
+    </figure>
+    <!--<pb xml:id="c2F119v" n="p235"/>-->
+    <figure xml:id="c2Pl0035" type="plate" facs="#c2FacsPl0035">
+        <fw type="header"><num n="3">III dessein.</num>
+            <hi rend="capital"> Églises <sic>conventuelle</sic></hi> Ch. V Se. I</fw>
+        <figDesc>
+            <locus from="#c2F119v" n="p235">p. 235</locus>
+            <label>
+                <num n="35">35</num>
+            </label>
+            <title>Coupes transversales de l’<term type="gT" ref="#egliseConventuelle"
+                    >église conventuelle</term> perpendiculairement au chœur des religieuses et élévation de la façade principale</title>
+            <desc>plume et lavis, encres noire, jaune, rouge et bleue</desc>
+            <dimensions>
+                <height quantity="21" unit="mm"/>
+                <width quantity="42" unit="mm"/>
+            </dimensions>
+        </figDesc>
+        <figure xml:id="c2Fig0035.01">
+            <head>
+                <num n="1">1ère Figure</num>
+            </head>
+            <figDesc>
+                <label>
+                    <num n="1">1</num>
+                </label>
+                <title>Coupe transversale de l’<term type="gT"
+                        ref="#egliseConventuelle"
+                        >église conventuelle</term> prise perpendiculairement à l’axe du chœur des religieuses, en avant de l’<term
+                        type="gT" ref="autel">autel</term></title>
+            </figDesc>
+        </figure>
+        <figure xml:id="c2Fig0035.02">
+            <figDesc>
+                <label>
+                    <num n="2">2</num>
+                </label>
+                <title>Coupe transversale du chœur des religieuses de l’<term type="gT"
+                        ref="#egliseConventuelle">église conventuelle</term></title>
+            </figDesc>
+        </figure>
+        <figure xml:id="c2Fig0035.03">
+            <figDesc>
+                <label>
+                    <num n="3">3</num>
+                </label>
+                <title>Élévation de la façade principale de l’<term type="gT"
+                        ref="#egliseConventuelle">église conventuelle</term></title>
+            </figDesc>
+        </figure>
+    </figure>
+    <!-- *********************** -->
+    <!-- 2ème partie, Chapitre I -->
+    <!-- *********************** -->
+    <!--<pb xml:id="c2F125v" n="p247"/>-->
+    <figure xml:id="c2Pl0036" type="plate" facs="#c2FacsPl0036">
+        <fw type="header"><num n="1">I dessein.</num>
+            <hi rend="capital"> Hôtel Dieu</hi> Ch. I Sect. II</fw>
+        <figDesc>
+            <locus from="#c2F125v" n="p247">p. 247</locus>
+            <label>
+                <num n="36">36</num>
+            </label>
+            <title>Plan du <term type="gT" ref="#rezDeChaussee"
+                    >rez-de-chaussée</term> de l’<term type="gT" ref="#hopital"
+                    >hôtel-dieu</term></title>
+            <desc>plume et encre noire</desc>
+            <dimensions>
+                <height quantity="21" unit="mm"/>
+                <width quantity="42" unit="mm"/>
+            </dimensions>
+        </figDesc>
+    </figure>
+    <!--<pb xml:id="c2F129r" n="p254"/>-->
+    <figure xml:id="c2Pl0037" type="plate" facs="#c2FacsPl0037">
+        <fw type="header"><num n="2">II dessein.</num>
+            <hi rend="capital"> Hôtel Dieu</hi> Ch. I Sect. II</fw>
+        <figDesc>
+            <locus from="#c2F129r" n="p254">p. 254</locus>
+            <label>
+                <num n="37">37</num>
+            </label>
+            <title>Plan du <term type="gT" ref="#premierEtage"
+                    >premier étage</term> de l’<term type="gT" ref="#hopital"
+                    >hôtel-dieu</term></title>
+            <desc>plume et encre noire</desc>
+            <dimensions>
+                <height quantity="21" unit="mm"/>
+                <width quantity="42" unit="mm"/>
+            </dimensions>
+        </figDesc>
+    </figure>
+    <!--<pb xml:id="c2F132v" n="p261"/>-->
+    <figure xml:id="c2Pl0038" type="plate" facs="#c2FacsPl0038">
+        <fw type="header"><num n="3">III dessein.</num>
+            <hi rend="capital"> Hôtel Dieu</hi> Ch. I Sect. II</fw>
+        <figDesc>
+            <locus from="#c2F132v" n="p261">p. 261</locus>
+            <label>
+                <num n="38">38</num>
+            </label>
+            <title>Plan du <term type="gT" ref="#rezDeChaussee"
+                    >rez-de-chaussée</term> de la <term type="gT" ref="#chapelle"
+                    >chapelle</term> de l’<term type="gT" ref="#hopital"
+                    >hôtel-dieu</term></title>
+            <desc>plume et encre noire</desc>
+            <dimensions>
+                <height quantity="21" unit="mm"/>
+                <width quantity="42" unit="mm"/>
+            </dimensions>
+        </figDesc>
+    </figure>
+    <!--<pb xml:id="c2F134v" n="p265"/>-->
+    <figure xml:id="c2Pl0039" type="plate" facs="#c2FacsPl0039">
+        <fw type="header"><num n="4">IV dessein.</num>
+            <hi rend="capital"> Hôtel Dieu</hi> Ch. I Sect. II</fw>
+        <figDesc>
+            <locus from="#c2F134v" n="p265">p. 265</locus>
+            <label>
+                <num n="39">39</num>
+            </label>
+            <title>Coupe longitudinale de la <term type="gT" ref="#chapelle"
+                    >chapelle</term> de l’<term type="gT" ref="#hopital"
+                    >hôtel-dieu</term> et élévation de la façade principale</title>
+            <desc>plume et lavis, encres noire, jaune, rouge et bleue</desc>
+            <dimensions>
+                <height quantity="21" unit="mm"/>
+                <width quantity="42" unit="mm"/>
+            </dimensions>
+        </figDesc>
+        <figure xml:id="c2Fig0039.01">
+            <head>
+                <num n="1">I<hi rend="superscript">ère</hi> Figure</num>
+            </head>
+            <figDesc>
+                <label>
+                    <num n="1">1</num>
+                </label>
+                <title>Coupe longitudinale de la <term type="gT" ref="#chapelle"
+                        >chapelle</term> de l’<term type="gT" ref="#hopital"
+                        >hôtel-dieu</term></title>
+            </figDesc>
+        </figure>
+        <figure xml:id="c2Fig0039.02">
+            <head>
+                <num n="2">II<hi rend="superscript">e</hi> Figure</num>
+            </head>
+            <figDesc>
+                <label>
+                    <num n="2">2</num>
+                </label>
+                <title>Élévation de la façade principale de l’<term type="gT"
+                        ref="#hopital">hôtel-dieu</term></title>
+            </figDesc>
+        </figure>
+    </figure>
+    <!-- ************************ -->
+    <!-- 2ème partie, Chapitre II -->
+    <!-- ************************ -->
+    <!--<pb xml:id="c2F139r" n="p274"/>-->
+    <figure xml:id="c2Pl0040" type="plate" facs="#c2FacsPl0040">
+        <fw type="header"><num n="1">I dessein.</num>
+            <hi rend="capital">Hôtel de ville</hi> Ch. II Sect. II</fw>
+        <!-- Un numéro coupé en haut de la page semble correspondre au numéro de page du C1 (133) -->
+        <figDesc>
+            <locus from="#c2F139r" n="p274">p. 274</locus>
+            <label>
+                <num n="40">40</num>
+            </label>
+            <title>Plan du <term type="gT" ref="#premierEtage"
+                    >premier étage</term> de l’<term type="gT" ref="#hotelDeVille"
+                    >hôtel de ville</term></title>
+            <desc>plume et encre noire</desc>
+            <dimensions>
+                <height quantity="21" unit="mm"/>
+                <width quantity="42" unit="mm"/>
+            </dimensions>
+        </figDesc>
+    </figure>
+    <!--<pb xml:id="c2F141v" n="p279"/>-->
+    <figure xml:id="c2Pl0041" type="plate" facs="#c2FacsPl0041">
+        <fw><num n="2">II dessein.</num>
+            <hi rend="capital"> Hôtel de ville</hi> Ch. II Sect. II</fw>
+        <!-- Numéro rayé en haut de la page qui correspond au numéro de page de C1 (136) -->
+        <figDesc>
+            <locus from="#c2F139r" n="p274">p. 274</locus>
+            <label>
+                <num n="40">40</num>
+            </label>
+            <title>Plan de l’<term type="gT" ref="#hotelDeVille"
+                >hôtel de ville</term></title>
+            <!-- TODO identifier l’étage -->
+            <desc>plume et encre noire</desc>
+            <dimensions>
+                <height quantity="21" unit="mm"/>
+                <width quantity="42" unit="mm"/>
+            </dimensions>
+        </figDesc>
+    </figure>
+    <!--<pb xml:id="c2F145r" n="p286"/>-->
+    <figure xml:id="c2Pl0042" type="plate" facs="#c2FacsPl0042">
+        <fw type="header"><num n="3">III dessein.</num>
+            <hi rend="capital"> Hôtel de ville</hi> Ch. II Sect. II</fw>
+        <figDesc/>
+    </figure>
+</div>

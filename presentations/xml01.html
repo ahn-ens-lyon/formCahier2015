@@ -183,14 +183,6 @@ Contrairement aux apparences, les logiciels de traitement de texte qui mettent e
 
 Autrement dit, le balisage descriptif offre un certain nombre d’avantages pour l’éditeur. Outre qu’il **permet de partager des documents pour collaborer sans se préoccuper d’éventuelles incompatibilités**, il offre un **gain de temps de production et de gestion en permettant la réalisation de plusieurs éditions successives à partir d’un même fichier source, ou de produire plusieurs manifestations (présentations) d’un même fichier**. De surcroît, ce balisage permet le plus souvent la **génération automatique de l’information bibliographique** directement à partir du fichier source (ce qui réduit les erreurs et permet une citation aisée dans les bases bibliographiques) ou d’inclure directement des documents dans des bases de données en ligne pour la publication et la recherche plein-texte.
 
-
----
-
-
-???
-
-La méthode d’édition critique bien établie, il convient de régler le problème pratique de la présentation de l’édition. Ces choix déterminaient les modalités de consultation du texte. Même si une édition numérique offre plus de souplesse qu’une édition imprimée, elle n’en reste pas moins problématique sous cet aspect qui tient du parti-pris éditorial. Là encore, il n’existe pas de solution absolue en la matière, le meilleur dispositif étant celui qui sert le mieux le point de vue éditorial adopté ou qui offre les meilleures conditions d’accessibilité au texte. Avant de pouvoir établir un cahier des charges fonctionnel, il fallait donc arrêter clairement ce que devait véhiculer l’édition d’un point de vue scientifique. Les pré-requis pour l’édition que nous voulions produire étaient soit généralement liés au respect des conventions de l’édition scientifique, soit propres aux spécificités du corpus édité.
-
 ---
 
 name: sourcesBiblio1
@@ -709,28 +701,11 @@ name: biblio
 - L’espace XML francophone  : actualités, discussions, articles et billets, sur le site Web <http://xmlfr.org/>
 
 ---
-
 name: part3
 template: inverse
+class: middle center
 
 ## Quelques exemples d’encodage TEI
-
----
-
-.left-column[
-##  .red[Sommaire]
-]
-
-.right-column[
-# Quelques exemples d’encodage TEI
-
-## 1. [Structure d’un document TEI](#structure)
-
-## 2. [Microstructures](#micro)
-
-## 3. [Traitement des variantes](#variantes)
-]
-
 
 ---
 
@@ -1036,133 +1011,12 @@ Même utilisation de `choice` possible pour les segments syntaxiquement incorrec
 Partout, utilisation des attributs @cert, @resp et @source qui peuvent s’avérer utile.
 
 ---
-
-name: variantes
-template: inverse
 class: center middle
 
-# .red[3.] Les variantes et les mains
+# Les guidelines TEI
 
----
+### http://www.tei-c.org/release/doc/tei-p5-doc/en/html/index.html
 
-# Description des mains (teiHeader)
-
-### `@hand`
-
-### `handDesc` et ses sous-éléments dans le teiHeader
-
-```xml
-  <handDesc>
-    <handNote xml:id="c2Hand1" scope="major">à l’encre noire</handNote>
-    <handNote xml:id="c2Hand2" scope="minor">au crayon</handNote>
-  </handDesc>
-```
-
-???
-
-handNote est répétable et peut contenir une localisation avec locus.
-
----
-
-# Les variantes
-
-# Trois approches pour l’.red[alignement]
-
-Les Guidelines proposent trois approches pour aligner des passages textuels lorsque l’on établit une édition critique  :
-
-- la **méthode de localisation référencée**, où les entrées d’apparat critique sont liées aux blocs de texte identifiés qui contiennent les lemmes respectifs
-
-- la **méthode d’attachement à double point**, où les entrées d’apparat critique sont liées à des points de départ et de fin identifiées dans un texte
-
-- la **méthode de segmentation parallèle**,	où les entrées d’apparat critique son encodées au moyen d’une transcription du texte connu invariable et de tous les témoins.
-
-
-???
-
-Les Guidelines proposent trois approches pour aligner des passages textuels lorsque l’on établit une édition critique  :
-
-- la **méthode de localisation référencée**,	où les entrées d’apparat critique sont liées aux blocs de texte identifiés qui contiennent les lemmes respectifs
-
-- la **méthode d’attachement à double point**,	où les entrées d’apparat critique sont liées à des points de départ et de fin identifiées dans un texte
-
-- la **méthode de segmentation parallèle**,	où les entrées d’apparat critique son encodées au moyen d’une transcription du texte connu invariable et de tous les témoins.
-
-La méthode par segmentation parallèle est le plus couramment utilisée lors de l’encodage de sources en XML-TEI pour comparer des témoins. Cette méthode correspond également à une méthode de travail pour l’établissement du texte.
-
----
-
-# Description des témoins (teiHeader)
-
-(tableau de tradition)
-
-```xml
-  <listWit>
-    <witness xml:id="A">
-      <msDesc>
-        <msIdentifier>
-          <country>France</country>
-          <settlement>Paris</settlement>
-          <repository>Archives nationales</repository>
-          <collection>Monuments ecclésiastiques</collection
-          <idno>S 2364 n° 5</idno>
-        </msIdentifier>
-      </msDesc>
-    </witness>
-    <witness xml:id="B">
-      <msDesc>
-      <!-- ... -->
-      </msDesc>
-    </witness>
-    <!-- répéter l’élément witness autant de fois que de témoins -->
-  </listWit>
-```
-
----
-
-# Segmentation parallèle
-
-### `app` entrée d’apparat critique
-
-### `lem` lemme ou leçon retenue du texte
-
-### `rdg` variante (lecture)
-
-```xml
-  <app>
-    <lem>remener</lem>
-    <rdg wit="#l-1-C #l-1-D #l-1-E #l-1-F">remettre</rdg>
-    <rdg wit="#l-#-a">conduire dehors</rdg>
-  </app>
-```
-
----
-
-# Variantes
-
-### `rdgGrp` pour regrouper plusieurs variantes ayant un lien entre elles
-
-### `@type` pour catégoriser la variante
-
-### `@cause` pour expliciter la cause de la variante
-
----
-
-# Groupes de variantes
-
-  <p>Magnus es, domine, et laudabilis valde: <app>
-	<lem wit="#A">magna</lem>
-	<rdgGrp>
-		<rdg wit="#B"><sic>magma</sic></rdg>
-		<rdg wit="#E"><sic>maga</sic></rdg>
-	</rdgGrp>
-	<rdgGrp>
-		<rdg wit="#C">laudabilis</rdg>
-		<rdg wit="#D"><sic>laudablis</sic></rdg>
-	</rdgGrp>
-  </app><note><p>This apparatus entry is an example using "rdgGrp" to group together 
-  variants. Here we have two groups,    one presenting only spelling mistakes on the 
-  same reading as the lemma, while the second group has a different reading   (with a 
-  spelling mistake for witness D)</p></note> virus [...]</p>
 ---
 
 template: inverse

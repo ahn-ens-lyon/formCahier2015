@@ -7,21 +7,24 @@
   </head>
   <body>
     <textarea id="source">
-title: html5PourLesHumanistes.html
-description: emchateau, ENC 27-30 octobre 2014
-theme: theme/remark-dark.css
+title: HTML5 Pour les Humanistes
+description: Atelier outillage XML (langages et logiciels), consortium Cahier 2015, Emmanuel Château, Maud Ingarao
+theme: themes/remark-dark.css
 name: inverse
 layout: true
 class: inverse
 
 ---
-
+name: index
 class: center middle
 
 # HTML5 pour les Humanistes
-Formation TEI | ENC 26-29 mai 2015
 
-.footnote[[Répertoire GitHub](https://github.com/tei-fr/formationEnc2015-05) | [Programme](00-programme.html)]
+##Atelier outillage XML (langages et logiciels)
+
+Consortium cahier | 1er et 2 juin 2015
+
+.footnote[[entrepôt GitHub](https://ahn-ens-lyon/formCahier2015) | [jour1](00-programme.html#jour1) | [jour2](00-programme.html#jour2)]
 
 ---
 
@@ -73,13 +76,13 @@ Pas du XML, néanmoins peut être écrit sen XML.
 
 # Composants d'un fichier HTML5
 
-- un prologue
+### un prologue
 
-- `html` élément racine
+### `html` élément racine
 
-- `head` sous-élement d'en-tête du fichier
+### `head` sous-élement d'en-tête du fichier
 
-- `body` sous-élément du contenu de la page
+### `body` sous-élément du contenu de la page
 
 ---
 
@@ -131,9 +134,7 @@ Pas du XML, néanmoins peut être écrit sen XML.
 
 ---
 
-# La .red[sémantique] de HTML5
-
-### structures
+# La .red[sémantique] de HTML5, structures
 
 - `header` pour l'en-tête de la page
 
@@ -157,9 +158,9 @@ Pas du XML, néanmoins peut être écrit sen XML.
 
 - `blockquote` citation
 
-# La sémantique de HTML5
+---
 
-### .red[structures, exemple]
+# .red[Structures, exemple] de structure
 
 ```html
 <body>
@@ -188,44 +189,40 @@ Pas du XML, néanmoins peut être écrit sen XML.
 
 ---
 
-# La .red[sémantique] de HTML5
+# La .red[sémantique] de HTML5, micro-structures (éléments in-line)
 
-### micro-structures (éléments in-line)
+### `ul` et `li` pour les listes
 
-- `ul` et `li` pour les listes
+### `emph` et `strong` pour les emphases et les mise en valeur
 
-- `emph` et `strong` pour les emphases et les mise en valeur
+### `mark` marquage
 
-- `mark` marquage
-
-
-
-- ...
+### ...
 
 
 ---
 
-# Liens hypertextes `a`
+# Liens hypertextes `<a>`
 
 ### lien hypertexte
 
 ```html
-<a href="http://www.monsite.fr">Visitez mon site !</a>
+  <a href="http://www.monsite.fr">Visitez mon site !</a>
 ```
 
 ```html
-<a href="#ancre2">lien interne</a>
+  <a href="#ancre2">lien interne</a>
 ```
 
 ### cible
 
 ```html
-<div id="ancre1">
-  <p>Du texte</p>
-</div>
-<div id="ancre2">
-  <p>Du texte</p>
-</div>
+  <div id="ancre1">
+    <p>Du texte</p>
+  </div>
+  <div id="ancre2">
+    <p>Du texte</p>
+  </div>
 ```
 
 ---
@@ -235,7 +232,7 @@ Pas du XML, néanmoins peut être écrit sen XML.
 ### `img` pour insérer une image
 
 ```html
-<img src="chemin/vers/image.png" alt="à propos de cette image" />
+  <img src="chemin/vers/image.png" alt="à propos de cette image" />
 ```
 
 ```html
@@ -273,7 +270,6 @@ Pas du XML, néanmoins peut être écrit sen XML.
   </nav>
 </header>
 ```
-
 
 ---
 

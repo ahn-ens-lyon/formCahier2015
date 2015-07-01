@@ -242,9 +242,7 @@ Le nom FLOWR correspond aux 5 clauses utilisées pour produire une expression. L
   return _expression_
 ```
 
-Les expressions peuvent être imbriquées
-
-TODO
+Les expressions peuvent aussi être imbriquées
 
 ???
 
@@ -292,8 +290,6 @@ Retour, évaluation expression
   return $document
 ```
 
-TODO exemple let dans For
-
 ???
 La clause `let` permet simplement de déclarer une variable et de lui donner une valeur.
 
@@ -323,7 +319,13 @@ Dans un tel mode de programmation on déclare le résultat que l’on veut obten
 
 ```xquery
   for $book in doc("books.xml")//book
-  return <title>$book/title</title>
+  return <title>$book/title/text()</title>
+```
+
+```xquery
+  for $book in doc("books.xml")//book
+  let $title := $book/title
+  return <title>$title/text()</title>
 ```
 
 ???

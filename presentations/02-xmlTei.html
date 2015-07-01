@@ -934,7 +934,7 @@ layout: false
 ### `del` texte supprimé
 
 ```xml
-  <del rend="overstrike">claustra</add>
+  <del rend="overstrike">claustra</del>
 ```
 
 ### `subst` substitutions (génétique textuelle)
@@ -953,19 +953,21 @@ layout: false
 ### `gap` passage ne pouvant pas être restitué pour des raisons matérielles
 
 ```xml
-<gap reason="illegible" agent="ink-blot" />
+  <gap reason="illegible" agent="ink-blot" />
 ```
 
 ### `unclear` passage en partie illisible
 
 ```xml
-<unclear agent="ink-blot" cert="low" resp="#EC" />
+  <unclear agent="ink-blot"
+  cert="low" resp="#EC">et</unclear>
 ```
 
 ### `suplied` restitution d’un passage manquant
 
 ```xml
-<supplied reason="hole" source="#autreEd">les</supplied>
+  <supplied reason="hole"
+  source="#autreEd">les</supplied>
 ```
 
 ???
@@ -974,8 +976,8 @@ Ne pas confondre `gap` et `space` qui sert à désigner un espace blanc jugé si
 
 Plusieurs attributs issus du module `certainty` qui peuvent vous permettre de préciser la certitude des restitutions.
 
-```
-xml<space quantity="1" unit="cm">
+```xml
+  <space quantity="1" unit="cm">
 ```
 
 ---

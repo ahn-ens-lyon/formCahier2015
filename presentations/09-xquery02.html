@@ -7,9 +7,9 @@
     </head>
     <body>
       <textarea id="source">
-title: 09-XQuery02 Les fonctions personnalisées
+title: XQuery02 Les fonctions personnalisées
 description: Atelier outillage XML (langages et logiciels), consortium Cahier 2015, Emmanuel Château, Maud Ingarao
-theme: ../themes/remark-dark.css
+theme: themes/remark-dark.css
 name: inverse
 layout: true
 class: inverse
@@ -18,7 +18,7 @@ class: inverse
 name: index
 class: center middle
 
-# 00-XQuery02 Les fonctions personnalisées
+# XQuery02 Les fonctions personnalisées
 
 ## Atelier outillage XML (langages et logiciels)
 
@@ -42,38 +42,37 @@ Ce sont des boîtes à outils incluses dans le langage, toutes prêtes pour effe
 
 Fonctions sur les chaînes de caractères
 ```xquery
-fn:string(@type)
-fn:substring-after(@ref,"#")
-fn:upper-case(string)
-fn:contains(string1, string2)
+  fn:string(@type)
+  fn:substring-after(@ref,"#")
+  fn:upper-case(string)
+  fn:contains(string1, string2)
 ```
 
 Fonctions sur les noeuds
 ```xquery
-fn:name()
-fn:root()
+  fn:name()
+  fn:root()
 ```
 ---
 
 Fonctions sur les séquences d'items
 ```xquery
-fn:distinct-values(item,item,...)
-fn:empty(item,item,...)
+  fn:distinct-values(item,item,...)
+  fn:empty(item,item,...)
 ```
 
 Fonctions sur les valeurs numériques
 ```xquery
-fn:round(3.14)
+  fn:round(3.14)
 ```
 
-Fonctions sur les dates, 
+Fonctions sur les dates,
 ```xquery
-month-from-dateTime(xs:dateTime("2015-07-01T10:30-04:10"))
+  month-from-dateTime(xs:dateTime("2015-07-01T10:30-04:10"))
 ```
-
-
 
 ---
+
 ## Bibliothèques de fonctions
 
 ### Incontournable : [FunctX XQuery Function Library](http://www.xqueryfunctions.com/)
@@ -83,9 +82,6 @@ functx:capitalize-first(string)
 ```
 
 ### On peut écrire ses propres fonctions personnalisées, ses propres bibliothèques !
-
-
-
 
 ---
 
@@ -114,7 +110,6 @@ functx:capitalize-first(string)
   local:confirm("Lou")
 ```
 
-
 ---
 
 ## Arguments et résultat de la fonction
@@ -127,7 +122,6 @@ functx:capitalize-first(string)
 ```
 
 
-
 ### Occurences : combien ?
 
 ```xquery
@@ -136,13 +130,14 @@ functx:capitalize-first(string)
   };
 ```
 
-Occurrence indicator	Meaning
-none (blank)	exactly one item
-?	zero or one items
-+	one or more items
-*	any number of items (zero or more)
-
 ---
+
+## Quantificateurs
+
+- aucun exactement un item
+- ?	zéro ou un item
+- +	un ou plusieurs items
+- *	n’importe quel nombre d’item (zéro ou plus)
 
 ---
 
@@ -242,10 +237,11 @@ TODO
 
 # Les expressions conditionnelles
 
-if (_condition_)
-then _expression_
-else _expression_
-
+```xquery
+  if (_condition_)
+  then _expression_
+  else _expression_
+``
 ---
 
 # Références

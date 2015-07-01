@@ -86,8 +86,6 @@ voir : Marchal, Benoît. "Working XML: Comparing XSLT 2.0 and XQuery." IBM deve
 
 # Installation de BaseX
 
-### Vérifiez que vous disposez de [Java 8.0](https://www.java.com/fr/download/help/index_installing.xml)
-
 ### Télécharger l’archive appropriée sur :
 
 http://basex.org/products/download/all-downloads/
@@ -99,6 +97,9 @@ http://basex.org/products/download/all-downloads/
 - lancez le script d’exécution de la GUI : `bin/basexgui`
 - lancez le script d’exécution du client : `bin/basex`
 - lancez le script d’exécution du serveur HTTP : `bin/basexhttp`
+
+### Vérifiez que vous disposez de [Java 8.0](https://www.java.com/fr/download/help/index_installing.xml)
+
 
 ???
 Pour les exercices qui vont suivre, nous allons utiliser la base de données XML native BaseX. Des bases de données comme BaseX fonctionne en stockant les fichiers XML bruts dans des index persistants.
@@ -264,7 +265,7 @@ Retour, évaluation expression
 
 - Commentaires
 ```xquery
-  (: xquery et un langage souriant :)
+  (: xquery est un langage souriant :)
 ```
 ```xquery
   (:~
@@ -445,7 +446,7 @@ constructeur calculé
 ```
 
 ???
-Ajouté un élément XML dans la sortie
+Ajouter un élément XML dans la sortie
 - constructeurs direct
 - constructeur calculé
 
@@ -499,23 +500,26 @@ Pour mémoire XQuery Use Cases 2001 http://www.w3.org/TR/2001/WD-xmlquery-use-ca
 ---
 
 # Standards (version 3)
-
-- XQuery 3.0 Requirements, Daniel Engovatov, Jonathan Robie, Editors. World Wide Web Consortium, 08 April 2014. http://www.w3.org/TR/xquery-30-requirements/
-- World Wide Web Consortium. XML Query Use Cases. W3C Working Draft, 8 June 2006. http://www.w3.org/TR/xquery-use-cases/.
+- XQuery 3.0, http://www.w3.org/TR/xquery-30/
 - XQuery and XPath Functions and Operators 3.0, Michael Kay, Editor. World Wide Web Consortium, 08 April 2014. http://www.w3.org/TR/xpath-functions-30/
 - XSLT and XQuery Serialization 3.0, Henry Zongaro, Andrew Coleman, Michael Sperberg-McQueen, Editors. World Wide Web Consortium, 08 April 2014. http://www.w3.org/TR/xslt-xquery-serialization-30/
-
 - XQuery and XPath Data Model (XDM) 3.0, Norman Walsh, Anders Berglund, John Snelson, Editors. World Wide Web Consortium, 08 April 2014. http://www.w3.org/TR/xpath-datamodel-30/.
+
+Pour mémoire
+- XQuery 3.0 Requirements, Daniel Engovatov, Jonathan Robie, Editors. World Wide Web Consortium, 08 April 2014. http://www.w3.org/TR/xquery-30-requirements/
+- World Wide Web Consortium. XML Query Use Cases. W3C Working Draft, 8 June 2006. http://www.w3.org/TR/xquery-use-cases/.
+
+---
+
+# Extensions
 
 - EXPath, http://expath.org
 - EXPath Wiki, http://wiki.expath.org/wiki/EXPath
 
-TODO Spec
+- XQuery Update Facility, http://www.w3.org/TR/xquery-update-10/
+- XQuery Full-text, http://www.w3.org/TR/xpath-full-text-10/
 
-### en 2007 [version 1 du langage](http://www.w3.org/TR/xquery/)
-### en 2011 extension [XQuery Update Facility](http://www.w3.org/TR/xquery-update-10/)
-### en 2011 extension [XQuery Full-text](http://www.w3.org/TR/xpath-full-text-10/)
-### en 2015 [version 3](http://www.w3.org/TR/xquery-30/) du langage
+- RESTXQ,  http://exquery.github.io/exquery/exquery-restxq-specification/restxq-1.0-specification.html
 ---
 
 # Sources & bibliographie
@@ -533,8 +537,9 @@ TODO Spec
 ---
 name: last-page
 template: inverse
+class: middle center
 
-## [Un peu plus loin](xquery02.html) !
+## [Un peu plus loin](09-xquery02.html) !
 
 
 .left[.footnote[[revenir au début](#index) | [programme](00-programme.html)]]

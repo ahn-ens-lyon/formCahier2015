@@ -7,7 +7,7 @@
     </head>
     <body>
       <textarea id="source">
-title: 00-XQuery02 Les fonctions personnalisées
+title: 09-XQuery02 Les fonctions personnalisées
 description: Atelier outillage XML (langages et logiciels), consortium Cahier 2015, Emmanuel Château, Maud Ingarao
 theme: ../themes/remark-dark.css
 name: inverse
@@ -33,54 +33,124 @@ class: left
 
 # Les fonctions
 
-## Fonctions prédéfinies
-## Fonctions personnalisées
+Une fonction permet de factoriser du code. Indispensable pour la maintenabilité du code.
 
-???
-Les fonctions sont une fonctionnalité
-XQuery prévoit un certain nombre de fonctions pré-définies telles ques fn:doc, fn:string, etc.
+## Fonctions prédéfinies
+
+Les [fonctions prédéfinies](http://www.w3schools.com/xpath/xpath_functions.asp) sont communes à Xpath, XSLT, et Xquery. On en a aperçu quelques-unes hier...
+Ce sont des boîtes à outils incluses dans le langage, toutes prêtes pour effectuer des tâches courantes.
+
+Fonctions sur les chaînes de caractères
+```xquery
+fn:string(@type)
+fn:substring-after(@ref,"#")
+fn:upper-case(string)
+fn:contains(string1, string2)
+```
+
+Fonctions sur les noeuds
+```xquery
+fn:name()
+fn:root()
+```
+---
+
+Fonctions sur les séquences d'items
+```xquery
+fn:distinct-values(item,item,...)
+fn:empty(item,item,...)
+```
+
+Fonctions sur les valeurs numériques
+```xquery
+fn:round(3.14)
+```
+
+Fonctions sur les dates, 
+```xquery
+month-from-dateTime(xs:dateTime("2015-07-01T10:30-04:10"))
+```
+
+
+
+---
+## Bibliothèques de fonctions
+
+### Incontournable : [FunctX XQuery Function Library](http://www.xqueryfunctions.com/)
+```xquery
+functx:substring-after-if-contains(@ref,"#")
+functx:capitalize-first(string)
+```
+
+### On peut écrire ses propres fonctions personnalisées, ses propres bibliothèques !
+
+
 
 
 ---
 
-# Déclaration d’une fonction XQuery
+## Déclaration d’une fonction XQuery
 
-```
-  declare function local:order-value($po as element(purchase-order))
-  as xs:double {
-    sum($po/order-item/(@price * @quantity))
+```xquery
+  declare function local:confirm(){
+    "Merci Fatiha ! C'est bien enregistré :)"
   };
 ```
 
+
+## Arguments d’une fonction et typage du résultat
+
+```xquery
+  declare function local:confirm($qui){
+    "Merci " || $qui || " ! C'est bien enregistré :)"
+  };
+```
+
+
+
+## Appel d’une fonction
+
+```xquery
+  local:confirm("Lou")
+```
+
+
 ---
 
-# Arguments d’une fonction et typage du résultat
+## Arguments et résultat de la fonction
 
----
+### Types : quoi ?
+```xquery
+  declare function local:confirm($qui as xs:string) as xs:string{
+    "Merci " || $qui || " !"
+  };
+```
 
-# Appel d’une fonction
 
-  local:order-value(doc('purchaseOrder.xml')/purchase-order)
 
----
+### Occurences : combien ?
 
-# Nom de la fonction
-
----
-
-# Arguments de la fonction
-
----
-
-# Les Types
-
-# Occurence
+```xquery
+  declare function local:accueil($qui as xs:string?) as xs:string{
+      "Merci " || $qui || " ! C'est bien enregistré :)"
+  };
+```
 
 Occurrence indicator	Meaning
 none (blank)	exactly one item
 ?	zero or one items
 +	one or more items
 *	any number of items (zero or more)
+
+---
+
+---
+
+## Nom de la fonction
+
+### L'espace de nom
+
+### Le nom : quelques interdits
 
 ---
 

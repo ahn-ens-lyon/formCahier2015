@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+    <html>
+      <head>
+        <title>Title</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <link href="themes/remark-dark.css" rel="stylesheet" media="all" type="text/css"/>
+        <style type="text/css">
+          .remark-slide-content h2 > code { font-size: 0.65em; }
+        </style>
+      </head>
+      <body>
+        <textarea id="source">
+title: ex2 Sélections dans un arbre XML
+description: Atelier outillage XML (langages et logiciels), consortium Cahier 2015, Emmanuel Château, Maud Ingarao
+theme: themes/remark-dark.css
+layout: true
+class: inverse
+
+---
+name: index
+class: middle center
+
+# ex 2 Sélections dans un arbre XML
+
+### Consortium cahier | 1er et 2 juin 2015
+
+.footnote[[entrepôt GitHub](https://ahn-ens-lyon/formCahier2015) | [jour1](00-programme.html#jour1) | [jour2](00-programme.html#jour2)]
+
+---
+template: inverse
+
+## Écriture d’étapes simples (navigation dans les axes)
+
+---
+layout: false
+
+## Sérialisation arborescente de [phares.tei.xml](./exemplesTEI/phares.tei.xml)
+
+![question](../images/diagram.svg)
+
+---
+## `/child::body/child::div/child::head`
+## `/body/div/head`
+
+![solution](../images/diagramEx01.svg)
+
+---
+## `/body/div/lg` ?
+![question](../images/diagram.svg)
+
+---
+## `/body/div/lg`
+## `/child::body/child::div/child::lg`
+![solution](../images/diagramEx02.svg)
+
+???
+équivaudrait à
+- `/body/*/lg`
+- `/child::body/child::*/child::lg`
+
+Mais pas à
+- `/body/div/*`
+- `/child::body/child::div/child::*`
+
+---
+## `/body/div/@type` ?
+rappel : @ = attribute
+![question](../images/diagram.svg)
+
+---
+## `/body/div/@type`
+## `/child::body/child::div/attribute::type`
+![solution](../images/diagramEx03.svg)
+
+---
+## `/body/div/lg/l` ?
+![question](../images/diagram.svg)
+
+---
+## `/body/div/lg/l`
+## `/child::body/child::div/child::lg/child::l`
+![solution](../images/diagramEx04.svg)
+
+---
+## `l/@n`
+![question](../images/diagram.svg)
+
+---
+## `l/@n`
+## `child::l/attribute::n`
+( ! un chemin relatif, tout dépend du contexte)
+![solution](../images/diagramEx05.svg)
+
+---
+## `ancestor::lg` ?
+![question](../images/diagram.svg)
+
+---
+## `ancestor::lg`
+tous les éléments ancêtres "lg" du nœud contexte
+![solution](../images/diagramEx06.svg)
+
+---
+## `descendant::l`?
+![question](../images/diagram.svg)
+
+---
+## `descendant::l`
+N’importe quel nœud "l" sous le contexte
+![solution](../images/diagramEx07.svg)
+
+---
+## `//lg` ?
+![question](../images/diagram.svg)
+
+---
+## `//lg`
+## `/descendant-or-self::lg`
+![solution](../images/diagramEx08.svg)
+
+---
+## `//lg/../@type` ?
+![question](../images/diagram.svg)
+
+---
+## `/descendent-or-self::node()/parent::node()/attribute::type`
+![solution](../images/diagramEx09.svg)
+
+---
+## `//lg/following-sibling::l` ?
+![question](../images/diagram.svg)
+
+---
+## `//lg/following-sibling::l`
+ensemble vide
+![solution](../images/diagramEx10.svg)
+
+---
+## `//lg/following::l` ?
+![question](../images/diagram.svg)
+
+---
+template: inverse
+
+## Écriture d’étapes avec prédicats
+
+---
+## `/body/div/lg/l[@n="2"]`?
+![question](../images/diagram.svg)
+
+---
+## `/body/div/lg/l[@n="2"]`?
+## `/child::body/child::div/child::lg/child::l[attribute::n=“2”]`
+![solution](../images/diagramEx12.svg)
+
+---
+## `/body/div[@type="shortPoem"]/head`?
+![question](../images/diagram.svg)
+
+---
+## `/body/div[@type="shortPoem"]/head`
+## `/body/div[attribute::type="shortPoem"]/head`
+
+![solution](../images/diagramEx13.svg)
+
+---
+## `//l[3]` ?
+![question](../images/diagram.svg)
+
+---
+## `//l[3]`
+![solution](../images/diagramEx15.svg)
+
+---
+name: last-page
+template: inverse
+class: middle center
+
+## [À vous de jouer](ex3-xpath.html) ?!
+
+.footnote[[revenir au début](#index) | [programme](00-programme.html)]
+
+</textarea>
+<!--<script src="http://gnab.github.com/remark/downloads/remark-0.6.5.min.js" type="text/javascript"></script>-->
+    <script src="js/remark-0.6.5.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+  var hljs = remark.highlighter.engine;
+</script>
+<script src="remark.language.js" type="text/javascript"></script>
+<script type="text/javascript">
+  var slideshow = remark.create({
+      highlightStyle: 'monokai',
+      highlightLanguage: 'remark'
+    }) ;
+</script>
+
+</body>
+</html>

@@ -25,6 +25,7 @@ class: center middle
 
 ---
 template: inverse
+class: middle center
 
 ## Cas d’utilisation
 
@@ -79,13 +80,15 @@ layout: false
 (explications Florence Clavaud)
 
 ## bien comprendre la notion d’arbre
+
 Vous comprenez maintenant sans doute mieux pour quelle raison il était si important de bien comprendre la notion d’arbre se fondant sur le modèle abstrait de XML.
 
 Celui-ci est mobilisé par le processeur dans l’ordre de parcours du document et appliqué au produit de la transformation. Ce modèle abstrait a l’avantage de décrire de façon non ambiguë la structure et le contenu d’un document XML.
+
 cf. DOM
 
 ---
-layout: false
+
 .left-column[
 ## Généralités sur XSLT
 ]
@@ -110,23 +113,25 @@ layout: false
 - Un des .red[éléments de haut niveau], `xsl:output` spécifie un format de sortie.
 
 ---
+
 ### Structure d’un programme
 
 ```xslt
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet
   xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-  xmlns:xs="http://www.w3.org/2001/XMLSchema"
-  exclude-result-prefixes="xs"
-  xpath-default-namespace="http://www.tei-c.org/ns/1.0"
   xmlns="http://www.w3.org/1999/xhtml"
   version="2.0">
   <xsl:output method="xml" omit-xml-declaration="no"
      encoding="UTF-8" indent="yes" />
+  <xsl:template match="/">
+    <xsl:apply-templates/>
+  </xsl:template>
 </xsl:stylesheet>
 ```
 
 ---
+
 ### Les règles
 
 Les instructions de transformation sont englobées dans des éléments `xsl:template` qui constituent des .red[règles]
@@ -147,7 +152,8 @@ C’est le cas le plus fréquent
 - soit un attribut `name` qui fait appel à une .red[règle nommée] qui peut être utilisée en l’appelant par son nom. Dispositif similaire à une macro.
 
 ---
-### Corps des règles
+
+## Corps des règles
 
 Le .red[corps d’une règle] contenue dans `xsl:template` comporte les instructions qui s’appliquent aux nœuds correspondant au motif indiqué dans l’attribut `match`
 
@@ -175,7 +181,8 @@ Ces instructions sont exprimées à l’aide des éléments XML définis par le 
 - `xsl:for-each` exécution d’instructions en bouclant sur chacun des nœuds désignés par l’attribut `select`
 
 ---
-### Corps des règles (suite)
+
+## Corps des règles (suite)
 
 Éléments XML définis par le langage XSLT (suite) :
 - `xsl:if` instruction conditionnelle
@@ -199,17 +206,32 @@ Ces instructions sont exprimées à l’aide des éléments XML définis par le 
 ---
 name: vide
 template: inverse
+class: middle center
 
-## Ex 01 : règle vide
+# Ex 01 : règle vide
 
 ---
-### Règles internes ou par défaut
+
+# Règles internes ou par défaut
+
+```xslt
+  <xsl:template match="* | /">
+    <xsl:apply-templates/>
+  </xsl:template>
+  <xsl:template match="text() | @*">
+    <xsl:value-of select="." />
+  </xsl:template>
+  <xsl:template match="comment() | processing-instruction()" />
+```
+
+## Comment fonctionne cette règle par défaut ?
+
 Lorsque le processeur trouve un nœud qui ne correspond à aucun motif, il applique les instructions de transformation par défaut suivantes :
 - pour un nœud élément ou pour le nœud document : il passe aux nœuds enfants
 - pour un nœud texte : il sort la valeur textuelle
 - pour un nœud attribut : il sort la valeur textuelle
 
-voir les [../xsl/instructionsParDefaut.xsl](../xsl/)
+voir les [../xsl/01instructionsParDefaut.xsl](../xsl/)
 
 ???
 ### Règles internes ou par défaut
@@ -225,12 +247,17 @@ On a donc toujours besoin d’écrire ce genre de choses
 
 ---
 template: inverse
+class: middle center
 
-## Ex 02 : copie à l’identique
+# Ex 02 : copie à l’identique
 
 ---
 
-### Comment fonctionne cette règle de recopie ?
+## Appliquez la transformation `01CopieIdentique.xsl`
+
+voir le fichier  [../xsl/01CopieIdentique.xsl](../xsl/)
+
+## Comment fonctionne cette règle de recopie ?
 
 ```xslt
     <xsl:template match="node() | @*">
@@ -240,8 +267,6 @@ template: inverse
         </xsl:copy>
     </xsl:template>
 ```
-voir le fichier  [../xsl/01CopieIdentique.xsl](../xsl/)
-
 
 ???
 ### Copie à l’identique

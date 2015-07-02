@@ -238,12 +238,14 @@ Le nom FLOWR correspond aux 5 clauses utilisées pour produire une expression. L
 ```xquery
   for $var in _expression_
   let $var := _expression_
-  where _condition_
+  where _expression_
   order by _expression_
   return _expression_
 ```
 
-Les expressions peuvent aussi être imbriquées
+### Les expressions peuvent aussi être imbriquées
+
+À l’intérieur d’une expression FLOWR, chaque expression peut être une expression flower
 
 ???
 
